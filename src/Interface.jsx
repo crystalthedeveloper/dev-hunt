@@ -4,7 +4,7 @@ import useGame from './stores/useGame.jsx'
 import fireworks from '/texture/fireworks.gif'
 
 export default function Interface() {
-
+    
     const restart = useGame((state) => state.restart)
 
     const forward = useKeyboardControls((state) => state.forward)
@@ -37,22 +37,17 @@ export default function Interface() {
     const incrementCanva = useGame((state) => state.incrementCanva)
     const incrementMusic = useGame((state) => state.incrementMusic)
     const AllIncrements = useGame((state) => state.AllIncrements)
-
+    function sayHello() {
+        alert('You clicked me!');
+      }
 
     return <div className="interface">
-
-        {/* Controls */}
-        <div className="controls">
-            <div className="raw">
-                <div className={`key ${forward ? 'active' : ''}`}></div>
-            </div>
-            <div className="raw">
-                <div className={`key ${leftward ? 'active' : ''}`}></div>
-                <div className={`key ${backward ? 'active' : ''}`}></div>
-                <div className={`key ${rightward ? 'active' : ''}`}></div>
-            </div>
-            <div className="raw">
-                <div className={`key large ${jump ? 'active' : ''}`}></div>
+        {/* CONGRATS */}
+        <div onClick={restart} className="winner">
+            <div className={`winnerHit ${AllIncrements ? 'active' : ''}`}>
+                CONGRATS!
+                <div className="winnerText">You collect them all.</div>
+                <img src={fireworks} alt="fireworks" />
             </div>
         </div>
 
@@ -131,12 +126,20 @@ export default function Interface() {
             </div>
         </div>
 
-        {/* CONGRATS */}
-        <div onClick={restart} className="winner">
-            <div className={`winnerHit ${AllIncrements ? 'active' : ''}`}>
-                CONGRATS!
-                <div className="winnerText">You collect them all</div>
-                <img src={fireworks} alt="fireworks" />
+        {/* Controls */}
+        <div className="controls">
+            <div className="raw">
+                <div onClick={sayHello} className={`key ${forward ? 'active' : ''}`}>
+                
+                </div>
+            </div>
+            <div className="raw">
+                <div className={`key ${leftward ? 'active' : ''}`}></div>
+                <div className={`key ${backward ? 'active' : ''}`}></div>
+                <div className={`key ${rightward ? 'active' : ''}`}></div>
+            </div>
+            <div className="raw">
+                <div className={`key large ${jump ? 'active' : ''}`}></div>
             </div>
         </div>
 

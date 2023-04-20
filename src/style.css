@@ -9,6 +9,7 @@ body,
     background: #000000;
     overflow: hidden !important;
     margin: 0px;
+    padding: 0px;
 }
 
 /**
@@ -48,6 +49,7 @@ body,
     bottom: 3%;
     left: 0;
     width: 100%;
+    cursor: pointer;
 
 }
 
@@ -62,15 +64,20 @@ body,
     margin: 4px;
     border: 1px solid #eeb609;
     background: #ffe60044;
+    pointer-events: auto;
+    cursor: pointer;
+    
 
 }
 
 .controls .key.large {
     width: 124px;
+    
 }
 
 .controls .key.active {
     background: #ffe60099;
+   
 }
 
 /**
@@ -84,6 +91,7 @@ body,
     width: 100%;
     color: #ffffff99;
     font-size: 1.5vh;
+    pointer-events: none;
 
 }
 

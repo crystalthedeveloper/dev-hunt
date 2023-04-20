@@ -4,12 +4,11 @@ import { Level } from './Level.jsx'
 import Player from './Player.jsx'
 
 export default function Experience() {
-
-
+    
     return <>
         <Physics gravity={[0, -2, 0]}>
             {/* <Debug />  */}
-            <Stats />
+            {/* <Stats /> */}
             <Level />
             <Player />
         </Physics>

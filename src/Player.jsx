@@ -34,6 +34,7 @@ export default function Player() {
             body.current.applyImpulse({ x: 0, y: 0.1, z: 0 })
         }
     }
+    
     {/******************* removeAll Increment 3DText *******************/ }
     const removeAllIncrements = useGame((state) => state.removeAllIncrements)
     {/******************* reset *******************/ }
@@ -176,8 +177,8 @@ export default function Player() {
 
     }
     const onCollisionExit = () => {
-        if (incrementHtml && incrementCss && incrementJavascript && incrementJquery && incrementReact && incrementThreeJs && incrementPython && incrementGithubGit && incrementSpeedOptimization && incrementSeo && incrementGoogleTagManager && incrementGoogleAnalytics && incrementJira && incrementLitmus && incrementVisualStudioCode && incrementBlenders && incrementIllustrator && incrementPhotoshop && incrementAfterEffects && incrementFigma && incrementAdobeXD && incrementCanva && incrementMusic ) {
-    
+        if (incrementHtml && incrementCss && incrementJavascript && incrementJquery && incrementReact && incrementThreeJs && incrementPython && incrementGithubGit && incrementSpeedOptimization && incrementSeo && incrementGoogleTagManager && incrementGoogleAnalytics && incrementJira && incrementLitmus && incrementVisualStudioCode && incrementBlenders && incrementIllustrator && incrementPhotoshop && incrementAfterEffects && incrementFigma && incrementAdobeXD && incrementCanva && incrementMusic) {
+
             increaseAllIncrements()
         }
 
@@ -221,7 +222,7 @@ export default function Player() {
 
     {/******************* useFrame *******************/ }
     useFrame((state, delta) => {
-        
+
         /**
          * Controls
          */
@@ -232,12 +233,12 @@ export default function Player() {
 
         const impulseStrength = 0.6 * delta
         const torqueStrength = 0.2 * delta
-        
+
 
         if (forward) {
             impulse.z -= impulseStrength
             torque.x -= torqueStrength
-            
+
         }
 
         if (rightward) {
