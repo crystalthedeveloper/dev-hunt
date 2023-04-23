@@ -4,7 +4,7 @@ import { useKeyboardControls, useGLTF } from '@react-three/drei'
 import { useState, useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import useGame from './stores/useGame.jsx'
-
+import Interface from './Interface.jsx'
 {/******************* Player function*******************/ }
 export default function Player() {
 

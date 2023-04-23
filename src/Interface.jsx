@@ -2,6 +2,7 @@
 import { useKeyboardControls } from '@react-three/drei'
 import useGame from './stores/useGame.jsx'
 import fireworks from '/texture/fireworks.gif'
+import Player from './Player.jsx'
 
 export default function Interface() {
     
@@ -37,9 +38,12 @@ export default function Interface() {
     const incrementCanva = useGame((state) => state.incrementCanva)
     const incrementMusic = useGame((state) => state.incrementMusic)
     const AllIncrements = useGame((state) => state.AllIncrements)
-    function sayHello() {
-        alert('You clicked me!');
+    function forwardMobile(event) {
+       
+        console.log(forward) 
+       
       }
+      
 
     return <div className="interface">
         {/* CONGRATS */}
@@ -129,7 +133,7 @@ export default function Interface() {
         {/* Controls */}
         <div className="controls">
             <div className="raw">
-                <div onClick={sayHello} className={`key ${forward ? 'active' : ''}`}>
+                <div onClick={forwardMobile} className={`key ${forward ? 'active' : ''}`}>
                 
                 </div>
             </div>
