@@ -3,13 +3,10 @@ import { RigidBody } from '@react-three/rapier'
 import { Html } from '@react-three/drei'
 import Logo from './Logo.jsx'
 
-{/* wall */ }
-const scaleWall = [2.1, 2.1, 4]
-const positionWall = [0, 1.17, -2.2]
+
 {/* HTML IFRAME */ }
-const scaleIframe = [2.1, 2.1, 1]
-const distanceFactorIframe = 0.20
-const positionIframe = [0, 1.17, -0.14]
+const distanceFactorIframe = 4
+const positionIframe = [0, 1.2, 0]
 const positionY = -0
 {/* Ground BELOW */ }
 const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
@@ -19,31 +16,6 @@ const rotationX = [-Math.PI / 2]
 const scaleGround = [18, 60, 0.1]
 
 
-{/******************* START FUNCTION *******************/ }
-function Debug() {
-
-    {/* Debug */ }
-    const { rotation, positions, scale } = useControls('About', {
-        rotation:
-        {
-            value: { x: 0, y: 0.36, z: 0 },
-            step: 0.01,
-            joystick: 'invertY'
-        },
-        //yellowMaterial:'#ff0000'
-        positions: {
-            value: { x: 0, y: 1.16, z: -0.14 },
-            step: 0.01,
-            joystick: 'invertY'
-        },
-        scale: {
-            value: { x: 2, y: 1.9, z: 1 },
-            step: 0.01,
-            joystick: 'invertY'
-        },
-
-    })
-}
 {/******************* CONTACT FUNCTION *******************/ }
 export default function StartLevel() {
 
@@ -51,38 +23,40 @@ export default function StartLevel() {
         {/* ABOUT HTML */}
         <group position={[-5, positionY, -6]}>
             <Html
-                // Debug
-                //position={[positions.x, positions.y, positions.z]}
-                //rotation={[rotation.x, rotation.y, rotation.z]}
-                transform
-                occlude="blending"
-                wrapperClass="htmlScreen"
-                position={positionIframe}
-                scale={scaleIframe}
+                center
+                occlude
+                wrapperClass="liveText"
                 distanceFactor={distanceFactorIframe}
+                position={positionIframe}
+                zIndexRange={[90, 0]}
+                
             >
-                <iframe src="https://www.crystalthedeveloper.ca/about" />
+                <h1>CRYSTAL LEWIS PORTFOLIO!</h1>
+                <p>I’m a Website &amp; Email Developer &amp; Designer with over 10+ years of experience. I have hands-on experience in all stages of web-based development efforts, including requirements definition, design, architecture, implementation, testing, and support ensuring a smooth transition from start to finish.‍My passion and My skills are wider and spanning across multiple creative and technical disciplines. I absorb information like a sponge and create new Designs, Emails, Websites, and music. That is fully responsive ensuring a user-friendly experience for all.‍</p>
+
             </Html>
-            <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-            </mesh>
             <Logo />
         </group>
         {/* GUIDE HTML */}
-        <group position={[-0.5, positionY, 0]}>
+        <group position={[-1.2, positionY, -0.30]}>
             <Html
-                transform
-                occlude="blending"
-                wrapperClass="htmlScreen"
-                position={positionIframe}
-                scale={scaleIframe}
+                center
+                occlude
+                wrapperClass="liveText"
                 distanceFactor={distanceFactorIframe}
+                position={positionIframe}
+                zIndexRange={[100, 0]}
             >
-                <iframe src="https://www.crystalthedeveloper.ca/guide" />
+                <h1>HERE IS A GUIDE TO HELP YOU GET AROUND.</h1>
+                <h2>YOU ARE HERE</h2>
+                <p>Here is where you find bio, programming languages and tools I use to build websites and emails. Try to collect them all!</p>
+                <h2>BOTTOM FLOOR </h2>
+                <p>You can contact me on this floor. Here you will find Designer & Animation tools, I love designing new ways to make your site look beautiful.</p>
+                <h2>TOP FLOOR</h2>
+                <p>I love developing and designing using these Content Management Systems!</p>
+                <h1>THANK YOU ENJOY!</h1>
+
             </Html>
-            <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                <meshBasicMaterial color={meshBasicMaterialColorBlack}/>
-            </mesh>
             <Logo />
         </group>
         {/* Ground */}

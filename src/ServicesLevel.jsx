@@ -4,12 +4,8 @@ import { Html } from '@react-three/drei'
 import Logo from './Logo.jsx'
 
 
-{/* wall */ }
-const scaleWall = [2.1, 2.1, 4]
-const positionWall = [0, 1.17, -2.2]
 {/* HTML IFRAME */ }
-const scaleIframe = [2.1, 2.1, 1]
-const distanceFactorIframe = 0.20
+const distanceFactorIframe = 2
 const positionIframe = [0, 1.17, -0.14]
 const positionY = 40.15
 {/* Ground */ }
@@ -29,149 +25,125 @@ export default function ServicesLevel() {
             {/* WEBFLOW */}
             <group position={[-2, positionY, -60]}>
                 <Html
-                    // Debug
-                    //position={[positions.x, positions.y, positions.z]}
-                    //rotation={[rotation.x, rotation.y, rotation.z]}
-                    transform
+                    center
                     occlude="blending"
-                    wrapperClass="htmlScreen"
+                    wrapperClass="Image"
                     position={positionIframe}
-                    scale={scaleIframe}
                     distanceFactor={distanceFactorIframe}
+                    zIndexRange={[90, 0]}
                 >
-                    <iframe src="https://www.crystalthedeveloper.ca/services/webflow" />
+                    <a href='https://www.crystalthedeveloper.ca/services/webflow' target="_blank"> <img src="/texture/webflow.png" alt="webflow" /><h1>PORTFOLIO</h1></a>
+
                 </Html>
-                <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                    <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-                </mesh>
                 <Logo />
             </group>
             {/* WORDPRESS */}
             <group position={[2, positionY, -60]}>
                 <Html
-                    transform
+                    center
                     occlude="blending"
-                    wrapperClass="htmlScreen"
+                    wrapperClass="Image"
                     position={positionIframe}
-                    scale={scaleIframe}
                     distanceFactor={distanceFactorIframe}
+                    zIndexRange={[90, 0]}
                 >
-                    <iframe src="https://www.crystalthedeveloper.ca/services/wordpress" />
+                    <a href='https://www.crystalthedeveloper.ca/services/wordpress' target="_blank"> <img src="/texture/WordPress.png" alt="wordpress" /><h1>PORTFOLIO</h1></a>
+
                 </Html>
-                <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                    <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-                </mesh>
                 <Logo />
             </group>
             {/* ADOBE EXPERIENCE MANAGER */}
             <group position={[-2, positionY, -70]}>
                 <Html
-                    transform
+                    center
                     occlude="blending"
-                    wrapperClass="htmlScreen"
+                    wrapperClass="Image"
                     position={positionIframe}
-                    scale={scaleIframe}
                     distanceFactor={distanceFactorIframe}
+                    zIndexRange={[80, 0]}
                 >
-                    <iframe src="https://www.crystalthedeveloper.ca/services/adobe-experience-manager" />
+                    <a href='https://www.crystalthedeveloper.ca/services/adobe-experience-manager' target="_blank"> <img src="/texture/AEM.png" alt="Adobe experience manager" /><h1>PORTFOLIO</h1></a>
+
                 </Html>
-                <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                    <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-                </mesh>
                 <Logo />
             </group>
             {/* MAGNOLIA */}
             <group position={[2, positionY, -70]}>
-
                 <Html
-                    transform
+                    center
                     occlude="blending"
-                    wrapperClass="htmlScreen"
+                    wrapperClass="Image"
                     position={positionIframe}
-                    scale={scaleIframe}
                     distanceFactor={distanceFactorIframe}
+                    zIndexRange={[80, 0]}
                 >
-                    <iframe src="https://www.crystalthedeveloper.ca/services/magnolia-cms" />
+                    <a href='https://www.crystalthedeveloper.ca/services/magnolia-cms' target="_blank"> <img src="/texture/Magnolia.png" alt="magnolia" /><h1>PORTFOLIO</h1></a>
+
                 </Html>
-                <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                    <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-                </mesh>
                 <Logo />
 
             </group>
             {/* MAILCHIMP */}
             <group position={[2, positionY, -80]}>
-
                 <Html
-                    transform
+                    center
                     occlude="blending"
-                    wrapperClass="htmlScreen"
+                    wrapperClass="Image"
                     position={positionIframe}
-                    scale={scaleIframe}
                     distanceFactor={distanceFactorIframe}
+                    zIndexRange={[70, 0]}
                 >
-                    <iframe src="https://www.crystalthedeveloper.ca/services/mailchimp" />
+                    <a href='https://www.crystalthedeveloper.ca/services/mailchimp' target="_blank"> <img src="/texture/Mailchimp.png" alt="mailchimp" /><h1>PORTFOLIO</h1></a>
+
                 </Html>
-                <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                    <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-                </mesh>
                 <Logo />
 
             </group>
             {/* SALESFORCE */}
             <group position={[-2, positionY, -80]}>
-
                 <Html
-                    transform
+                    center
                     occlude="blending"
-                    wrapperClass="htmlScreen"
+                    wrapperClass="Image"
                     position={positionIframe}
-                    scale={scaleIframe}
                     distanceFactor={distanceFactorIframe}
+                    zIndexRange={[70, 0]}
                 >
-                    <iframe src="https://www.crystalthedeveloper.ca/services/salesforce" />
+                    <a href='https://www.crystalthedeveloper.ca/services/salesforce' target="_blank"> <img src="/texture/Salesforce.png" alt="salesforce" /><h1>PORTFOLIO</h1></a>
+
                 </Html>
-                <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                    <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-                </mesh>
                 <Logo />
 
             </group>
             {/* EMAIL */}
             <group position={[2, positionY, -90]}>
-
                 <Html
-                    transform
+                    center
                     occlude="blending"
-                    wrapperClass="htmlScreen"
+                    wrapperClass="Image"
                     position={positionIframe}
-                    scale={scaleIframe}
                     distanceFactor={distanceFactorIframe}
+                    zIndexRange={[60, 0]}
                 >
-                    <iframe src="https://www.crystalthedeveloper.ca/services/email-developer" />
+                    <a href='https://www.crystalthedeveloper.ca/services/email-developer' target="_blank"> <img src="/texture/Email.png" alt="Email developer" /><h1>PORTFOLIO</h1></a>
+
                 </Html>
-                <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                    <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-                </mesh>
                 <Logo />
 
             </group>
             {/* ANIMATION */}
             <group position={[-2, positionY, -90]}>
-
                 <Html
-                    transform
+                    center
                     occlude="blending"
-                    wrapperClass="htmlScreen"
+                    wrapperClass="Image"
                     position={positionIframe}
-                    scale={scaleIframe}
                     distanceFactor={distanceFactorIframe}
+                    zIndexRange={[60, 0]}
                 >
-                    <iframe src="https://www.crystalthedeveloper.ca/services/animation" />
+                    <a href='https://www.crystalthedeveloper.ca/services/animation' target="_blank"> <img src="/texture/Animation.png" alt="Animation" /><h1>PORTFOLIO</h1></a>
+
                 </Html>
-                <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                    <meshBasicMaterial color={meshBasicMaterialColorBlack} />
-                </mesh>
                 <Logo />
 
             </group>

@@ -1,6 +1,7 @@
 html,
 body,
 #root {
+    -webkit-font-smoothing: antialiased;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,10 +11,53 @@ body,
     overflow: hidden !important;
     margin: 0px;
     padding: 0px;
+
+}
+
+canvas {
+    touch-action: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 26px;
+}
+
+h2 {
+    color: #ffe600;
+    font-size: 16px;
+}
+
+p {
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /**
- * iframes
+ * iframes/Wrap
  */
 .htmlScreen iframe {
     width: 1920px;
@@ -24,6 +68,71 @@ body,
     overflow: hidden !important;
     padding: 0;
     margin: 0px;
+}
+
+.liveText>div {
+    /* position: absolute; */
+    background: #000000;
+    color: #ffffff;
+    border-top: solid;
+    border-color: #ffe600;
+    cursor: pointer;
+    overflow: hidden;
+    width: 220px;
+    height: 200px;
+    overflow: hidden;
+    padding: 15px;
+    overflow: auto;
+    overflow-wrap: break-word;
+    white-space: normal;
+
+}
+
+/**
+ * Buttons
+ */
+.button {
+
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #039f00;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px #999;
+    font-family: 'Cinzel';
+    color: #ffe600;
+}
+
+.button:hover {
+    background-color: #3e8e41
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/**
+ * Images
+ */
+.Image img {
+    width: 400px;
+}
+
+.Image h1 {
+    font-size: 50px;
+    color: #fff;
+}
+.Image:hover {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
 
 /**
@@ -66,18 +175,18 @@ body,
     background: #ffe60044;
     pointer-events: auto;
     cursor: pointer;
-    
+
 
 }
 
 .controls .key.large {
     width: 124px;
-    
+
 }
 
 .controls .key.active {
     background: #ffe60099;
-   
+
 }
 
 /**

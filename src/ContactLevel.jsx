@@ -4,12 +4,7 @@ import { Html } from '@react-three/drei'
 import Logo from './Logo.jsx'
 
 
-{/* wall */ }
-const scaleWall = [2.1, 2.1, 4]
-const positionWall = [0, 1.17, -2.2]
 {/* HTML IFRAME */ }
-const scaleIframe = [2.1, 2.1, 1]
-const distanceFactorIframe = 0.20
 const positionIframe = [0, 1.17, -0.14]
 const positionY = -8.9
 {/* Ground BELOW */ }
@@ -26,19 +21,16 @@ export default function ContactLevel() {
     return <RigidBody type="fixed">
         <group position={[3, positionY, -3]}>
             <Html
-                transform
-                occlude="blending"
-                wrapperClass="htmlScreen"
+                center
+                occlude
+                wrapperClass="Button"
                 position={positionIframe}
-                scale={scaleIframe}
-                distanceFactor={distanceFactorIframe}
+                zIndexRange={[100, 0]}
             >
-                <iframe src="https://www.crystalthedeveloper.ca/contact" />
+                <a href="https://www.crystalthedeveloper.ca/contact" target="_blank"><button className="button" style={{ verticalAlign: 'middle' }}>CONTACT<span>&nbsp;</span>ME</button>
+                </a>
 
             </Html>
-            <mesh geometry={boxGeometry} position={positionWall} scale={scaleWall}>
-                <meshBasicMaterial color={meshBasicMaterialColorBlack}/>
-            </mesh>
             <Logo />
         </group>
         {/* GROUND */}
