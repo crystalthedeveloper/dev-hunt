@@ -27,7 +27,7 @@ export default function ContactLevel() {
                 position={positionIframe}
                 zIndexRange={[100, 0]}
             >
-                <a href="https://www.crystalthedeveloper.ca/contact" target="_blank"><button className="button" style={{ verticalAlign: 'middle' }}>CONTACT<span>&nbsp;</span>ME</button>
+                <a href="https://www.crystalthedeveloper.ca/contact" target="_blank"><button className="button" style={{ verticalAlign: 'middle' }}><strong>CONTACT</strong> CRYSTAL<span>&nbsp;</span>LEWIS</button>
                 </a>
 
             </Html>
