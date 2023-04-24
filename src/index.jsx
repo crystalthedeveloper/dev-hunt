@@ -20,13 +20,13 @@ root.render(
             camera={{
                 fov: 45,
                 near: 0.1,
-                far: 200,
+                far: 60,
                 position: [2.5, 4, 6]
             }}
         >
             <Experience />
             <fog attach="fog" args={['black', 8, 25]} />
-            <Stars radius={80} depth={10} count={1500} factor={10} saturation={0} fade speed={1} />
+            <Stars radius={4} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
             <Environment
                 //background 
                 preset='studio' />

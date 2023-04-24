@@ -8,12 +8,7 @@ import Logo from './Logo.jsx'
 const distanceFactorIframe = 4
 const positionIframe = [0, 1.2, 0]
 const positionY = -0
-{/* Ground BELOW */ }
-const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
-const meshBasicMaterialColorBlack = "#000000"
-const positionGround = [0, -0.1, -10]
-const rotationX = [-Math.PI / 2]
-const scaleGround = [18, 60, 0.1]
+
 
 
 {/******************* CONTACT FUNCTION *******************/ }
@@ -29,7 +24,7 @@ export default function StartLevel() {
                 distanceFactor={distanceFactorIframe}
                 position={positionIframe}
                 zIndexRange={[90, 0]}
-                
+
             >
                 <h1>CRYSTAL LEWIS PORTFOLIO!</h1>
                 <p>I’m a Website &amp; Email Developer &amp; Designer with over 10+ years of experience. I have hands-on experience in all stages of web-based development efforts, including requirements definition, design, architecture, implementation, testing, and support ensuring a smooth transition from start to finish.‍My passion and My skills are wider and spanning across multiple creative and technical disciplines. I absorb information like a sponge and create new Designs, Emails, Websites, and music. That is fully responsive ensuring a user-friendly experience for all.‍</p>
@@ -59,15 +54,6 @@ export default function StartLevel() {
             </Html>
             <Logo />
         </group>
-        {/* Ground */}
-        <mesh
-            position={positionGround}
-            rotation-x={rotationX}
-            geometry={boxGeometry}
-            scale={scaleGround}
-        >
-            <meshBasicMaterial color={meshBasicMaterialColorBlack} wireframe />
-        </mesh>
     </RigidBody>
 
     </>

@@ -18,43 +18,43 @@ const bevelThicknessText3D = 0
 const bevelSizeText3D = 0
 const heightText3D = [0.1]
 {/* Text3D positions Designer & Animation*/ }
-const positionadobeAfterEffectsText3D = [-3, -9, -3]
-const positionAdobeXdText3D = [-1.5, -9, -13]
+const positionadobeAfterEffectsText3D = [-10, -9, -6]
+const positionAdobeXdText3D = [-7, -9, -13]
 const positionPhotoshopText3D = [-1, -9, -3]
-const positionBlenderText3D = [0, -9, -6]
-const positionFigmaText3D = [0, -9, -9]
+const positionBlenderText3D = [10, -9, -13]
+const positionFigmaText3D = [-4, -9, -7]
 const positionMusicText3D = [3, -9, -13]
-const positionIllustratorText3D = [-4, -9, -7]
+const positionIllustratorText3D = [8, -9, -6]
 const positionCanvaText3D = [-3, -9, -11]
 {/* Text3D Developer */ }
 
-const positionReactText3D = [-4, 0, -36]
-const positionThreeJsText3D = [0, 0, -20]
-const positionPythonText3D = [4, 0, -34]
-const positionJqueryText3D = [-8, 0, -10]
-const positionJavascriptText3D = [-6, 0, -24]
-const positionCssText3D = [4, 0, -14]
-const positionVisualStudioCodeText3D = [0, 0, -30]
+const positionReactText3D = [-6, 0, -20]
+const positionThreeJsText3D = [-2, 0, -20]
+const positionPythonText3D = [4, 0, -24]
+const positionJqueryText3D = [-8, 0, -20]
+const positionJavascriptText3D = [-7, 0, -24]
+const positionCssText3D = [5, 0, -16]
+const positionVisualStudioCodeText3D = [0, 0, -24]
 
 const positionHText3D = [2, 0, -8]
 const positionTText3D = [2.3, 0, -8]
 const positionMText3D = [2.5, 0, -8]
 const positionLText3D = [2.7, 0, -8]
 
-const positionLitmusText3D = [1, 0, 15]
-const positionJiraText3D = [-5, 5, -8]
+const positionLitmusText3D = [1, 0, 3]
+const positionJiraText3D = [0, 5, -8]
 const positionGithubGitText3D = [-8, 0, 3]
-const positionSeoText3D = [-3.5, 0, -5]
-const positionGoogleTagManagerText3D = [-3, 0, 7]
-const positionSpeedOptimizationText3D = [4, 0, 5]
-const positionGoogleAnalyticsText3D = [-8, 0, 15]
+const positionSeoText3D = [-2, 0, -10]
+const positionGoogleTagManagerText3D = [-3, 0, 4]
+const positionSpeedOptimizationText3D = [4, 0, 0]
+const positionGoogleAnalyticsText3D = [-8, 0, 0]
 
 
 {/* gravity Text3D Developer */ }
 const gravityScaleDeveloper = [0.3]
 const gravityScaleCMS = [1]
 {/* Basic Material Color */ }
-const meshBasicMaterialColorYellow = "#ffe600"
+const meshBasicMaterialColorYellow = "#ffdf00"
 const meshBasicMaterialColorGreen = "#039f00"
 const meshBasicMaterialColorBlue = "#1245a8"
 
@@ -470,40 +470,10 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
 }
 
 {/******************* END EXPERTISE FUNCTION *******************/ }
-{/******************* STAIRS FUNCTION *******************/ }
-export function BlockStairs({ position = [0, 0, 0] }) {
-    const [matcap] = useMatcapTexture('E6BF3C_5A4719_977726_FCFC82')
-    const obstacle = useRef()
-    const [timeOffset] = useState(() => Math.random() * Math.PI * 2)
 
-    {/* Stairs anmation */ }
-    useFrame((state) => {
-        {/* need clock to anmation */ }
-        const time = state.clock.getElapsedTime()
-        {/* up and down anmation */ }
-        const y = Math.sin(time + timeOffset) * 13
-        obstacle.current.setNextKinematicTranslation({ x: position[0], y: position[1] + y, z: position[2] })
-
-    })
-
-    return <group position={position}>
-        {/* Stairs Rigidbody Physics */}
-        <RigidBody type="kinematicPosition"
-            ref={obstacle}
-            restitution={0.2}
-            friction={0}
-            colliders="hull">
-            {/* mesh */}
-            <mesh geometry={boxGeometry} scale={[1.6, 0.3, 3]}>
-                <meshMatcapMaterial matcap={matcap} />
-            </mesh>
-        </RigidBody>
-    </group>
-}
 {/******************* END STAIRS FUNCTION *******************/ }
 {/******************* SPINNER FUNCTION *******************/ }
 export function BlockSpinner({ position = [0, 0, 0] }) {
-    const [matcap] = useMatcapTexture('E6BF3C_5A4719_977726_FCFC82')
     const obstacle = useRef()
     const [speed] = useState(() => (Math.random() + 0.1) * (Math.random() < 0.5 ? - 1 : 1))
 
@@ -526,7 +496,7 @@ export function BlockSpinner({ position = [0, 0, 0] }) {
             restitution={0.2}
             friction={0}>
             <mesh geometry={boxGeometry}>
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
             </mesh>
         </RigidBody>
     </group>
@@ -534,7 +504,6 @@ export function BlockSpinner({ position = [0, 0, 0] }) {
 {/******************* END SPINNER FUNCTION *******************/ }
 {/****************** LIMBO FUNCTION ******************/ }
 export function BlockLimbo({ position = [0, 0, 0] }) {
-    const [matcap] = useMatcapTexture('0C430C_257D25_439A43_3C683C')
     const obstacle = useRef()
     const [timeOffset] = useState(() => Math.random() * Math.PI * 1)
 
@@ -556,7 +525,7 @@ export function BlockLimbo({ position = [0, 0, 0] }) {
             colliders={false}
         >
             <mesh geometry={boxGeometry}>
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
             </mesh>
         </RigidBody>
     </group>
@@ -564,7 +533,6 @@ export function BlockLimbo({ position = [0, 0, 0] }) {
 {/****************** END LIMBO FUNCTION ******************/ }
 {/******************* AXE FUNCTION *******************/ }
 export function BlockAxe({ position = [6, 0, -5] }) {
-    const [matcap] = useMatcapTexture('0C430C_257D25_439A43_3C683C')
     const obstacle = useRef()
     const [timeOffset] = useState(() => Math.random() * Math.PI * 2)
 
@@ -589,7 +557,7 @@ export function BlockAxe({ position = [6, 0, -5] }) {
 
             {/* Axe mesh */}
             <mesh geometry={boxGeometry}>
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
             </mesh>
         </RigidBody>
     </group>
@@ -601,24 +569,17 @@ export function Level() {
     return <>
 
         <StartLevel />
-
         <ServicesLevel />
-
         <ContactLevel />
-
         <BlockExpertise position={[0, 0, 0]} />
 
-        <BlockSpinner position={[8, -10, -7]} />
-        <BlockSpinner position={[-2, 1, -10]} />
+        <BlockSpinner position={[14, -9, -6]} />
+        <BlockSpinner position={[-2, 2, -10]} />
 
         <BlockLimbo position={[-9, 0.60, -3]} />
-        <BlockLimbo position={[-6, -9, -12]} />
 
         <BlockAxe position={[0, 45, -70]} />
 
-        <BlockStairs position={[11, -1, -21]} />
-        <BlockStairs position={[0, 9, -42]} />
-        <BlockStairs position={[0, 30, -48]} />
 
 
     </>

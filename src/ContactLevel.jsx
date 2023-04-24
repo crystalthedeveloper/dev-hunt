@@ -1,18 +1,11 @@
 import * as THREE from 'three'
 import { RigidBody } from '@react-three/rapier'
-import { Html } from '@react-three/drei'
+import { Html, Image } from '@react-three/drei'
 import Logo from './Logo.jsx'
 
 
-{/* HTML IFRAME */ }
-const positionIframe = [0, 1.17, -0.14]
+{/* SERVICES LEVEL POSITION */ }
 const positionY = -8.9
-{/* Ground BELOW */ }
-const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
-const meshBasicMaterialColorBlack = "#000000"
-const positionGround = [0, -9, -7]
-const rotationX = [-Math.PI / 2]
-const scaleGroundBelow = [10, 15, 0.1]
 
 
 {/******************* CONTACT FUNCTION *******************/ }
@@ -20,29 +13,19 @@ export default function ContactLevel() {
 
     return <RigidBody type="fixed">
         <group position={[3, positionY, -3]}>
-            <Html
-                center
-                occlude
-                wrapperClass="Button"
-                position={positionIframe}
-                zIndexRange={[100, 0]}
-            >
-                <a href="https://www.crystalthedeveloper.ca/contact" target="_blank"><button className="button" style={{ verticalAlign: 'middle' }}><strong>CONTACT</strong> CRYSTAL<span>&nbsp;</span>LEWIS</button>
-                </a>
-
-            </Html>
-            <Logo />
+            {/* MAILCHIMP */}
+            <Image url="/texture/mail.png" scale={[1, 1]} position={[-3, 1.5, -6]} transparent onClick={()=> window.open('https://www.crystalthedeveloper.ca/mailchimp', '_blank')}/> 
+            {/* INSTAGRAM */}
+            <Image url="/texture/instagram.png" scale={[1, 1]} position={[5, 1.5, -6]} transparent onClick={()=> window.open('https://www.instagram.com/crystalthedeveloper/', '_blank')}/> 
+            {/* FACEBOOK */}
+            <Image url="/texture/facebook.png" scale={[1, 1]} position={[4, 1, -9]} transparent onClick={()=> window.open('https://www.facebook.com/Crystalthedeveloper/reviews/?ref=page_internal', '_blank')}/> 
+            {/* YOUTUBE */}
+            <Image url="/texture/youtube.png" scale={[1, 1]} position={[8, 1.5, -8]} transparent onClick={()=> window.open('https://www.youtube.com/channel/UCeUkpwkof62DlSAU9C2uLtA', '_blank')}/> 
+            {/* LINKEDIN */}
+            <Image url="/texture/linkedin.png" scale={[1, 1]} position={[-11, 0.5, -6]} transparent onClick={()=> window.open('https://www.linkedin.com/in/crystal-lewis-b14b7386/', '_blank')}/> 
+            {/* REVIEWS */}
+            <Image url="/texture/reviews.png" scale={[1, 1]} position={[-14, 1.8, -6]} transparent onClick={()=> window.open('https://www.facebook.com/Crystalthedeveloper/reviews', '_blank')}/> 
         </group>
-        {/* GROUND */}
-        <mesh
-            position={positionGround}
-            rotation-x={rotationX}
-            geometry={boxGeometry}
-            scale={scaleGroundBelow}
-        >
-            <meshBasicMaterial color={meshBasicMaterialColorBlack} wireframe />
-        </mesh>
-
     </RigidBody>
 
 }

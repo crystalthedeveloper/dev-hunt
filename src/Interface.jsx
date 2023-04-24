@@ -38,8 +38,8 @@ export default function Interface() {
     const incrementCanva = useGame((state) => state.incrementCanva)
     const incrementMusic = useGame((state) => state.incrementMusic)
     const AllIncrements = useGame((state) => state.AllIncrements)
-    function forwardMobile(event) {
-       
+    function forwardMobile(forward) {
+        return forward
         console.log(forward) 
        
       }
@@ -133,7 +133,7 @@ export default function Interface() {
         {/* Controls */}
         <div className="controls">
             <div className="raw">
-                <div onClick={forwardMobile} className={`key ${forward ? 'active' : ''}`}>
+                <div onKeyPress={forwardMobile} className={`key ${forward ? 'active' : ''}`}>
                 
                 </div>
             </div>
