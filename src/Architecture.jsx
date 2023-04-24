@@ -36,7 +36,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundTop}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorBlack} wireframe />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} wireframe />
             </mesh>
             {/* GROUND BELOW */}
             <mesh
