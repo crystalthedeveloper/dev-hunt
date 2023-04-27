@@ -2,10 +2,10 @@
 import { useKeyboardControls } from '@react-three/drei'
 import useGame from './stores/useGame.jsx'
 import fireworks from '/texture/fireworks.gif'
-import Player from './Player.jsx'
+
 
 export default function Interface() {
-    
+
     const restart = useGame((state) => state.restart)
 
     const forward = useKeyboardControls((state) => state.forward)
@@ -38,12 +38,54 @@ export default function Interface() {
     const incrementCanva = useGame((state) => state.incrementCanva)
     const incrementMusic = useGame((state) => state.incrementMusic)
     const AllIncrements = useGame((state) => state.AllIncrements)
-    function forwardMobile(forward) {
-        return forward
-        console.log(forward) 
-       
-      }
-      
+
+    const increaseIncrementforwardButton = useGame((state) => state.increaseIncrementforwardButton)
+    const removeforwardButton = useGame((state) => state.removeforwardButton)
+
+    function forwardClicked() {
+        increaseIncrementforwardButton()
+    }
+    function forwardEnd() {
+        removeforwardButton()
+    }
+    const increaseIncrementrightwardButton = useGame((state) => state.increaseIncrementrightwardButton)
+    const removerightwardButton = useGame((state) => state.removerightwardButton)
+
+    function rightwardClicked() {
+        increaseIncrementrightwardButton()
+    }
+    function rightwardEnd() {
+        removerightwardButton()
+    }
+    const increaseIncrementleftwardButton  = useGame((state) => state.increaseIncrementleftwardButton )
+    const removeleftwardButton  = useGame((state) => state.removeleftwardButton )
+
+    function leftwardClicked() {
+        increaseIncrementleftwardButton()
+    }
+    function leftwardEnd() {
+        removeleftwardButton ()
+    }
+    const increaseIncrementbackwardButton = useGame((state) => state.increaseIncrementbackwardButton)
+    const removebackwardButton = useGame((state) => state.removebackwardButton)
+
+    function backwardClicked() {
+        increaseIncrementbackwardButton()
+    }
+    function backwardEnd() {
+        removebackwardButton()
+    }
+
+    const increaseIncrementjumpButton = useGame((state) => state.increaseIncrementjumpButton)
+    const removejumpButton = useGame((state) => state.removejumpButton)
+
+    function jumpClicked() {
+        increaseIncrementjumpButton()
+    }
+    function jumpEnd() {
+        removejumpButton()
+    }
+
 
     return <div className="interface">
         {/* CONGRATS */}
@@ -74,7 +116,7 @@ export default function Interface() {
                 React
             </div>
             <div className={`collectHit ${incrementThreeJs ? 'active' : ''}`}>
-            Three.js
+                Three.js
             </div>
             <div className={`collectHit ${incrementPython ? 'active' : ''}`}>
                 Python
@@ -133,17 +175,17 @@ export default function Interface() {
         {/* Controls */}
         <div className="controls">
             <div className="raw">
-                <div onKeyPress={forwardMobile} className={`key ${forward ? 'active' : ''}`}>
-                
+                <div onTouchStart={forwardClicked} onTouchEnd={forwardEnd} className={`key ${forward ? 'active' : ''}`}>
+
                 </div>
             </div>
             <div className="raw">
-                <div className={`key ${leftward ? 'active' : ''}`}></div>
-                <div className={`key ${backward ? 'active' : ''}`}></div>
-                <div className={`key ${rightward ? 'active' : ''}`}></div>
+                <div onTouchStart={leftwardClicked} onTouchEnd={leftwardEnd} className={`key ${leftward ? 'active' : ''}`}></div>
+                <div  onTouchStart={backwardClicked} onTouchEnd={backwardEnd}className={`key ${backward ? 'active' : ''}`}></div>
+                <div onTouchStart={rightwardClicked} onTouchEnd={rightwardEnd} className={`key ${rightward ? 'active' : ''}`}></div>
             </div>
             <div className="raw">
-                <div className={`key large ${jump ? 'active' : ''}`}></div>
+                <div onTouchStart={jumpClicked} onTouchEnd={jumpEnd} className={`key large ${jump ? 'active' : ''}`}></div>
             </div>
         </div>
 

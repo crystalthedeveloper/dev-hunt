@@ -20,16 +20,18 @@ canvas {
 
 h1 {
     text-align: center;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 h2 {
     color: #ffe600;
     font-size: 16px;
+    text-align: center;
 }
 
 p {
     font-size: 15px;
+    text-align: center;
 }
 
 a {
@@ -68,10 +70,9 @@ a {
     border-color: #ffe600;
     cursor: pointer;
     overflow: hidden;
-    width: 220px;
+    width: 170px;
     height: 200px;
     overflow: hidden;
-    padding: 15px;
     overflow: auto;
     overflow-wrap: break-word;
     white-space: normal;
@@ -89,8 +90,10 @@ a {
     font-size: 50px;
     color: #fff;
 }
+
 .Image:hover {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
 
@@ -106,6 +109,11 @@ a {
     pointer-events: none;
     font-family: 'Cinzel';
     z-index: 9999999;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
 }
 

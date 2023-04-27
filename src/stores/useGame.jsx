@@ -9,6 +9,33 @@ export default create(subscribeWithSelector((set) => {
 
         phase: 'ready',
 
+        forwardButton: 0,
+        increaseIncrementforwardButton: () => set((state) => ({ forwardButton: state.forwardButton + 1 })),
+        removeforwardButton: () => set({
+            forwardButton: 0,
+        }),
+        leftwardButton: 0,
+        increaseIncrementleftwardButton: () => set((state) => ({ leftwardButton: state.leftwardButton + 1 })),
+        removeleftwardButton: () => set({
+            leftwardButton: 0,
+        }),
+        rightwardButton: 0,
+        increaseIncrementrightwardButton: () => set((state) => ({ rightwardButton: state.rightwardButton + 1 })),
+        removerightwardButton: () => set({
+            rightwardButton: 0,
+        }),
+        backwardButton: 0,
+        increaseIncrementbackwardButton: () => set((state) => ({ backwardButton: state.backwardButton + 1 })),
+        removebackwardButton: () => set({
+            backwardButton: 0,
+        }),
+
+        jumpButton: 0,
+        increaseIncrementjumpButton: () => set((state) => ({ jumpButton: state.jumpButton + 1 })),
+        removejumpButton: () => set({
+            jumpButton: 0,
+        }),
+
         incrementHtml: 0,
         incrementCss: 0,
         incrementJavascript: 0,

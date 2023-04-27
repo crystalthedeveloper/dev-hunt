@@ -4,7 +4,8 @@ import { useKeyboardControls, useGLTF } from '@react-three/drei'
 import { useState, useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import useGame from './stores/useGame.jsx'
-import Interface from './Interface.jsx'
+
+
 {/******************* Player function*******************/ }
 export default function Player() {
 
@@ -34,7 +35,11 @@ export default function Player() {
             body.current.applyImpulse({ x: 0, y: 0.1, z: 0 })
         }
     }
-    
+    {/******************* Mobile Touch jump *******************/ }
+    const jumpButton = useGame((state) => state.jumpButton)
+    if (jumpButton) {
+        jump()
+    }
     {/******************* removeAll Increment 3DText *******************/ }
     const removeAllIncrements = useGame((state) => state.removeAllIncrements)
     {/******************* reset *******************/ }
@@ -220,6 +225,12 @@ export default function Player() {
 
     }, [])
 
+    {/******************* Mobile Touch *******************/ }
+    const forwardButton = useGame((state) => state.forwardButton)
+    const backwardButton = useGame((state) => state.backwardButton)
+    const leftwardButton = useGame((state) => state.leftwardButton)
+    const rightwardButton = useGame((state) => state.rightwardButton)
+
     {/******************* useFrame *******************/ }
     useFrame((state, delta) => {
 
@@ -228,6 +239,8 @@ export default function Player() {
          */
         const { forward, backward, leftward, rightward } = getKeys()
 
+
+
         const impulse = { x: 0, y: 0, z: 0 }
         const torque = { x: 0, y: 0, z: 0 }
 
@@ -235,23 +248,23 @@ export default function Player() {
         const torqueStrength = 0.2 * delta
 
 
-        if (forward) {
+        if (forward || forwardButton) {
             impulse.z -= impulseStrength
             torque.x -= torqueStrength
 
         }
 
-        if (rightward) {
+        if (rightward || rightwardButton) {
             impulse.x += impulseStrength
             torque.z -= torqueStrength
         }
 
-        if (backward) {
+        if (backward || backwardButton) {
             impulse.z += impulseStrength
             torque.x += torqueStrength
         }
 
-        if (leftward) {
+        if (leftward || leftwardButton) {
             impulse.x -= impulseStrength
             torque.z += torqueStrength
         }
@@ -283,9 +296,10 @@ export default function Player() {
         /**
         * Phases
         */
-
+       
         if (bodyPosition.y < - 10)
             restart()
+            
 
 
     })
@@ -299,7 +313,7 @@ export default function Player() {
         colliders="ball"
         restitution={0.2}
         friction={1}
-        linearDamping={1}
+        linearDamping={2}
         angularDamping={1}
         position={[0, 1, 0]}>
         <primitive object={characterLogo.scene} />

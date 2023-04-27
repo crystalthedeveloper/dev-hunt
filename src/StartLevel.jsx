@@ -27,7 +27,7 @@ export default function StartLevel() {
 
             >
                 <h1>CRYSTAL LEWIS PORTFOLIO!</h1>
-                <p>I’m a Website &amp; Email Developer &amp; Designer with over 10+ years of experience. I have hands-on experience in all stages of web-based development efforts, including requirements definition, design, architecture, implementation, testing, and support ensuring a smooth transition from start to finish.‍My passion and My skills are wider and spanning across multiple creative and technical disciplines. I absorb information like a sponge and create new Designs, Emails, Websites, and music. That is fully responsive ensuring a user-friendly experience for all.‍</p>
+                <p>I’m a Website &amp; Email Developer &amp; Designer with over 10+ years of experience. I have hands-on experience in all stages of web-based development efforts, including requirements definition, design, architecture, implementation, testing, and support ensuring a smooth transition from start to finish.‍ My passion and My skills are wider and spanning across multiple creative and technical disciplines. I absorb information like a sponge and create new Designs, Emails, Websites, and music. That is fully responsive ensuring a <span style={{whiteSpace: 'nowrap'}}>user-friendly</span> experience for<span>&nbsp;</span>all.‍</p>
 
             </Html>
             <Logo />
@@ -42,13 +42,13 @@ export default function StartLevel() {
                 position={positionIframe}
                 zIndexRange={[100, 0]}
             >
-                <h1>HERE IS A GUIDE TO HELP YOU GET AROUND.</h1>
+                <h1>GUIDE!<br/> TO HELP YOU GET AROUND.</h1>
                 <h2>YOU ARE HERE</h2>
-                <p>Here is where you find bio, programming languages and tools I use to build websites and emails. Try to collect them all!</p>
+                <p>You will find my bio, programming languages and tools I use to build websites and emails.<br/> <strong>Try to collect them all!</strong> </p>
                 <h2>BOTTOM FLOOR </h2>
-                <p>You can contact me on this floor. Here you will find Designer & Animation tools, I love designing new ways to make your site look beautiful.</p>
+                <p>You can contact me on this floor. Here you will find Designer & Animation tools, I love designing new ways to make your site look<span>&nbsp;</span>beautiful.</p>
                 <h2>TOP FLOOR</h2>
-                <p>I love developing and designing using these Content Management Systems!</p>
+                <p>I love developing and designing using these Content Management Systems! (CMS)</p>
                 <h1>THANK YOU ENJOY!</h1>
 
             </Html>
