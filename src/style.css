@@ -70,7 +70,7 @@ a {
     border-color: #ffe600;
     cursor: pointer;
     overflow: hidden;
-    width: 170px;
+    width: 220px;
     height: 200px;
     overflow: hidden;
     overflow: auto;
@@ -78,7 +78,24 @@ a {
     white-space: normal;
 
 }
-
+@media (max-width: 580px) {
+    .liveText>div {
+        /* position: absolute; */
+        background: #000000;
+        color: #ffffff;
+        border-top: solid;
+        border-color: #ffe600;
+        cursor: pointer;
+        overflow: hidden;
+        width: 170px;
+        height: 200px;
+        overflow: hidden;
+        overflow: auto;
+        overflow-wrap: break-word;
+        white-space: normal;
+    
+    }
+}
 /**
  * Images
  */
