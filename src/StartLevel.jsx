@@ -33,7 +33,7 @@ export default function StartLevel() {
             <Logo />
         </group>
         {/* GUIDE HTML */}
-        <group position={[-1.2, positionY, -0.30]}>
+        <group position={[-1, positionY, -0.30]}>
             <Html
                 center
                 occlude
