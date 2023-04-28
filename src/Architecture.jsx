@@ -9,7 +9,7 @@ const rotationX = [-Math.PI / 2]
 const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
 const meshBasicMaterialColorBlack = "#000000"
 const meshBasicMaterialColorGreen = "#039f00"
-const meshBasicMaterialColorYellow = "#ffdf00"
+const meshBasicMaterialColorYellow = "#ffe600"
 {/* GROUND TOP */ }
 const positionGroundTop = [0, 4, -50]
 const scaleGroundTop = [10, 10, 0.1]

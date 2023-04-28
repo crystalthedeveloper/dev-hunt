@@ -54,7 +54,7 @@ const positionGoogleAnalyticsText3D = [-8, 0, 0]
 const gravityScaleDeveloper = [0.3]
 const gravityScaleCMS = [1]
 {/* Basic Material Color */ }
-const meshBasicMaterialColorYellow = "#ffdf00"
+const meshBasicMaterialColorYellow = "#ffe600"
 const meshBasicMaterialColorGreen = "#039f00"
 const meshBasicMaterialColorBlue = "#1245a8"
 

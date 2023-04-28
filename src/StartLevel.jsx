@@ -26,7 +26,7 @@ export default function StartLevel() {
                 zIndexRange={[90, 0]}
 
             >
-                <h1>CRYSTAL LEWIS PORTFOLIO!</h1>
+                <h1><span className="liveTextCrystal">CRYSTAL LEWIS</span> PORTFOLIO!</h1>
                 <p>I’m a Website &amp; Email Developer &amp; Designer with over 10+ years of experience. I have hands-on experience in all stages of web-based development efforts, including requirements definition, design, architecture, implementation, testing, and support ensuring a smooth transition from start to finish.‍ My passion and My skills are wider and spanning across multiple creative and technical disciplines. I absorb information like a sponge and create new Designs, Emails, Websites, and music. That is fully responsive ensuring a <span style={{whiteSpace: 'nowrap'}}>user-friendly</span> experience for<span>&nbsp;</span>all.‍</p>
 
             </Html>
@@ -42,9 +42,9 @@ export default function StartLevel() {
                 position={positionIframe}
                 zIndexRange={[100, 0]}
             >
-                <h1>GUIDE!<br/> TO HELP YOU GET AROUND.</h1>
+                <h1>GUIDE!</h1>
                 <h2>YOU ARE HERE</h2>
-                <p>You will find my bio, programming languages and tools I use to build websites and emails.<br/> <strong>Try to collect them all!</strong> </p>
+                <p>You will find my bio, programming languages and tools I use to build websites and<span>&nbsp;</span>emails.<br/> <br/> <strong>Try to collect them<span>&nbsp;</span>all!</strong> </p>
                 <h2>BOTTOM FLOOR </h2>
                 <p>You can contact me on this floor. Here you will find Designer & Animation tools, I love designing new ways to make your site look<span>&nbsp;</span>beautiful.</p>
                 <h2>TOP FLOOR</h2>

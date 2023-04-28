@@ -29,7 +29,10 @@ root.render(
             <Stars radius={4} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
             <Environment
                 //background 
-                preset='studio' />
+               //preset='studio' 
+                
+                files="/texture/kloppenheim_02_4k.hdr"
+                />
 
         </Canvas>
         <Interface />
