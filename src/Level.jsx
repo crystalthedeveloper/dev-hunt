@@ -12,43 +12,54 @@ THREE.ColorManagement.enabled = true
 {/* All Box Geometry */ }
 const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
 {/* Text3D */ }
-const sizeText3D = 0.2
+const sizeText3D = 0.14
+const sizeText3DTwo = 0.10
 const fontText3D = "Cinzel ExtraBold_Regular.json"
 const bevelThicknessText3D = 0
 const bevelSizeText3D = 0
 const heightText3D = [0.1]
 {/* Text3D positions Designer & Animation*/ }
-const positionadobeAfterEffectsText3D = [-10, -9, -6]
-const positionAdobeXdText3D = [-7, -9, -13]
-const positionPhotoshopText3D = [-1, -9, -3]
-const positionBlenderText3D = [10, -9, -13]
-const positionFigmaText3D = [-4, -9, -7]
-const positionMusicText3D = [3, -9, -13]
-const positionIllustratorText3D = [8, -9, -6]
-const positionCanvaText3D = [-3, -9, -11]
+const text3DpositionY = 0
+const text3DPositionRight = 5.5
+const text3DPositionLeft = -9.2
+const text3DPositionCenter = 5.5
+
+{/* DESGIN */ }
+const positionBlenderText3D = [text3DPositionCenter, text3DpositionY, -28]
+const positionPhotoshopText3D = [text3DPositionCenter, text3DpositionY, -31]
+const positionIllustratorText3D = [text3DPositionCenter, text3DpositionY, -34]
+const positionadobeAfterEffectsText3D = [text3DPositionCenter, text3DpositionY, -37]
+const positionAdobeXdText3D = [text3DPositionCenter, text3DpositionY, -40]
+const positionFigmaText3D = [text3DPositionCenter, 1, -43]
+const positionCanvaText3D = [text3DPositionCenter, text3DpositionY, -46]
+const positionMusicText3D = [1, text3DpositionY, -46]
 {/* Text3D Developer */ }
 
-const positionReactText3D = [-6, 0, -20]
-const positionThreeJsText3D = [-2, 0, -20]
-const positionPythonText3D = [4, 0, -24]
-const positionJqueryText3D = [-8, 0, -20]
-const positionJavascriptText3D = [-7, 0, -24]
-const positionCssText3D = [5, 0, -16]
-const positionVisualStudioCodeText3D = [0, 0, -24]
+{/* START */ }
+const positionReactText3D = [0, 4, -6]
+const positionThreeJsText3D = [0, text3DpositionY, -6]
+const positionJqueryText3D = [-1.3, text3DpositionY, -17]
+const positionJavascriptText3D = [3, text3DpositionY, -25]
+const positionPythonText3D = [-1.3, text3DpositionY, -24]
+const positionCssText3D = [1, text3DpositionY, -13]
 
-const positionHText3D = [2, 0, -8]
-const positionTText3D = [2.3, 0, -8]
-const positionMText3D = [2.5, 0, -8]
-const positionLText3D = [2.7, 0, -8]
+const positionHText3D = [-1, text3DpositionY, -10]
+const positionTText3D = [-0.80,text3DpositionY, -10]
+const positionMText3D = [-0.65, text3DpositionY, -10]
+const positionLText3D = [-0.43, text3DpositionY, -10]
 
-const positionLitmusText3D = [1, 0, 3]
-const positionJiraText3D = [0, 5, -8]
-const positionGithubGitText3D = [-8, 0, 3]
-const positionSeoText3D = [-5, 0, -10]
-const positionGoogleTagManagerText3D = [-3, 0, 4]
-const positionSpeedOptimizationText3D = [4, 0, 0]
-const positionGoogleAnalyticsText3D = [-8, 0, 0]
 
+{/* SERVICES */ }
+const positionLitmusText3D = [text3DPositionLeft, text3DpositionY, -79]
+const positionGithubGitText3D = [text3DPositionLeft, text3DpositionY, -61]
+const positionSeoText3D = [-7, text3DpositionY, -81]
+const positionSpeedOptimizationText3D = [text3DPositionLeft, text3DpositionY, -73]
+const positionGoogleTagManagerText3D = [text3DPositionLeft, 1, -65]
+const positionGoogleAnalyticsText3D = [text3DPositionLeft, text3DpositionY, -70]
+
+{/* END */ }
+const positionVisualStudioCodeText3D = [0, text3DpositionY, -100]
+const positionJiraText3D = [-2, text3DpositionY, -103]
 
 {/* gravity Text3D Developer */ }
 const gravityScaleDeveloper = [0.3]
@@ -56,7 +67,6 @@ const gravityScaleCMS = [1]
 {/* Basic Material Color */ }
 const meshBasicMaterialColorYellow = "#ffe600"
 const meshBasicMaterialColorGreen = "#039f00"
-const meshBasicMaterialColorBlue = "#1245a8"
 
 
 {/******************* EXPERTISE FUNCTION *******************/ }
@@ -224,7 +234,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -239,7 +249,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -269,7 +279,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -471,7 +481,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
 
 {/******************* END EXPERTISE FUNCTION *******************/ }
 
-{/******************* END STAIRS FUNCTION *******************/ }
+
 {/******************* SPINNER FUNCTION *******************/ }
 export function BlockSpinner({ position = [0, 0, 0] }) {
     const obstacle = useRef()
@@ -496,12 +506,12 @@ export function BlockSpinner({ position = [0, 0, 0] }) {
             restitution={0.2}
             friction={0}>
             <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} />
             </mesh>
         </RigidBody>
     </group>
 }
-{/******************* END SPINNER FUNCTION *******************/ }
+
 {/****************** LIMBO FUNCTION ******************/ }
 export function BlockLimbo({ position = [0, 0, 0] }) {
     const obstacle = useRef()
@@ -522,15 +532,15 @@ export function BlockLimbo({ position = [0, 0, 0] }) {
             ref={obstacle}
             restitution={0.2}
             friction={0}
-            colliders={false}
+            
         >
             <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} />
             </mesh>
         </RigidBody>
     </group>
 }
-{/****************** END LIMBO FUNCTION ******************/ }
+
 {/******************* AXE FUNCTION *******************/ }
 export function BlockAxe({ position = [6, 0, -5] }) {
     const obstacle = useRef()
@@ -557,12 +567,12 @@ export function BlockAxe({ position = [6, 0, -5] }) {
 
             {/* Axe mesh */}
             <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} />
             </mesh>
         </RigidBody>
     </group>
 }
-{/******************* END AXE FUNCTION *******************/ }
+
 {/******************* EXPORT TO SENSE *******************/ }
 export function Level() {
 
@@ -571,16 +581,11 @@ export function Level() {
         <StartLevel />
         <ServicesLevel />
         <ContactLevel />
-        <BlockExpertise position={[0, 0, 0]} />
+        <BlockExpertise />
 
-        <BlockSpinner position={[14, -9, -6]} />
-        <BlockSpinner position={[-2, 2, -10]} />
-
-        <BlockLimbo position={[-9, 0.60, -3]} />
-
-        <BlockAxe position={[0, 45, -70]} />
-
-
+        <BlockSpinner position={[4, 1, -42]} />
+        <BlockAxe position={[-11, 0, -70]} />
+        <BlockLimbo position={[0, 0.7, -100]} />
 
     </>
 }

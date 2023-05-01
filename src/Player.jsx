@@ -178,16 +178,12 @@ export default function Player() {
 
             increaseIncrementMusic()
         }
-
-
     }
     const onCollisionExit = () => {
         if (incrementHtml && incrementCss && incrementJavascript && incrementJquery && incrementReact && incrementThreeJs && incrementPython && incrementGithubGit && incrementSpeedOptimization && incrementSeo && incrementGoogleTagManager && incrementGoogleAnalytics && incrementJira && incrementLitmus && incrementVisualStudioCode && incrementBlenders && incrementIllustrator && incrementPhotoshop && incrementAfterEffects && incrementFigma && incrementAdobeXD && incrementCanva && incrementMusic) {
 
             increaseAllIncrements()
         }
-
-
     }
 
 
@@ -244,7 +240,7 @@ export default function Player() {
         const impulse = { x: 0, y: 0, z: 0 }
         const torque = { x: 0, y: 0, z: 0 }
 
-        const impulseStrength = 1 * delta
+        const impulseStrength = 1.6 * delta
         const torqueStrength = 0.2 * delta
 
 
@@ -296,10 +292,10 @@ export default function Player() {
         /**
         * Phases
         */
-       
-        if (bodyPosition.y < - 10)
+
+        if (bodyPosition.y < - 3)
             restart()
-            
+
 
 
     })
@@ -313,8 +309,8 @@ export default function Player() {
         colliders="ball"
         restitution={0.2}
         friction={1}
-        linearDamping={2}
-        angularDamping={1}
+        linearDamping={3}
+        angularDamping={3}
         position={[0, 1, 0]}>
         <primitive object={characterLogo.scene} />
     </RigidBody>

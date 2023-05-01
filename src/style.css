@@ -24,7 +24,7 @@ canvas {
 
 h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 32px;
 }
 
 h2 {
@@ -75,16 +75,17 @@ a {
     border-color: #ffe600;
     cursor: pointer;
     overflow: hidden;
-    width: 220px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
     overflow: hidden;
     overflow: auto;
     overflow-wrap: break-word;
     white-space: normal;
 
 }
-.liveTextCrystal{
-    font-size: 26px;
+.liveTextBoldYellow{
+    font-weight: 600;
+    color: #ffe600;
 }
 
 @media (max-width: 580px) {
@@ -96,7 +97,7 @@ a {
         border-color: #ffe600;
         cursor: pointer;
         overflow: hidden;
-        width: 170px;
+        width: 210px;
         height: 200px;
         overflow: hidden;
         overflow: auto;
@@ -123,19 +124,17 @@ a {
 /**
  * Images
  */
-.Image img {
-    width: 400px;
-}
-
-.Image h1 {
-    font-size: 50px;
-    color: #fff;
+.img {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .Image:hover {
     -webkit-filter: grayscale(100%);
     /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 /**
@@ -180,7 +179,7 @@ a {
     width: 34px;
     height: 28px;
     margin: 4px;
-    border: 1px solid #eeb609;
+    border: 1px solid #039f00;
     background: #ffe60044;
     pointer-events: auto;
     cursor: pointer;
