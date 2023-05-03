@@ -133,7 +133,7 @@ export default function ServicesLevel() {
                 {/* MAILCHIMP */}
 
                 <Image url="/texture/Mailchimp.png"
-                    scale={[0.74, 0.2]}
+                    scale={[0.28, 0.3]}
                     position={[imagePositionRight, imagePositionY, -3]}
                     transparent
                     ref={imagesMailchimp}

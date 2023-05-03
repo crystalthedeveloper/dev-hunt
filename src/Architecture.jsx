@@ -12,7 +12,7 @@ const meshBasicMaterialColorBlack = "#000000"
 const meshBasicMaterialColorGreen = "#039f00"
 const meshBasicMaterialColorYellow = "#ffe600"
 const positionGroundY = -0.16
-const positionScaleZ = 0.2
+const positionScaleZ = 0.1
 
 {/* GROUND START */ }
 const positionGroundStart = [0, positionGroundY, -10]
@@ -57,7 +57,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundStart}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} />
             </mesh>
              {/* RIGHT GROUND */}
              <mesh
@@ -75,7 +75,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundDesigner}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
             </mesh>
             {/* LEFT GROUND */}
             <mesh
@@ -93,7 +93,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundCrystal}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
             </mesh>
             {/* LEFT GROUND TWO */}
             <mesh
@@ -111,7 +111,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundServices}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
             </mesh>
             {/* RIGHT GROUND TWO */}
             <mesh
@@ -129,7 +129,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundSocial}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
             </mesh>
              {/* GROUND CONTACT */}
              <mesh
