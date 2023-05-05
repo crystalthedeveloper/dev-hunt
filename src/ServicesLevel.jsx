@@ -8,8 +8,7 @@ import { useFrame } from '@react-three/fiber'
 const positionY = 0
 const imagePositionY = 1
 const imagePositionRight = -4.9
-const imagePositionLeft = -6.7
-const imagePositionCenter = -5.7
+const imagePositionLeft = -7
 
 {/******************* SERVICES FUNCTION *******************/ }
 export default function ServicesLevel() {
@@ -72,8 +71,8 @@ export default function ServicesLevel() {
 
 
                 <Image url="/texture/webflow.png"
-                    scale={[0.80, 0.2]}
-                    position={[imagePositionCenter, imagePositionY, 10]}
+                    scale={[1.2, 0.3]}
+                    position={[0.6, 0.6, 20]}
                     transparent
                     ref={imagesWebflow}
                     onPointerOver={overWebflow}
@@ -85,7 +84,7 @@ export default function ServicesLevel() {
                 {/* WORDPRESS */}
                 <Image url="/texture/WordPress.png"
                     scale={[0.8, 0.5]}
-                    position={[imagePositionRight, imagePositionY, 7]}
+                    position={[2, imagePositionY, 15]}
                     transparent
                     ref={imagesWordpress}
                     onPointerOver={overWordpress}
@@ -96,8 +95,8 @@ export default function ServicesLevel() {
                 {/* ADOBE EXPERIENCE MANAGER */}
 
                 <Image url="/texture/AEM.png"
-                    scale={[0.3, 0.3]}
-                    position={[imagePositionLeft, imagePositionY, 6]}
+                    scale={[0.2, 0.2]}
+                    position={[0.3, imagePositionY, 12]}
                     transparent
                     ref={imagesAdobeExperience}
                     onPointerOver={overAdobeExperience}
@@ -110,7 +109,7 @@ export default function ServicesLevel() {
 
                 <Image url="/texture/Magnolia.png"
                     scale={[0.8, 0.2]}
-                    position={[imagePositionRight, imagePositionY, 3]}
+                    position={[imagePositionLeft, imagePositionY, 6]}
                     transparent
                     ref={imagesMagnolia}
                     onPointerOver={overMagnolia}
@@ -134,7 +133,7 @@ export default function ServicesLevel() {
 
                 <Image url="/texture/Mailchimp.png"
                     scale={[0.28, 0.3]}
-                    position={[imagePositionRight, imagePositionY, -3]}
+                    position={[imagePositionLeft, imagePositionY, -3]}
                     transparent
                     ref={imagesMailchimp}
                     onPointerOver={overMailchimp}
@@ -146,7 +145,7 @@ export default function ServicesLevel() {
 
                 <Image url="/texture/Salesforce.png"
                     scale={[0.40, 0.28]}
-                    position={[imagePositionLeft, imagePositionY, -5]}
+                    position={[imagePositionLeft, imagePositionY,10]}
                     transparent
                     ref={imagesSalesforce}
                     onPointerOver={overSalesforce}
@@ -158,7 +157,7 @@ export default function ServicesLevel() {
 
                 <Image url="/texture/Email.png"
                     scale={[0.5, 0.5]}
-                    position={[imagePositionCenter, imagePositionY, -10]}
+                    position={[imagePositionLeft, imagePositionY, -10]}
                     transparent
                     ref={imagesEmail}
                     onPointerOver={overEmail}

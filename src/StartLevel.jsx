@@ -15,7 +15,7 @@ export default function StartLevel() {
 
     return <><RigidBody type="fixed">
         {/* ABOUT HTML */}
-        <group position={[0, positionY, -54]}>
+        <group position={[0, 0.5, -100]}>
             <Html
                 center
                 occlude

@@ -49,12 +49,12 @@ export default function ContactLevel() {
 
     })
     return <RigidBody type="fixed">
-        <group position={[0, positionY, -91]}>
+        <group position={[0, positionY, -16]}>
             {/* MAILCHIMP */}
 
             <Image url="/texture/mail.png"
-                scale={[1, 1]}
-                position={[0, 1.5, -9]}
+                scale={[1.5, 1.5]}
+                position={[0, 1, -9]}
                 transparent
                 ref={imagesMailchimpEmail}
                 onPointerOver={overMailchimpEmail}
@@ -66,7 +66,7 @@ export default function ContactLevel() {
 
             <Image url="/texture/instagram.png"
                 scale={Imagescale}
-                position={[0, 1, 6]}
+                position={[2, 1, 6]}
                 transparent
                 ref={imagesInstagram}
                 onPointerOver={overInstagram}
@@ -78,7 +78,7 @@ export default function ContactLevel() {
 
             <Image url="/texture/facebook.png"
                 scale={Imagescale}
-                position={[1, 0.8, 3]}
+                position={[-2, 1, 6]}
                 transparent
                 ref={imagesFacebook}
                 onPointerOver={overFacebook}
@@ -90,7 +90,7 @@ export default function ContactLevel() {
 
             <Image url="/texture/linkedin.png"
                 scale={Imagescale}
-                position={[1, 0.8, 0]}
+                position={[-3, 0.8, 0]}
                 transparent
                 ref={imagesLinkedin}
                 onPointerOver={overLinkedin}
@@ -102,7 +102,7 @@ export default function ContactLevel() {
 
             <Image url="/texture/youtube.png"
                 scale={Imagescale}
-                position={[-1, 0.8, -3]}
+                position={[-2, 0, -3]}
                 transparent
                 ref={imagesYoutube}
                 onPointerOver={overYoutube}
@@ -114,7 +114,7 @@ export default function ContactLevel() {
 
             <Image url="/texture/reviews.png"
                 scale={Imagescale}
-                position={[1, 0.2, -5]}
+                position={[-1, 0.4, -5]}
                 transparent
                 ref={imagesReviews}
                 onPointerOver={overReviews}

@@ -6,7 +6,7 @@ import Logo from './Logo.jsx'
 
 {/* ALL GROUND */ }
 const rotationX = [-Math.PI / 2]
-const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
+const boxGeometry = new THREE.BoxGeometry(1, 1, 1, 1,1,6)
 const circleGeometry = new THREE.CircleGeometry( 1, 100 )
 const meshBasicMaterialColorBlack = "#000000"
 const meshBasicMaterialColorGreen = "#039f00"
@@ -26,7 +26,7 @@ const scaleGroundDesigner = [3, 20, positionScaleZ]
 {/* LEFT GROUND */}
 const positionGroundLeft = [1, positionGroundY, -46]
 const scaleGroundLeft = [6, 3, positionScaleZ]
-{/* GROUND CRYSTAL */ }
+{/* GROUND */ }
 const positionGroundCrystal = [-0.8, positionGroundY, -54]
 const scaleGroundCrystal = [3, 10, positionScaleZ]
 {/* LEFT GROUND TWO */}
@@ -41,8 +41,8 @@ const scaleGroundRightTwo = [7, 3, positionScaleZ]
 {/* GROUND SOCIAL */ }
 const positionGroundSocial = [0, positionGroundY, -91]
 const scaleGroundSocial= [3, 15, positionScaleZ]
-{/* GROUND CONTACT */ }
-const positionGroundContact = [0, 0, -103]
+{/* GROUND ABOUT */ }
+const positionGroundContact = [0, 0.5, -100]
 const scaleGroundContact = [3, 6, positionScaleZ]
 
 {/******************* ARCHITECTURE FUNCTION *******************/ }
@@ -57,7 +57,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundStart}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} />
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
             </mesh>
              {/* RIGHT GROUND */}
              <mesh
@@ -75,7 +75,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundDesigner}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
             </mesh>
             {/* LEFT GROUND */}
             <mesh
@@ -93,7 +93,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundCrystal}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
             </mesh>
             {/* LEFT GROUND TWO */}
             <mesh
@@ -111,7 +111,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundServices}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
             </mesh>
             {/* RIGHT GROUND TWO */}
             <mesh
@@ -129,7 +129,7 @@ export default function Architecture() {
                 geometry={boxGeometry}
                 scale={scaleGroundSocial}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
             </mesh>
              {/* GROUND CONTACT */}
              <mesh
@@ -138,7 +138,7 @@ export default function Architecture() {
                 geometry={circleGeometry}
                 scale={scaleGroundContact}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen}/>
+                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
             </mesh>
         </RigidBody>
     </>

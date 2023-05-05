@@ -12,8 +12,9 @@ THREE.ColorManagement.enabled = true
 {/* All Box Geometry */ }
 const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
 {/* Text3D */ }
-const sizeText3D = 0.08
+const sizeText3D = 0.06
 const sizeText3DTwo = 0.10
+const sizeText3DThree = 0.3
 const fontText3D = "Cinzel ExtraBold_Regular.json"
 const bevelThicknessText3D = 0
 const bevelSizeText3D = 0
@@ -21,7 +22,7 @@ const heightText3D = [0.1]
 {/* Text3D positions Designer & Animation*/ }
 const text3DpositionY = 0
 const text3DPositionRight = 5.5
-const text3DPositionLeft = -9.2
+const text3DPositionLeft = -9
 const text3DPositionCenter = 5.5
 
 {/* DESGIN */ }
@@ -41,7 +42,7 @@ const positionThreeJsText3D = [0, text3DpositionY, -6]
 const positionJqueryText3D = [-1.3, text3DpositionY, -17]
 const positionJavascriptText3D = [3, text3DpositionY, -25]
 const positionPythonText3D = [-1.3, text3DpositionY, -24]
-const positionCssText3D = [1, text3DpositionY, -13]
+const positionCssText3D = [0, text3DpositionY, -13]
 
 const positionHText3D = [-1, text3DpositionY, -10]
 const positionTText3D = [-0.80,text3DpositionY, -10]
@@ -52,7 +53,7 @@ const positionLText3D = [-0.43, text3DpositionY, -10]
 {/* SERVICES */ }
 const positionLitmusText3D = [text3DPositionLeft, text3DpositionY, -79]
 const positionGithubGitText3D = [text3DPositionLeft, text3DpositionY, -61]
-const positionSeoText3D = [-7, text3DpositionY, -81]
+const positionSeoText3D = [-2, text3DpositionY, -81]
 const positionSpeedOptimizationText3D = [text3DPositionLeft, text3DpositionY, -73]
 const positionGoogleTagManagerText3D = [text3DPositionLeft, 1, -65]
 const positionGoogleAnalyticsText3D = [text3DPositionLeft, text3DpositionY, -70]
@@ -142,7 +143,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
 
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DThree}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -157,7 +158,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -250,7 +251,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3DTwo}
+                size={sizeText3D}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -265,7 +266,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -280,7 +281,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3DTwo}
+                size={sizeText3D}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -295,7 +296,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -310,7 +311,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -326,7 +327,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DThree}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -358,7 +359,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DThree}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -388,7 +389,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -418,7 +419,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DThree}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -465,7 +466,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             <Text3D
                 bevelEnabled
                 font={fontText3D}
-                size={sizeText3D}
+                size={sizeText3DTwo}
                 height={heightText3D}
                 bevelThickness={bevelThicknessText3D}
                 bevelSize={bevelSizeText3D}
@@ -507,7 +508,7 @@ export function BlockSpinner({ position = [0, 0, 0] }) {
             restitution={0.2}
             friction={0}>
             <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}  wireframe/>
             </mesh>
         </RigidBody>
     </group>
@@ -536,7 +537,7 @@ export function BlockLimbo({ position = [0, 0, 0] }) {
             
         >
             <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} wireframe />
             </mesh>
         </RigidBody>
     </group>
@@ -568,7 +569,7 @@ export function BlockAxe({ position = [6, 0, -5] }) {
 
             {/* Axe mesh */}
             <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} wireframe />
             </mesh>
         </RigidBody>
     </group>
@@ -585,8 +586,8 @@ export function Level() {
         <BlockExpertise />
 
         <BlockSpinner position={[4, 1, -42]} />
-        <BlockAxe position={[-11, 0, -70]} />
-        <BlockLimbo position={[0, 0.7, -100]} />
+        <BlockAxe position={[-12, 0, -70]} />
+        <BlockLimbo position={[-1, 0.7, -66]} />
 
     </>
 }
