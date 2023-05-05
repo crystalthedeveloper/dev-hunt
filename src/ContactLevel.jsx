@@ -66,7 +66,7 @@ export default function ContactLevel() {
 
             <Image url="/texture/instagram.png"
                 scale={Imagescale}
-                position={[2, 1, 6]}
+                position={[2, 1, -1]}
                 transparent
                 ref={imagesInstagram}
                 onPointerOver={overInstagram}
