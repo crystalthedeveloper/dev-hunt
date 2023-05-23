@@ -4,10 +4,9 @@ import Logo from './Logo.jsx'
 
 
 {/* HTML IFRAME */ }
-const distanceFactorIframe = 4
+const distanceFactorIframe = 3
 const positionIframe = [0, 1.2, 0]
 const positionY = 0
-
 
 
 {/******************* CONTACT FUNCTION *******************/ }
@@ -15,7 +14,7 @@ export default function StartLevel() {
 
     return <><RigidBody type="fixed">
         {/* ABOUT HTML */}
-        <group position={[0, 0.5, -100]}>
+        <group position={[-6, positionY, -10]}>
             <Html
                 center
                 occlude
@@ -36,7 +35,7 @@ export default function StartLevel() {
             <Logo />
         </group>
         {/* WELCOME */}
-        <group position={[-0.80, positionY, -3]}>
+        <group position={[0, positionY, 0]}>
             <Html
                 center
                 occlude
@@ -51,7 +50,22 @@ export default function StartLevel() {
                 </p>
 
                 <h1>THANK YOU ENJOY!</h1>
-                <h2>AND DON'T FALL OFF 😁</h2>
+
+            </Html>
+            <Logo />
+        </group>
+         {/* EMAIL */}
+         <group position={[6, positionY, -10]}>
+            <Html
+                center
+                occlude
+                wrapperClass="liveText"
+                distanceFactor={distanceFactorIframe}
+                position={positionIframe}
+                zIndexRange={[100, 0]}
+            >
+                <h1>NEED A<br/> WEBSITE?</h1>
+                <h2><button onClick={() => { window.open('https://www.crystalthedeveloper.ca/mailchimp', '_blank') }}><strong>EMAIL ME NOW!</strong></button></h2>
 
             </Html>
             <Logo />

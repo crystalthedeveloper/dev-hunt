@@ -181,12 +181,18 @@ export default function Interface() {
             </div>
             <div className="raw">
                 <div onTouchStart={leftwardClicked} onTouchEnd={leftwardEnd} className={`key ${leftward ? 'active' : ''}`}></div>
-                <div  onTouchStart={backwardClicked} onTouchEnd={backwardEnd}className={`key ${backward ? 'active' : ''}`}></div>
+                <div className="raw">
+                <div onTouchStart={jumpClicked} onTouchEnd={jumpEnd} className={`key ${jump ? 'active' : ''}`}>FLY</div>
+            </div>
                 <div onTouchStart={rightwardClicked} onTouchEnd={rightwardEnd} className={`key ${rightward ? 'active' : ''}`}></div>
+                
             </div>
             <div className="raw">
-                <div onTouchStart={jumpClicked} onTouchEnd={jumpEnd} className={`key large ${jump ? 'active' : ''}`}></div>
+            <div  onTouchStart={backwardClicked} onTouchEnd={backwardEnd}className={`key ${backward ? 'active' : ''}`}></div>
             </div>
+            {/* <div className="raw">
+                <div onTouchStart={jumpClicked} onTouchEnd={jumpEnd} className={`key large ${jump ? 'active' : ''}`}></div>
+            </div> */}
         </div>
 
     </div>

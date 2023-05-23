@@ -1,5 +1,5 @@
 import { RigidBody } from '@react-three/rapier'
-import { Image } from '@react-three/drei'
+import { Image, Float } from '@react-three/drei'
 import { useState, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 
@@ -10,10 +10,6 @@ const Imagescale = 0.3
 
 {/******************* CONTACT FUNCTION *******************/ }
 export default function ContactLevel() {
-    const imagesMailchimpEmail = useRef()
-    const [hoveredMailchimpEmail, hoverMailchimpEmail] = useState(false)
-    const overMailchimpEmail = () => hoverMailchimpEmail(true)
-    const outMailchimpEmail = () => hoverMailchimpEmail(false)
 
     const imagesInstagram = useRef()
     const [hoveredInstagram, hoverInstagram] = useState(false)
@@ -40,7 +36,6 @@ export default function ContactLevel() {
     const overReviews = () => hoverReviews(true)
     const outReviews = () => hoverReviews(false)
     useFrame(() => {
-        imagesMailchimpEmail.current.material.grayscale = (hoveredMailchimpEmail ? 1 : 0)
         imagesInstagram.current.material.grayscale = (hoveredInstagram ? 1 : 0)
         imagesFacebook.current.material.grayscale = (hoveredFacebook ? 1 : 0)
         imagesLinkedin.current.material.grayscale = (hoveredLinkedin ? 1 : 0)
@@ -49,78 +44,67 @@ export default function ContactLevel() {
 
     })
     return <RigidBody type="fixed">
-        <group position={[0, positionY, -16]}>
-            {/* MAILCHIMP */}
-
-            <Image url="/texture/mail.png"
-                scale={[1.5, 1.5]}
-                position={[0, 1, -9]}
-                transparent
-                ref={imagesMailchimpEmail}
-                onPointerOver={overMailchimpEmail}
-                onPointerOut={outMailchimpEmail}
-                onClick={() => { window.open('https://www.crystalthedeveloper.ca/mailchimp', '_blank') }}
-            />
-
+       <group position={[6, positionY, -10]}>
+     
             {/* INSTAGRAM */}
 
-            <Image url="/texture/instagram.png"
+            <Float></Float><Image url="/texture/instagram.png"
                 scale={Imagescale}
-                position={[2, 1, -1]}
+                position={[2, 2, -1]}
                 transparent
                 ref={imagesInstagram}
                 onPointerOver={overInstagram}
                 onPointerOut={outInstagram}
                 onClick={() => { window.open('https://www.instagram.com/crystalthedeveloper/', '_blank') }}
-            />
+            /><Float/>
 
             {/* FACEBOOK */}
 
-            <Image url="/texture/facebook.png"
+            <Float>   <Image url="/texture/facebook.png"
                 scale={Imagescale}
-                position={[-2, 1, 6]}
+                position={[2, 0, -1]}
                 transparent
                 ref={imagesFacebook}
                 onPointerOver={overFacebook}
                 onPointerOut={outFacebook}
                 onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews/?ref=page_internal', '_blank') }}
-            />
+            /></Float> 
 
             {/* LINKEDIN */}
 
-            <Image url="/texture/linkedin.png"
+            <Float><Image url="/texture/linkedin.png"
                 scale={Imagescale}
-                position={[-3, 0.8, 0]}
+                position={[-2, 2, -1]}
                 transparent
                 ref={imagesLinkedin}
                 onPointerOver={overLinkedin}
                 onPointerOut={outLinkedin}
                 onClick={() => { window.open('https://www.linkedin.com/in/crystal-lewis-b14b7386/', '_blank') }}
-            />
+            /></Float>
 
             {/* YOUTUBE */}
 
-            <Image url="/texture/youtube.png"
+            <Float><Image url="/texture/youtube.png"
                 scale={Imagescale}
-                position={[-2, 0, -3]}
+                position={[-2, 0, -1]}
                 transparent
                 ref={imagesYoutube}
                 onPointerOver={overYoutube}
                 onPointerOut={outYoutube}
                 onClick={() => { window.open('https://www.youtube.com/channel/UCeUkpwkof62DlSAU9C2uLtA', '_blank') }}
-            />
+            /></Float>
 
             {/* REVIEWS */}
 
-            <Image url="/texture/reviews.png"
+            <Float><Image url="/texture/reviews.png"
                 scale={Imagescale}
-                position={[-1, 0.4, -5]}
+                position={[0, 2.2, -1]}
                 transparent
                 ref={imagesReviews}
                 onPointerOver={overReviews}
                 onPointerOut={outReviews}
                 onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews', '_blank') }}
-            />
+            /></Float>
 
         </group>
     </RigidBody>

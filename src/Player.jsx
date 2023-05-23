@@ -1,6 +1,6 @@
 import { useRapier, RigidBody } from '@react-three/rapier'
 import { useFrame } from '@react-three/fiber'
-import { useKeyboardControls, useGLTF } from '@react-three/drei'
+import { useKeyboardControls, useGLTF, Float } from '@react-three/drei'
 import { useState, useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import useGame from './stores/useGame.jsx'
@@ -24,22 +24,22 @@ export default function Player() {
     const start = useGame((state) => state.start)
     const restart = useGame((state) => state.restart)
     {/******************* jump *******************/ }
-    const jump = () => {
-        const origin = body.current.translation()
-        origin.y -= 0.3
-        const direction = { x: 0, y: - 1, z: 0 }
-        const ray = new rapier.Ray(origin, direction)
-        const hit = rapierWorld.castRay(ray, 10, true)
+    // const jump = () => {
+    //     const origin = body.current.translation()
+    //     origin.y -= 0.3
+    //     const direction = { x: 0, y: - 1, z: 0 }
+    //     const ray = new rapier.Ray(origin, direction)
+    //     const hit = rapierWorld.castRay(ray, 10, true)
 
-        if (hit.toi < 0.5) {
-            body.current.applyImpulse({ x: 0, y: 0.1, z: 0 })
-        }
-    }
+    //     if (hit.toi < 0.5) {
+    //         body.current.applyImpulse({ x: 0, y: 0.1, z: 0 })
+    //     }
+    // }
     {/******************* Mobile Touch jump *******************/ }
-    const jumpButton = useGame((state) => state.jumpButton)
-    if (jumpButton) {
-        jump()
-    }
+    // const jumpButton = useGame((state) => state.jumpButton)
+    // if (jumpButton) {
+    //     jump()
+    // }
     {/******************* removeAll Increment 3DText *******************/ }
     const removeAllIncrements = useGame((state) => state.removeAllIncrements)
     {/******************* reset *******************/ }
@@ -198,14 +198,14 @@ export default function Player() {
             }
         )
 
-        const unsubscribeJump = subscribeKeys(
-            (state) => state.jump,
-            (value) => {
-                if (value)
-                    jump()
+        // const unsubscribeJump = subscribeKeys(
+        //     (state) => state.jump,
+        //     (value) => {
+        //         if (value)
+        //             jump()
 
-            }
-        )
+        //     }
+        // )
 
         const unsubscribeAny = subscribeKeys(
             () => {
@@ -215,7 +215,7 @@ export default function Player() {
 
         return () => {
             unsubscribeReset()
-            unsubscribeJump()
+            //unsubscribeJump()
             unsubscribeAny()
         }
 
@@ -226,6 +226,7 @@ export default function Player() {
     const backwardButton = useGame((state) => state.backwardButton)
     const leftwardButton = useGame((state) => state.leftwardButton)
     const rightwardButton = useGame((state) => state.rightwardButton)
+    const jumpButton = useGame((state) => state.jumpButton)
 
     {/******************* useFrame *******************/ }
     useFrame((state, delta) => {
@@ -233,19 +234,24 @@ export default function Player() {
         /**
          * Controls
          */
-        const { forward, backward, leftward, rightward } = getKeys()
+        const { forward, backward, leftward, rightward, jump } = getKeys()
 
 
 
         const impulse = { x: 0, y: 0, z: 0 }
         const torque = { x: 0, y: 0, z: 0 }
 
-        const impulseStrength = 1.6 * delta
+        const impulseStrength = 1.3 * delta
         const torqueStrength = 0.2 * delta
 
 
         if (forward || forwardButton) {
             impulse.z -= impulseStrength
+            torque.x -= torqueStrength
+
+        }
+        if (jump || jumpButton) {
+            impulse.y += impulseStrength
             torque.x -= torqueStrength
 
         }

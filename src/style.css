@@ -183,7 +183,11 @@ a {
     background: #ffe60044;
     pointer-events: auto;
     cursor: pointer;
-
+    border-radius: 50%;
+    text-align: center;
+    color: #ffffff;
+    padding: 10px;
+    
 
 }
 
@@ -196,7 +200,32 @@ a {
     background: #ffe60099;
 
 }
-
+/**
+  * Buttons
+  */
+button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-family: 'Cinzel';
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #000000;
+    background-color: #ffe600;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+button:hover {background-color: #666}
+  
+button:active {
+    background-color: #ffe600;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 /**
   * Collect 
   */
@@ -234,7 +263,7 @@ a {
     top: 40%;
     left: 0;
     width: 100%;
-    color: #039f00;
+    color: #ffffff;
     font-size: 96px;
     background: #000000;
     padding-top: 10px;
@@ -258,6 +287,6 @@ a {
 }
 
 .winnerHit.active {
-    color: #039f00;
+    color: #ffffff;
     display: flex;
 }

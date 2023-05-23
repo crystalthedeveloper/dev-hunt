@@ -7,7 +7,7 @@ import Architecture from './Architecture.jsx'
 export default function Experience() {
     
     return <>
-        <Physics gravity={[0, -4, 0]}>
+        <Physics gravity={[0, -6, 0]}>
             {/* <Debug />  */}
             {/* <Stats /> */}
             <Level />

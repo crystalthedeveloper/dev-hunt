@@ -6,139 +6,97 @@ import Logo from './Logo.jsx'
 
 {/* ALL GROUND */ }
 const rotationX = [-Math.PI / 2]
-const boxGeometry = new THREE.BoxGeometry(1, 1, 1, 1,1,6)
-const circleGeometry = new THREE.CircleGeometry( 1, 100 )
+const boxGeometry = new THREE.BoxGeometry(1, 1, 1, 2, 2, 2)
+const circleGeometry = new THREE.CircleGeometry(1, 100)
 const meshBasicMaterialColorBlack = "#000000"
-const meshBasicMaterialColorGreen = "#039f00"
+const meshBasicMaterialColorWhite = "#ffffff"
 const meshBasicMaterialColorYellow = "#ffe600"
-const positionGroundY = -0.16
-const positionScaleZ = 0.1
+const positionGroundY = 0
+const positionGroundDesignerY = 2
+const positionGroundDeveloperY = 3
+const positionScaleZ = 1
 
 {/* GROUND START */ }
-const positionGroundStart = [0, positionGroundY, -10]
-const scaleGroundStart = [3, 30, positionScaleZ]
-{/* RIGHT GROUND */}
-const positionGroundRight = [4.5, positionGroundY, -23.5]
-const scaleGroundRight = [5, 3, positionScaleZ]
-{/* GROUND DESIGNER */}
-const positionGroundDesigner = [6, positionGroundY, -37]
-const scaleGroundDesigner = [3, 20, positionScaleZ]
-{/* LEFT GROUND */}
-const positionGroundLeft = [1, positionGroundY, -46]
-const scaleGroundLeft = [6, 3, positionScaleZ]
-{/* GROUND */ }
-const positionGroundCrystal = [-0.8, positionGroundY, -54]
-const scaleGroundCrystal = [3, 10, positionScaleZ]
-{/* LEFT GROUND TWO */}
-const positionGroundLeftTwo = [-6, positionGroundY, -58]
-const scaleGroundLeftTwo = [6, 3, positionScaleZ]
-{/* GROUND SERVICES */}
-const positionGroundServices = [-7.7, positionGroundY, -71]
-const scaleGroundServices = [3, 21, positionScaleZ]
-{/* RIGHT GROUND TWO*/}
-const positionGroundRightTwo = [-2, positionGroundY, -80]
-const scaleGroundRightTwo = [7, 3, positionScaleZ]
-{/* GROUND SOCIAL */ }
-const positionGroundSocial = [0, positionGroundY, -91]
-const scaleGroundSocial= [3, 15, positionScaleZ]
+const positionGroundStart = [0, positionGroundY, 0]
+const scaleGroundStart = [1, 1, positionScaleZ]
 {/* GROUND ABOUT */ }
-const positionGroundContact = [0, 0.5, -100]
-const scaleGroundContact = [3, 6, positionScaleZ]
+const positionGroundContact = [-6, positionGroundY, -10]
+const scaleGroundContact = [1, 1, positionScaleZ]
+{/* GROUND EMAIL */ }
+const positionGroundRight = [6, positionGroundY, -10]
+const scaleGroundRight = [1, 1, positionScaleZ]
+
+
+{/* GROUND DESIGNER */ }
+const positionGroundDesigner = [6, positionGroundDesignerY, -40]
+const scaleGroundDesigner = [2, 2, positionScaleZ]
+{/* GROUND DEVELOPER */ }
+const positionGroundDeveloper = [-6, positionGroundDeveloperY, -30]
+const scaleGroundDeveloper = [2, 2, positionScaleZ]
+{/*  MORE */ }
+const positionGroundMore = [5, positionGroundY, -60]
+const scaleGroundMore = [2, 2, positionScaleZ]
+
 
 {/******************* ARCHITECTURE FUNCTION *******************/ }
 export default function Architecture() {
 
     return <>
+        {/* GROUND */}
         <RigidBody type="fixed">
-            {/* GROUND START */}
+            {/* START */}
             <mesh
                 position={positionGroundStart}
                 rotation-x={rotationX}
-                geometry={boxGeometry}
+                geometry={circleGeometry}
                 scale={scaleGroundStart}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
-             {/* RIGHT GROUND */}
-             <mesh
-                position={positionGroundRight}
-                rotation-x={rotationX}
-                geometry={boxGeometry}
-                scale={scaleGroundRight}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe />
-            </mesh>
-             {/* BRIDGE DESIGNER */}
-             <mesh
-                position={positionGroundDesigner}
-                rotation-x={rotationX}
-                geometry={boxGeometry}
-                scale={scaleGroundDesigner}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
-            </mesh>
-            {/* LEFT GROUND */}
+            {/* ABOUT */}
             <mesh
-                position={positionGroundLeft}
-                rotation-x={rotationX}
-                geometry={boxGeometry}
-                scale={scaleGroundLeft}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe />
-            </mesh>
-            {/* GROUND CRYSTAL */}
-            <mesh
-                position={positionGroundCrystal}
-                rotation-x={rotationX}
-                geometry={boxGeometry}
-                scale={scaleGroundCrystal}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
-            </mesh>
-            {/* LEFT GROUND TWO */}
-            <mesh
-                position={positionGroundLeftTwo}
-                rotation-x={rotationX}
-                geometry={boxGeometry}
-                scale={scaleGroundLeftTwo}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe />
-            </mesh>
-            {/* BRIDGE SERVICES */}
-            <mesh
-                position={positionGroundServices}
-                rotation-x={rotationX}
-                geometry={boxGeometry}
-                scale={scaleGroundServices}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
-            </mesh>
-            {/* RIGHT GROUND TWO */}
-            <mesh
-                position={positionGroundRightTwo}
-                rotation-x={rotationX}
-                geometry={boxGeometry}
-                scale={scaleGroundRightTwo}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe />
-            </mesh>
-             {/* GROUND SOCIAL */}
-             <mesh
-                position={positionGroundSocial}
-                rotation-x={rotationX}
-                geometry={boxGeometry}
-                scale={scaleGroundSocial}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
-            </mesh>
-             {/* GROUND CONTACT */}
-             <mesh
                 position={positionGroundContact}
                 rotation-x={rotationX}
                 geometry={circleGeometry}
                 scale={scaleGroundContact}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorGreen} wireframe/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
+            </mesh>
+            {/* EMAIL */}
+            <mesh
+                position={positionGroundRight}
+                rotation-x={rotationX}
+                geometry={circleGeometry}
+                scale={scaleGroundRight}
+            >
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} opacity={0.6} transparent wireframe />
+            </mesh>
+            {/* DESIGNER */}
+            <mesh
+                position={positionGroundDesigner}
+                rotation-x={rotationX}
+                geometry={circleGeometry}
+                scale={scaleGroundDesigner}
+            >
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
+            </mesh>
+            {/* DEVELOPER */}
+            <mesh
+                position={positionGroundDeveloper}
+                rotation-x={rotationX}
+                geometry={circleGeometry}
+                scale={scaleGroundDeveloper}
+            >
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} opacity={0.6} transparent wireframe/>
+            </mesh>
+            {/* MORE */}
+            <mesh
+                position={positionGroundMore}
+                rotation-x={rotationX}
+                geometry={circleGeometry}
+                scale={scaleGroundMore}
+            >
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
         </RigidBody>
     </>

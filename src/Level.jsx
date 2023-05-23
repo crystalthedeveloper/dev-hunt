@@ -2,72 +2,71 @@ import * as THREE from 'three'
 import { RigidBody } from '@react-three/rapier'
 import { useState, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useMatcapTexture, Text3D } from '@react-three/drei'
+import { useMatcapTexture, Text3D, Cloud, Float } from '@react-three/drei'
 import ServicesLevel from './ServicesLevel.jsx'
 import ContactLevel from './ContactLevel.jsx'
 import StartLevel from './StartLevel.jsx'
 
 {/* FIX COLORS FROM THREE */ }
 THREE.ColorManagement.enabled = true
+
 {/* All Box Geometry */ }
 const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
+
 {/* Text3D */ }
-const sizeText3D = 0.06
-const sizeText3DTwo = 0.10
-const sizeText3DThree = 0.3
+const sizeText3D = 0.1
+const sizeText3DTwo = 0.09
+const sizeText3DThree = 0.13
 const fontText3D = "Cinzel ExtraBold_Regular.json"
 const bevelThicknessText3D = 0
 const bevelSizeText3D = 0
-const heightText3D = [0.1]
-{/* Text3D positions Designer & Animation*/ }
-const text3DpositionY = 0
-const text3DPositionRight = 5.5
-const text3DPositionLeft = -9
-const text3DPositionCenter = 5.5
+const heightText3D = [0.03]
+
+{/* Text3D positions */ }
+const text3DpositionDesignerY = 2
+const text3DpositionDeveloperY = 3
+const text3DpositionMoreY = 0
 
 {/* DESGIN */ }
-const positionBlenderText3D = [text3DPositionCenter, text3DpositionY, -28]
-const positionPhotoshopText3D = [text3DPositionCenter, text3DpositionY, -31]
-const positionIllustratorText3D = [text3DPositionCenter, text3DpositionY, -34]
-const positionadobeAfterEffectsText3D = [text3DPositionCenter, text3DpositionY, -37]
-const positionAdobeXdText3D = [text3DPositionCenter, text3DpositionY, -40]
-const positionFigmaText3D = [text3DPositionCenter, 1, -43]
-const positionCanvaText3D = [text3DPositionCenter, text3DpositionY, -46]
-const positionMusicText3D = [1, text3DpositionY, -46]
-{/* Text3D Developer */ }
+const positionBlenderText3D = [7, text3DpositionDesignerY, -41]
+const positionPhotoshopText3D = [5, text3DpositionDesignerY, -40]
+const positionIllustratorText3D = [4, text3DpositionDesignerY, -40]
+const positionadobeAfterEffectsText3D = [6, text3DpositionDesignerY, -39]
+const positionAdobeXdText3D = [6, text3DpositionDesignerY, -42]
+const positionFigmaText3D = [6, text3DpositionDesignerY, -40]
+const positionCanvaText3D = [5, text3DpositionDesignerY, -39]
 
-{/* START */ }
-const positionReactText3D = [0, 4, -6]
-const positionThreeJsText3D = [0, text3DpositionY, -6]
-const positionJqueryText3D = [-1.3, text3DpositionY, -17]
-const positionJavascriptText3D = [3, text3DpositionY, -25]
-const positionPythonText3D = [-1.3, text3DpositionY, -24]
-const positionCssText3D = [0, text3DpositionY, -13]
+{/* DEVELOPER */ }
+const positionReactText3D = [-6, text3DpositionDeveloperY, -29]
+const positionThreeJsText3D = [-5, text3DpositionDeveloperY, -31]
+const positionJqueryText3D = [-7, text3DpositionDeveloperY, -29]
+const positionJavascriptText3D = [-6, text3DpositionDeveloperY, -31]
+const positionPythonText3D = [-5, text3DpositionDeveloperY, -30]
+const positionCssText3D = [-7, text3DpositionDeveloperY, -31]
 
-const positionHText3D = [-1, text3DpositionY, -10]
-const positionTText3D = [-0.80,text3DpositionY, -10]
-const positionMText3D = [-0.65, text3DpositionY, -10]
-const positionLText3D = [-0.43, text3DpositionY, -10]
+const positionHText3D = [-7, text3DpositionDeveloperY, -30]
+const positionTText3D = [-6.80, text3DpositionDeveloperY, -30]
+const positionMText3D = [-6.65, text3DpositionDeveloperY, -30]
+const positionLText3D = [-6.43, text3DpositionDeveloperY, -30]
 
-
-{/* SERVICES */ }
-const positionLitmusText3D = [text3DPositionLeft, text3DpositionY, -79]
-const positionGithubGitText3D = [text3DPositionLeft, text3DpositionY, -61]
-const positionSeoText3D = [-2, text3DpositionY, -81]
-const positionSpeedOptimizationText3D = [text3DPositionLeft, text3DpositionY, -73]
-const positionGoogleTagManagerText3D = [text3DPositionLeft, 1, -65]
-const positionGoogleAnalyticsText3D = [text3DPositionLeft, text3DpositionY, -70]
-
-{/* END */ }
-const positionVisualStudioCodeText3D = [0, text3DpositionY, -100]
-const positionJiraText3D = [-2, text3DpositionY, -103]
+{/* MORE */ }
+const positionLitmusText3D = [5, text3DpositionMoreY, -58.2]
+const positionGithubGitText3D = [6, text3DpositionMoreY, -61]
+const positionSeoText3D = [5, text3DpositionMoreY, -59]
+const positionSpeedOptimizationText3D = [4, text3DpositionMoreY, -60.8]
+const positionGoogleTagManagerText3D = [5, text3DpositionMoreY, -60]
+const positionGoogleAnalyticsText3D = [5, text3DpositionMoreY, -61.5]
+const positionVisualStudioCodeText3D = [3, text3DpositionMoreY, -60]
+const positionJiraText3D = [6, text3DpositionMoreY, -59]
+const positionMusicText3D = [4, text3DpositionMoreY, -59]
 
 {/* gravity Text3D Developer */ }
-const gravityScaleLow = [0.3]
-const gravityScaleHigh = [10]
+const gravityScaleLow = [1]
+const gravityScaleHigh = [1]
+
 {/* Basic Material Color */ }
 const meshBasicMaterialColorYellow = "#ffe600"
-const meshBasicMaterialColorGreen = "#039f00"
+const meshBasicMaterialColorWhite = "#ffffff"
 
 
 {/******************* EXPERTISE FUNCTION *******************/ }
@@ -91,7 +90,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             >
                 H
                 <meshMatcapMaterial matcap={matcap} />
-                
+
             </Text3D>
         </RigidBody >
 
@@ -508,7 +507,7 @@ export function BlockSpinner({ position = [0, 0, 0] }) {
             restitution={0.2}
             friction={0}>
             <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}  wireframe/>
+                <meshBasicMaterial color={meshBasicMaterialColorYellow} wireframe />
             </mesh>
         </RigidBody>
     </group>
@@ -534,17 +533,23 @@ export function BlockLimbo({ position = [0, 0, 0] }) {
             ref={obstacle}
             restitution={0.2}
             friction={0}
-            
+            colliders={false}
+
         >
-            <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} wireframe />
-            </mesh>
+            <Cloud
+                opacity={0.5}
+                speed={0.4} // Rotation speed
+                width={10} // Width of the full cloud
+                depth={1.5} // Z-dir depth
+                segments={20} // Number of particles
+                color={meshBasicMaterialColorWhite}
+            />
         </RigidBody>
     </group>
 }
 
 {/******************* AXE FUNCTION *******************/ }
-export function BlockAxe({ position = [6, 0, -5] }) {
+export function BlockAxe({ position = [0, 0, 0] }) {
     const obstacle = useRef()
     const [timeOffset] = useState(() => Math.random() * Math.PI * 2)
 
@@ -553,7 +558,7 @@ export function BlockAxe({ position = [6, 0, -5] }) {
         {/* need clock to anmation */ }
         const time = state.clock.getElapsedTime()
         {/* up and down anmation */ }
-        const z = Math.sin(time + timeOffset) * 10
+        const z = Math.sin(time + timeOffset) * 3
         obstacle.current.setNextKinematicTranslation({ x: position[0], y: position[1], z: position[2] + z })
     })
 
@@ -568,9 +573,15 @@ export function BlockAxe({ position = [6, 0, -5] }) {
             friction={0}>
 
             {/* Axe mesh */}
-            <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} wireframe />
-            </mesh>
+            <Cloud
+                opacity={0.5}
+                speed={0.4} // Rotation speed
+                width={10} // Width of the full cloud
+                depth={1.5} // Z-dir depth
+                segments={20} // Number of particles
+                colliders={false}
+                color={meshBasicMaterialColorYellow}
+            />
         </RigidBody>
     </group>
 }
@@ -585,9 +596,11 @@ export function Level() {
         <ContactLevel />
         <BlockExpertise />
 
-        <BlockSpinner position={[4, 1, -42]} />
-        <BlockAxe position={[-12, 0, -70]} />
-        <BlockLimbo position={[-1, 0.7, -66]} />
+        {/* <BlockSpinner position={[0, 0, 0]} /> */}
+        <BlockAxe position={[-14, 10, -50]} />
+        <BlockAxe position={[10, -10, -70]} />
+        <BlockLimbo position={[0, -10, -20]} />
+        <BlockLimbo position={[16, 10, -50]} />
 
     </>
 }
