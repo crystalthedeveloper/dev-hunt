@@ -99,6 +99,9 @@ export default function Interface() {
 
         {/* Collect */}
         <div className="collect">
+        <div className={`collectHitStar`}>
+                *
+            </div>
             <div className={`collectHit ${incrementHtml ? 'active' : ''}`}>
                 HTML
             </div>

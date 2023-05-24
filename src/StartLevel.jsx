@@ -46,7 +46,7 @@ export default function StartLevel() {
             >
                 <h1>WELCOME</h1>
                 <h2>I'M GLAD YOU'RE HERE</h2>
-                <p>There is 3D Text<span className="liveTextBoldYellow"> Try to collect them all!</span> They are programming languages and Designer & Animation tools I use to build websites and<span>&nbsp;</span>emails.<br /> <br />  On the journey, you see Content Management Systems! I  love developing and designing using these platforms. All these tools let me bring your vision to<span>&nbsp;</span>life!
+                <p><span className="liveTextBoldYellow"> Try to collect them all! *</span><br/> They are programming languages and Designer & Animation tools I use to build websites and<span>&nbsp;</span>emails.<br /> <br />  On the journey, you see Content Management Systems! (CMS). I love developing and designing using these platforms.<br/> <br/>All these tools let me bring your vision to<span>&nbsp;</span>life!
                 </p>
 
                 <h1>THANK YOU ENJOY!</h1>

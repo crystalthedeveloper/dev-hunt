@@ -240,7 +240,12 @@ button:active {
     pointer-events: none;
 
 }
-
+.collectHitStar{
+    text-align: right;
+    padding: 0px 5px; 
+    color: #ffe600;
+    font-size: 20px;
+}
 .collectHit {
     text-align: right;
     padding: 5px 5px;
