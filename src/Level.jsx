@@ -4,7 +4,6 @@ import { useState, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useMatcapTexture, Text3D, Cloud, Float } from '@react-three/drei'
 import ServicesLevel from './ServicesLevel.jsx'
-import ContactLevel from './ContactLevel.jsx'
 import StartLevel from './StartLevel.jsx'
 
 {/* FIX COLORS FROM THREE */ }
@@ -593,7 +592,6 @@ export function Level() {
 
         <StartLevel />
         <ServicesLevel />
-        <ContactLevel />
         <BlockExpertise />
 
         {/* <BlockSpinner position={[0, 0, 0]} /> */}

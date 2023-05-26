@@ -30,6 +30,13 @@ export default function StartLevel() {
                 My passion is learning new things. I absorb information like a sponge. I create new Designs, Emails, Websites, and music. That is fully responsive ensuring a <span style={{ whiteSpace: 'nowrap' }}>user-friendly</span> experience for<span>&nbsp;</span>all.‍<br /><br />
 
                 My skills are wider and spanning across multiple creative and technical disciplines. Helping your business excel<span>&nbsp;</span>further!</p>
+                <p><span className="liveTextBoldYellow">FOLLOW ME ON SOCIAL MEDIA</span></p>
+                <p><span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews/?ref=page_internal', '_blank') }}> Facebook </span>
+                <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.instagram.com/crystalthedeveloper/', '_blank') }}> Instagram </span>
+                <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.linkedin.com/in/crystal-lewis-b14b7386/', '_blank') }}> Linkedin </span>
+                <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.youtube.com/channel/UCeUkpwkof62DlSAU9C2uLtA', '_blank') }}> Youtube </span>
+                <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews', '_blank') }}> Facebook Reviews </span>
+                </p>
 
             </Html>
             <Logo />
@@ -49,6 +56,7 @@ export default function StartLevel() {
                 <p><span className="liveTextBoldYellow"> Try to collect them all! *</span><br/> They are programming languages and Designer & Animation tools I use to build websites and<span>&nbsp;</span>emails.<br /> <br />  On the journey, you see Content Management Systems! (CMS). I love developing and designing using these platforms.<br/> <br/>All these tools let me bring your vision to<span>&nbsp;</span>life!
                 </p>
 
+
                 <h1>THANK YOU ENJOY!</h1>
 
             </Html>
@@ -66,6 +74,7 @@ export default function StartLevel() {
             >
                 <h1>NEED A<br/> WEBSITE?</h1>
                 <h2><button onClick={() => { window.open('https://www.crystalthedeveloper.ca/mailchimp', '_blank') }}><strong>EMAIL ME NOW!</strong></button></h2>
+                <h2><button onClick={() => { window.open('https://www.crystalthedeveloper.ca/need-help', '_blank') }}><strong>NEED HELP?</strong></button></h2>
 
             </Html>
             <Logo />
