@@ -238,15 +238,19 @@ button:active {
 
 .socialLinks{
     border-style: solid;
-    margin: 10px;
+    margin: 0px;
     padding: 6px 10px 6px 10px;
     border-top: 3px solid #ffe600;
     border-left: 1px solid #ffffff;
     border-right: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
+    text-align: center;
+    
 }
 .socialLinks:hover {background-color: #ffe600;transform: scale(0.8);color: #000000;}
-
+.socialLinksWrap{
+    display: inline-grid;
+}
 /**
   * Collect 
   */

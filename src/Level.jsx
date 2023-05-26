@@ -60,8 +60,7 @@ const positionJiraText3D = [6, text3DpositionMoreY, -59]
 const positionMusicText3D = [4, text3DpositionMoreY, -59]
 
 {/* gravity Text3D Developer */ }
-const gravityScaleLow = [1]
-const gravityScaleHigh = [1]
+const gravityScale = [0]
 
 {/* Basic Material Color */ }
 const meshBasicMaterialColorYellow = "#ffe600"
@@ -76,7 +75,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
     return <><group position={position}>
 
         {/* Html Developer */}
-        <RigidBody gravityScale={gravityScaleLow} name="html">
+        <RigidBody gravityScale={gravityScale} name="html">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -93,7 +92,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody >
 
-        <RigidBody gravityScale={gravityScaleLow}>
+        <RigidBody gravityScale={gravityScale}>
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -107,7 +106,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshMatcapMaterial matcap={matcap} />
             </Text3D>
         </RigidBody >
-        <RigidBody gravityScale={gravityScaleLow}>
+        <RigidBody gravityScale={gravityScale}>
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -121,7 +120,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshMatcapMaterial matcap={matcap} />
             </Text3D>
         </RigidBody >
-        <RigidBody gravityScale={gravityScaleLow}>
+        <RigidBody gravityScale={gravityScale}>
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -136,7 +135,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody >
         {/* Css Developer */}
-        <RigidBody gravityScale={gravityScaleLow} name="css">
+        <RigidBody type="fixed" name="css">
             <Text3D
 
                 bevelEnabled
@@ -152,7 +151,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* Javascript Developer */}
-        <RigidBody gravityScale={gravityScaleLow} name="javascript">
+        <RigidBody type="fixed" name="javascript">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -167,7 +166,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* ‍Jquery */}
-        <RigidBody gravityScale={gravityScaleLow} name="jquery">
+        <RigidBody type="fixed" name="jquery">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -182,7 +181,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* ‍React Developer */}
-        <RigidBody gravityScale={gravityScaleLow} name="react">
+        <RigidBody type="fixed" name="react">
 
             <Text3D
                 bevelEnabled
@@ -198,7 +197,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* ‍Three.js */}
-        <RigidBody gravityScale={gravityScaleLow} name="ThreeJs">
+        <RigidBody type="fixed" name="ThreeJs">
 
             <Text3D
                 bevelEnabled
@@ -214,7 +213,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* ‍python Developer */}
-        <RigidBody gravityScale={gravityScaleLow} name="python">
+        <RigidBody type="fixed" name="python">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -230,7 +229,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
         </RigidBody>
 
         {/* Github Git Developer */}
-        <RigidBody gravityScale={gravityScaleLow} name="githubGit">
+        <RigidBody type="fixed" name="githubGit">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -245,7 +244,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* Speed Optimization */}
-        <RigidBody gravityScale={gravityScaleLow} name="speedOptimization">
+        <RigidBody type="fixed" name="speedOptimization">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -260,7 +259,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody >
         {/* seo */}
-        <RigidBody gravityScale={gravityScaleLow} name="seo">
+        <RigidBody type="fixed" name="seo">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -275,7 +274,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody >
         {/* Google Tag Manager */}
-        <RigidBody gravityScale={gravityScaleLow} name="tagManager">
+        <RigidBody type="fixed" name="tagManager">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -290,7 +289,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody >
         {/* Google Analytics */}
-        <RigidBody gravityScale={gravityScaleLow} name="analytics">
+        <RigidBody type="fixed" name="analytics">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -305,7 +304,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody >
         {/* ‍Jira */}
-        <RigidBody gravityScale={gravityScaleLow} name="jira">
+        <RigidBody type="fixed" name="jira">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -321,7 +320,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
         </RigidBody>
 
         {/* ‍Litmus */}
-        <RigidBody gravityScale={gravityScaleLow} name="litmus">
+        <RigidBody type="fixed" name="litmus">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -336,7 +335,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* Visual Studio Code */}
-        <RigidBody gravityScale={gravityScaleLow} name="studio">
+        <RigidBody type="fixed"name="studio">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -353,7 +352,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
 
         {/* DESIGNER & ANIMATION TOOLS */}
         {/* blender */}
-        <RigidBody name="blender" gravityScale={gravityScaleHigh}>
+        <RigidBody  type="fixed" name="blender" >
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -368,7 +367,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* Illustrator */}
-        <RigidBody name="illustrator" gravityScale={gravityScaleHigh}>
+        <RigidBody type="fixed" name="illustrator">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -383,7 +382,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* Photoshop */}
-        <RigidBody name="photoshop" gravityScale={gravityScaleHigh}>
+        <RigidBody type="fixed" name="photoshop">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -398,7 +397,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* adobe After Effects */}
-        <RigidBody name="ae" gravityScale={gravityScaleHigh}>
+        <RigidBody type="fixed" name="ae">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -413,7 +412,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* figma */}
-        <RigidBody name="figma" gravityScale={gravityScaleHigh}>
+        <RigidBody type="fixed" name="figma">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -428,7 +427,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
         {/* Adobe XD */}
-        <RigidBody name="xd" gravityScale={gravityScaleHigh}>
+        <RigidBody type="fixed" name="xd">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -444,7 +443,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
         </RigidBody>
 
         {/* canva */}
-        <RigidBody name="canva" gravityScale={gravityScaleHigh}>
+        <RigidBody type="fixed" name="canva">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -460,7 +459,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
         </RigidBody>
 
         {/* music */}
-        <RigidBody name="music" gravityScale={gravityScaleHigh}>
+        <RigidBody name="music" gravityScale={gravityScale}>
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -596,9 +595,10 @@ export function Level() {
 
         {/* <BlockSpinner position={[0, 0, 0]} /> */}
         <BlockAxe position={[-14, 10, -50]} />
+        <BlockAxe position={[-7, 9, 0]} />
         <BlockAxe position={[10, -10, -70]} />
         <BlockLimbo position={[0, -10, -20]} />
-        <BlockLimbo position={[16, 10, -50]} />
+        <BlockLimbo position={[20, 10, -50]} />
 
     </>
 }
