@@ -69,7 +69,7 @@ export default function Architecture() {
                 geometry={circleGeometry}
                 scale={scaleGroundRight}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} opacity={0.6} transparent wireframe />
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
             {/* DESIGNER */}
             <mesh
@@ -87,7 +87,7 @@ export default function Architecture() {
                 geometry={circleGeometry}
                 scale={scaleGroundDeveloper}
             >
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} opacity={0.6} transparent wireframe/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe/>
             </mesh>
             {/* MORE */}
             <mesh

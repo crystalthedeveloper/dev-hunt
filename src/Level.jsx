@@ -579,7 +579,7 @@ export function BlockAxe({ position = [0, 0, 0] }) {
                 depth={1.5} // Z-dir depth
                 segments={20} // Number of particles
                 colliders={false}
-                color={meshBasicMaterialColorYellow}
+                color={meshBasicMaterialColorWhite}
             />
         </RigidBody>
     </group>
