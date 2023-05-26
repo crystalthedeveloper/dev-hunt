@@ -595,7 +595,7 @@ export function Level() {
 
         {/* <BlockSpinner position={[0, 0, 0]} /> */}
         <BlockAxe position={[-14, 10, -50]} />
-        <BlockAxe position={[-7, 9, 0]} />
+        <BlockAxe position={[-6, -10, 0]} />
         <BlockAxe position={[10, -10, -70]} />
         <BlockLimbo position={[0, -10, -20]} />
         <BlockLimbo position={[20, 10, -50]} />
