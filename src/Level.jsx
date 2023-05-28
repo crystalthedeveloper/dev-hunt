@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { RigidBody } from '@react-three/rapier'
 import { useState, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useMatcapTexture, Text3D, Cloud, Float } from '@react-three/drei'
+import { Text3D, Cloud, Float } from '@react-three/drei'
 import ServicesLevel from './ServicesLevel.jsx'
 import StartLevel from './StartLevel.jsx'
 
@@ -70,7 +70,7 @@ const meshBasicMaterialColorWhite = "#ffffff"
 {/******************* EXPERTISE FUNCTION *******************/ }
 export function BlockExpertise({ position = [0, 0, 0] }) {
 
-    const [matcap] = useMatcapTexture('E6BF3C_5A4719_977726_FCFC82')
+   
 
     return <><group position={position}>
 
@@ -87,7 +87,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
 
             >
                 H
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
 
             </Text3D>
         </RigidBody >
@@ -103,7 +103,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionTText3D}
             >
                 T
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody >
         <RigidBody gravityScale={gravityScale}>
@@ -117,7 +117,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionMText3D}
             >
                 M
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody >
         <RigidBody gravityScale={gravityScale}>
@@ -131,7 +131,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionLText3D}
             >
                 L
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody >
         {/* Css Developer */}
@@ -147,7 +147,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionCssText3D}
             >
                 CSS
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* Javascript Developer */}
@@ -162,7 +162,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionJavascriptText3D}
             >
                 Javascript
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* ‍Jquery */}
@@ -177,7 +177,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionJqueryText3D}
             >
                 Jquery
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* ‍React Developer */}
@@ -193,7 +193,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionReactText3D}
             >
                 React
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* ‍Three.js */}
@@ -209,7 +209,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionThreeJsText3D}
             >
                 Three.js
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* ‍python Developer */}
@@ -224,7 +224,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionPythonText3D}
             >
                 Python
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
 
@@ -240,7 +240,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionGithubGitText3D}
             >
                 Github & Git
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* Speed Optimization */}
@@ -255,7 +255,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionSpeedOptimizationText3D}
             >
                 Speed Optimization
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody >
         {/* seo */}
@@ -270,7 +270,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionSeoText3D}
             >
                 SEO
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody >
         {/* Google Tag Manager */}
@@ -285,7 +285,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionGoogleTagManagerText3D}
             >
                 Google Tag Manager
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody >
         {/* Google Analytics */}
@@ -300,7 +300,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionGoogleAnalyticsText3D}
             >
                 Google Analytics
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody >
         {/* ‍Jira */}
@@ -315,7 +315,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionJiraText3D}
             >
                 Jira
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
 
@@ -331,7 +331,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionLitmusText3D}
             >
                 Litmus
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* Visual Studio Code */}
@@ -346,7 +346,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionVisualStudioCodeText3D}
             >
                 Visual Studio Code
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
 
@@ -363,7 +363,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionBlenderText3D}
             >
                 Blender
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* Illustrator */}
@@ -378,7 +378,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionIllustratorText3D}
             >
                 Illustrator
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* Photoshop */}
@@ -393,7 +393,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionPhotoshopText3D}
             >
                 Photoshop
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* adobe After Effects */}
@@ -408,7 +408,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionadobeAfterEffectsText3D}
             >
                 After Effects
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* figma */}
@@ -423,7 +423,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionFigmaText3D}
             >
                 Figma
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
         {/* Adobe XD */}
@@ -438,7 +438,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionAdobeXdText3D}
             >
                 Adobe XD
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
 
@@ -454,7 +454,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionCanvaText3D}
             >
                 Canva
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
 
@@ -470,7 +470,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionMusicText3D}
             >
                 Music
-                <meshMatcapMaterial matcap={matcap} />
+                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
             </Text3D>
         </RigidBody>
 

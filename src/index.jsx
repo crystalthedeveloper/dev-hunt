@@ -3,7 +3,7 @@ import Experience from './Experience.jsx'
 import Interface from './Interface.jsx'
 import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
-import { KeyboardControls, Loader, Environment } from '@react-three/drei'
+import { KeyboardControls, Loader, Environment, Lightformer, Sky } from '@react-three/drei'
 
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
@@ -26,10 +26,17 @@ root.render(
 
         >
             <Experience />
-            <Environment
+            {/* <Environment
                 //background
-                preset='forest'
-            />
+               preset='forest'
+            />  */}
+            <Environment>
+                <Sky
+                    distance={450000}
+                    sunPosition={[0, 1, 0]}
+                    inclination={0}
+                    azimuth={-0.25} />
+            </Environment>
 
         </Canvas>
         <Interface />
