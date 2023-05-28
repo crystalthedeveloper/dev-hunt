@@ -14,7 +14,7 @@ export default function StartLevel() {
 
     return <><RigidBody type="fixed">
         {/* ABOUT HTML */}
-        <group position={[-6, positionY, -10]}>
+        <group position={[-4, positionY, -10]}>
             <Html
                 center
                 occlude
@@ -52,9 +52,10 @@ export default function StartLevel() {
                 <p><span className="liveTextBoldYellow">FOLLOW ME ON SOCIAL MEDIA<br/></span></p>
                 <p><span className="socialLinksWrap"><span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews/?ref=page_internal', '_blank') }}> Facebook </span>
                 <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.instagram.com/crystalthedeveloper/', '_blank') }}> Instagram </span>
+                <br/><br/>
+                <span className="socialLinks" onClick={() => { window.open('https://www.youtube.com/channel/UCeUkpwkof62DlSAU9C2uLtA', '_blank') }}> Youtube </span>
                 <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.linkedin.com/in/crystal-lewis-b14b7386/', '_blank') }}> Linkedin </span>
-                <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.youtube.com/channel/UCeUkpwkof62DlSAU9C2uLtA', '_blank') }}> Youtube </span>
-                <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews', '_blank') }}> Facebook Reviews </span>
+                <br/><br/>  <span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews', '_blank') }}> Facebook Reviews </span>
                 </span></p>
 
                 <h1>THANK YOU ENJOY!</h1>
@@ -63,7 +64,7 @@ export default function StartLevel() {
             <Logo />
         </group>
          {/* EMAIL */}
-         <group position={[6, positionY, -10]}>
+         <group position={[4, positionY, -10]}>
             <Html
                 center
                 occlude

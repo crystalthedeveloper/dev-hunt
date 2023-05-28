@@ -6,8 +6,8 @@ import { useFrame } from '@react-three/fiber'
 
 {/* SERVICES LEVEL POSITION */ }
 const positionY = 0
-const imagePositionY = 8
-const imagepositionZ = -60
+const imagePositionY = 6
+const imagepositionZ = -55
 const imagePositionCenter = 0
 
 {/******************* SERVICES FUNCTION *******************/ }

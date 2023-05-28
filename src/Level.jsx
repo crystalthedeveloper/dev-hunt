@@ -570,8 +570,10 @@ export function BlockAxe({ position = [0, 0, 0] }) {
             restitution={0.2}
             friction={0}>
 
-            {/* Axe mesh */}
-            <Cloud
+            
+        </RigidBody>
+        {/* Axe mesh */}
+        <Cloud
                 opacity={0.5}
                 speed={0.4} // Rotation speed
                 width={10} // Width of the full cloud
@@ -580,7 +582,6 @@ export function BlockAxe({ position = [0, 0, 0] }) {
                 colliders={false}
                 color={meshBasicMaterialColorWhite}
             />
-        </RigidBody>
     </group>
 }
 
@@ -595,7 +596,6 @@ export function Level() {
 
         {/* <BlockSpinner position={[0, 0, 0]} /> */}
         <BlockAxe position={[-14, 10, -50]} />
-        <BlockAxe position={[-6, -10, 0]} />
         <BlockAxe position={[10, -10, -70]} />
         <BlockLimbo position={[0, -10, -20]} />
         <BlockLimbo position={[20, 10, -50]} />

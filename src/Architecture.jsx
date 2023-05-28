@@ -20,12 +20,14 @@ const positionScaleZ = 1
 const positionGroundStart = [0, positionGroundY, 0]
 const scaleGroundStart = [1, 1, positionScaleZ]
 {/* GROUND ABOUT */ }
-const positionGroundContact = [-6, positionGroundY, -10]
+const positionGroundContact = [-4, positionGroundY, -10]
 const scaleGroundContact = [1, 1, positionScaleZ]
 {/* GROUND EMAIL */ }
-const positionGroundRight = [6, positionGroundY, -10]
+const positionGroundRight = [4, positionGroundY, -10]
 const scaleGroundRight = [1, 1, positionScaleZ]
-
+{/* GROUND SERVICES */ }
+const positionGroundServices= [-3, 5, -12]
+const scaleGroundServices = [1, 1, positionScaleZ]
 
 {/* GROUND DESIGNER */ }
 const positionGroundDesigner = [6, positionGroundDesignerY, -40]
@@ -50,6 +52,15 @@ export default function Architecture() {
                 rotation-x={rotationX}
                 geometry={circleGeometry}
                 scale={scaleGroundStart}
+            >
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
+            </mesh>
+               {/* SERVICES */}
+               <mesh
+                position={positionGroundServices}
+                rotation-x={rotationX}
+                geometry={circleGeometry}
+                scale={scaleGroundServices}
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
