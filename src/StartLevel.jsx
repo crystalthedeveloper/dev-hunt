@@ -49,14 +49,14 @@ export default function StartLevel() {
                 <h2>I'M GLAD YOU'RE HERE</h2>
                 <p><span className="liveTextBoldYellow"> COLLECT THEM ALL! *</span><br/><br/> They are programming languages and Designer & Animation tools I use to build websites and<span>&nbsp;</span>emails.<br /> <br />  On the journey, you see Content Management Systems! (CMS). I love developing and designing using these platforms.<br/> <br/>All these tools let me bring your vision to<span>&nbsp;</span>life!
                 </p>
-                <p><span className="liveTextBoldYellow">FOLLOW ME ON SOCIAL MEDIA<br/></span></p>
-                <p><span className="socialLinksWrap"><span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews/?ref=page_internal', '_blank') }}> Facebook </span>
-                <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.instagram.com/crystalthedeveloper/', '_blank') }}> Instagram </span>
-                <br/><br/>
+                <h2><span className="liveTextBoldYellow">FOLLOW ME ON SOCIAL MEDIA<br/></span></h2>
+                <h2><span className="socialLinksWrap"><span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews/?ref=page_internal', '_blank') }}> Facebook </span>
+                <br/> <span className="socialLinks" onClick={() => { window.open('https://www.instagram.com/crystalthedeveloper/', '_blank') }}> Instagram </span>
+                <br/>
                 <span className="socialLinks" onClick={() => { window.open('https://www.youtube.com/channel/UCeUkpwkof62DlSAU9C2uLtA', '_blank') }}> Youtube </span>
-                <br/><br/> <span className="socialLinks" onClick={() => { window.open('https://www.linkedin.com/in/crystal-lewis-b14b7386/', '_blank') }}> Linkedin </span>
-                <br/><br/>  <span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews', '_blank') }}> Facebook Reviews </span>
-                </span></p>
+                <br/> <span className="socialLinks" onClick={() => { window.open('https://www.linkedin.com/in/crystal-lewis-b14b7386/', '_blank') }}> Linkedin </span>
+                <br/> <span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews', '_blank') }}> Facebook Reviews </span>
+                </span></h2>
 
                 <h1>THANK YOU ENJOY!</h1>
 

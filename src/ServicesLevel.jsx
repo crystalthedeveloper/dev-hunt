@@ -52,14 +52,14 @@ export default function ServicesLevel() {
     const overEmail = () => hoverEmail(true)
     const outEmail = () => hoverEmail(false)
     useFrame(() => {
-        imagesWebflow.current.material.grayscale = (hoveredWebflow ? 1 : 0)
-        imagesWordpress.current.material.grayscale = (hoveredWordpress ? 1 : 0)
-        imagesAdobeExperience.current.material.grayscale = (hoveredAdobeExperience ? 1 : 0)
-        imagesMagnolia.current.material.grayscale = (hoveredMagnolia ? 1 : 0)
-        imagesAnimation.current.material.grayscale = (hoveredAnimation ? 1 : 0)
-        imagesMailchimp.current.material.grayscale = (hoveredMailchimp ? 1 : 0)
-        imagesSalesforce.current.material.grayscale = (hoveredSalesforce ? 1 : 0)
-        imagesEmail.current.material.grayscale = (hoveredEmail ? 1 : 0)
+        imagesWebflow.current.material.grayscale = (hoveredWebflow ? 0 : 1)
+        imagesWordpress.current.material.grayscale = (hoveredWordpress ? 0 : 1)
+        imagesAdobeExperience.current.material.grayscale = (hoveredAdobeExperience ? 0 : 1)
+        imagesMagnolia.current.material.grayscale = (hoveredMagnolia ? 0 : 1)
+        imagesAnimation.current.material.grayscale = (hoveredAnimation ? 0 : 1)
+        imagesMailchimp.current.material.grayscale = (hoveredMailchimp ? 0 : 1)
+        imagesSalesforce.current.material.grayscale = (hoveredSalesforce ? 0 : 1)
+        imagesEmail.current.material.grayscale = (hoveredEmail ? 0 : 1)
     })
 
 

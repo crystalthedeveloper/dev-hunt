@@ -59,9 +59,6 @@ const positionVisualStudioCodeText3D = [3, text3DpositionMoreY, -60]
 const positionJiraText3D = [6, text3DpositionMoreY, -59]
 const positionMusicText3D = [4, text3DpositionMoreY, -59]
 
-{/* gravity Text3D Developer */ }
-const gravityScale = [0]
-
 {/* Basic Material Color */ }
 const meshBasicMaterialColorYellow = "#ffe600"
 const meshBasicMaterialColorWhite = "#ffffff"
@@ -75,7 +72,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
     return <><group position={position}>
 
         {/* Html Developer */}
-        <RigidBody gravityScale={gravityScale} name="html">
+        <RigidBody  name="html">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -87,12 +84,12 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
 
             >
                 H
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
 
             </Text3D>
         </RigidBody >
 
-        <RigidBody gravityScale={gravityScale}>
+        <RigidBody >
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -103,10 +100,10 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionTText3D}
             >
                 T
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody >
-        <RigidBody gravityScale={gravityScale}>
+        <RigidBody >
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -117,10 +114,10 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionMText3D}
             >
                 M
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody >
-        <RigidBody gravityScale={gravityScale}>
+        <RigidBody >
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -131,7 +128,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionLText3D}
             >
                 L
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody >
         {/* Css Developer */}
@@ -147,7 +144,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionCssText3D}
             >
                 CSS
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* Javascript Developer */}
@@ -162,7 +159,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionJavascriptText3D}
             >
                 Javascript
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* ‍Jquery */}
@@ -177,7 +174,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionJqueryText3D}
             >
                 Jquery
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* ‍React Developer */}
@@ -193,7 +190,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionReactText3D}
             >
                 React
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* ‍Three.js */}
@@ -209,7 +206,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionThreeJsText3D}
             >
                 Three.js
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* ‍python Developer */}
@@ -224,7 +221,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionPythonText3D}
             >
                 Python
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
 
@@ -240,7 +237,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionGithubGitText3D}
             >
                 Github & Git
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* Speed Optimization */}
@@ -255,7 +252,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionSpeedOptimizationText3D}
             >
                 Speed Optimization
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody >
         {/* seo */}
@@ -270,7 +267,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionSeoText3D}
             >
                 SEO
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody >
         {/* Google Tag Manager */}
@@ -285,7 +282,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionGoogleTagManagerText3D}
             >
                 Google Tag Manager
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody >
         {/* Google Analytics */}
@@ -300,7 +297,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionGoogleAnalyticsText3D}
             >
                 Google Analytics
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody >
         {/* ‍Jira */}
@@ -315,7 +312,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionJiraText3D}
             >
                 Jira
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
 
@@ -331,7 +328,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionLitmusText3D}
             >
                 Litmus
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* Visual Studio Code */}
@@ -346,7 +343,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionVisualStudioCodeText3D}
             >
                 Visual Studio Code
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
 
@@ -363,7 +360,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionBlenderText3D}
             >
                 Blender
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* Illustrator */}
@@ -378,7 +375,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionIllustratorText3D}
             >
                 Illustrator
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* Photoshop */}
@@ -393,7 +390,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionPhotoshopText3D}
             >
                 Photoshop
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* adobe After Effects */}
@@ -408,7 +405,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionadobeAfterEffectsText3D}
             >
                 After Effects
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* figma */}
@@ -423,7 +420,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionFigmaText3D}
             >
                 Figma
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
         {/* Adobe XD */}
@@ -438,7 +435,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionAdobeXdText3D}
             >
                 Adobe XD
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
 
@@ -454,12 +451,12 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionCanvaText3D}
             >
                 Canva
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
 
         {/* music */}
-        <RigidBody name="music" gravityScale={gravityScale}>
+        <RigidBody name="music">
             <Text3D
                 bevelEnabled
                 font={fontText3D}
@@ -470,7 +467,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionMusicText3D}
             >
                 Music
-                <meshBasicMaterial color={meshBasicMaterialColorYellow}/>
+                <meshBasicMaterial color={meshBasicMaterialColorWhite}/>
             </Text3D>
         </RigidBody>
 
@@ -505,7 +502,7 @@ export function BlockSpinner({ position = [0, 0, 0] }) {
             restitution={0.2}
             friction={0}>
             <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorYellow} wireframe />
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} wireframe />
             </mesh>
         </RigidBody>
     </group>
@@ -597,7 +594,7 @@ export function Level() {
         {/* <BlockSpinner position={[0, 0, 0]} /> */}
         <BlockAxe position={[-14, 10, -50]} />
         <BlockAxe position={[10, -10, -70]} />
-        <BlockLimbo position={[0, -10, -20]} />
+        <BlockLimbo position={[-12, -10, -20]} />
         <BlockLimbo position={[20, 10, -50]} />
 
     </>

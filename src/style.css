@@ -28,7 +28,7 @@ h1 {
 }
 
 h2 {
-    color: #ffe600;
+    color: #ffffff;
     font-size: 16px;
     text-align: center;
 }
@@ -72,7 +72,7 @@ a {
     background: #000000;
     color: #ffffff;
     border-top: solid;
-    border-color: #ffe600;
+    border-color: #ffffff;
     cursor: pointer;
     overflow: hidden;
     width: 300px;
@@ -85,7 +85,7 @@ a {
 }
 .liveTextBoldYellow{
     font-weight: 600;
-    color: #ffe600;
+    color: #ffffff;
 }
 
 @media (max-width: 580px) {
@@ -94,7 +94,7 @@ a {
         background: #000000;
         color: #ffffff;
         border-top: solid;
-        border-color: #ffe600;
+        border-color: #ffffff;
         cursor: pointer;
         overflow: hidden;
         width: 210px;
@@ -179,8 +179,8 @@ a {
     width: 34px;
     height: 28px;
     margin: 4px;
-    border: 1px solid #ffe600;
-    background: #ffe60044;
+    border: 1px solid #ffffff;
+    background: #cad2c544;
     pointer-events: auto;
     cursor: pointer;
     border-radius: 50%;
@@ -197,7 +197,7 @@ a {
 }
 
 .controls .key.active {
-    background: #ffe60099;
+    background: #00000099;
 
 }
 /**
@@ -216,7 +216,7 @@ button {
     text-decoration: none;
     outline: none;
     color: #000000;
-    background-color: #ffe600;
+    background-color: #ffffff;
     border: none;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -224,11 +224,11 @@ button {
 
   }
   
-button:hover {background-color: #666;transform: scale(0.8);}
+button:hover {background-color: #666;transform: scale(0.8); color: #ffffff;}
   
 button:active {
-    background-color: #ffe600;
-    box-shadow: 0 4px #cad2c5;
+    background-color: #ffffff;
+    box-shadow: 0 4px #ffffff;
     transform: translateY(4px);
   }
   
@@ -240,14 +240,14 @@ button:active {
     border-style: solid;
     margin: 0px;
     padding: 6px 10px 6px 10px;
-    border-top: 3px solid #ffe600;
+    border-top: 3px solid #ffffff;
     border-left: 1px solid #ffffff;
     border-right: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
     text-align: center;
     
 }
-.socialLinks:hover {background-color: #ffe600;transform: scale(0.8);color: #000000;}
+.socialLinks:hover {background-color: #ffffff;transform: scale(0.8);color: #000000;}
 .socialLinksWrap{
     display: inline-grid;
 }

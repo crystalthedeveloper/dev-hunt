@@ -33,7 +33,7 @@ root.render(
             <Environment>
                 <Sky
                     distance={450000}
-                    sunPosition={[0, 1, 0]}
+                    sunPosition={[9, 1, 0]}
                     inclination={0}
                     azimuth={-0.25} />
             </Environment>

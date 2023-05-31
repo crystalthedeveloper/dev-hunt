@@ -55,6 +55,8 @@ export default function Architecture() {
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
+            </RigidBody>
+            <RigidBody type="fixed">
                {/* SERVICES */}
                <mesh
                 position={positionGroundServices}
@@ -64,6 +66,8 @@ export default function Architecture() {
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
+            </RigidBody>
+            <RigidBody type="fixed">
             {/* ABOUT */}
             <mesh
                 position={positionGroundContact}
@@ -73,6 +77,8 @@ export default function Architecture() {
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
+            </RigidBody>
+            <RigidBody type="fixed">
             {/* EMAIL */}
             <mesh
                 position={positionGroundRight}
@@ -82,6 +88,8 @@ export default function Architecture() {
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
+            </RigidBody>
+            <RigidBody type="fixed">
             {/* DESIGNER */}
             <mesh
                 position={positionGroundDesigner}
@@ -91,6 +99,8 @@ export default function Architecture() {
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
+            </RigidBody>
+            <RigidBody type="fixed">
             {/* DEVELOPER */}
             <mesh
                 position={positionGroundDeveloper}
@@ -100,6 +110,8 @@ export default function Architecture() {
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe/>
             </mesh>
+            </RigidBody>
+            <RigidBody type="fixed">
             {/* MORE */}
             <mesh
                 position={positionGroundMore}
