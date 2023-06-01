@@ -201,9 +201,9 @@ a {
 
 }
 /**
-  * Buttons
+  * Buttons & Social
   */
-button {
+button, .socialLinks{
     display: inline-block;
     padding-top: 10px;
     padding-right: 20px;
@@ -224,33 +224,18 @@ button {
 
   }
   
-button:hover {background-color: #666;transform: scale(0.8); color: #ffffff;}
+button:hover, .socialLinks:hover {background-color: #666; color: #ffffff;}
   
-button:active {
+button:active, .socialLinks:active{
     background-color: #ffffff;
     box-shadow: 0 4px #ffffff;
     transform: translateY(4px);
   }
-  
-  /**
-  * Social
-  */
 
-.socialLinks{
-    border-style: solid;
-    margin: 0px;
-    padding: 6px 10px 6px 10px;
-    border-top: 3px solid #ffffff;
-    border-left: 1px solid #ffffff;
-    border-right: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-    text-align: center;
-    
-}
-.socialLinks:hover {background-color: #ffffff;transform: scale(0.8);color: #000000;}
 .socialLinksWrap{
     display: inline-grid;
 }
+
 /**
   * Collect 
   */
@@ -268,7 +253,7 @@ button:active {
 .collectHitStar{
     text-align: right;
     padding: 0px 5px; 
-    color: #ffe600;
+    color: #ffffff;
     font-size: 20px;
 }
 .collectHit {
@@ -278,7 +263,7 @@ button:active {
 }
 
 .collectHit.active {
-    color: #ffe600;
+    color: #ffffff;
 }
 
 /**
