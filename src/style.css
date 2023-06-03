@@ -87,6 +87,11 @@ a {
     font-weight: 600;
     color: #ffffff;
 }
+.liveHeader{
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 24px;
+}
 
 @media (max-width: 580px) {
     .liveText>div {

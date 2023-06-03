@@ -45,9 +45,8 @@ export default function StartLevel() {
                 position={positionIframe}
                 zIndexRange={[100, 0]}
             >
-                <h1>WELCOME</h1>
-                <h2>I'M GLAD YOU'RE HERE</h2>
-                <p><span className="liveTextBoldYellow"> COLLECT THEM ALL! *</span><br/><br/> They are programming languages and Designer & Animation tools I use to build websites and<span>&nbsp;</span>emails.<br /> <br />  On the journey, you see Content Management Systems! (CMS). I love developing and designing using these platforms.<br/> <br/>All these tools let me bring your vision to<span>&nbsp;</span>life!
+                <h1 className="liveHeader">COLLECT THEM ALL! *</h1>
+                <p>They are programming languages and Designer & Animation tools I use to build websites and<span>&nbsp;</span>emails.<br /> <br />  On the journey, you see Content Management Systems! (CMS). I love developing and designing using these platforms.<br/> <br/>All these tools let me bring your vision to<span>&nbsp;</span>life!
                 </p>
                 <h2><span className="liveTextBoldYellow">FOLLOW ME ON SOCIAL MEDIA<br/></span></h2>
                 <h2><span className="socialLinksWrap"><span className="socialLinks" onClick={() => { window.open('https://www.facebook.com/Crystalthedeveloper/reviews/?ref=page_internal', '_blank') }}> Facebook </span>
