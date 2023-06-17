@@ -255,19 +255,19 @@ button:active, .socialLinks:active{
     left: 0;
     width: 100%;
     color: #cad2c599;
-    font-size: 1.5vh;
+    font-size: 1.6vh;
     pointer-events: none;
 
 }
 .collectHitStar{
     text-align: right;
     padding: 0px 5px; 
-    color: #ffffff;
+    color: #ffe600;
     font-size: 20px;
 }
 .collectHit {
     text-align: right;
-    padding: 5px 5px;
+    padding:3px 5px;
 
 }
 

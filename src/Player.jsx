@@ -74,6 +74,15 @@ export default function Player() {
     const increaseIncrementAdobeXD = useGame((state) => state.increaseIncrementAdobeXD)
     const increaseIncrementCanva = useGame((state) => state.increaseIncrementCanva)
     const increaseIncrementMusic = useGame((state) => state.increaseIncrementMusic)
+
+    const increaseIncrementWebflow = useGame((state) => state.increaseIncrementWebflow)
+    const increaseIncrementWordpress = useGame((state) => state.increaseIncrementWordpress)
+    const increaseIncrementAdobeExperience = useGame((state) => state.increaseIncrementAdobeExperience)
+    const increaseIncrementMagnolia = useGame((state) => state.increaseIncrementMagnolia)
+    const increaseIncrementAnimation = useGame((state) => state.increaseIncrementAnimation)
+    const increaseIncrementMailchimp = useGame((state) => state.increaseIncrementMailchimp)
+    const increaseIncrementSalesforce = useGame((state) => state.increaseIncrementSalesforce)
+    
     const increaseAllIncrements = useGame((state) => state.increaseAllIncrements)
 
     const incrementHtml = useGame((state) => state.incrementHtml)
@@ -99,6 +108,14 @@ export default function Player() {
     const incrementAdobeXD = useGame((state) => state.incrementAdobeXD)
     const incrementCanva = useGame((state) => state.incrementCanva)
     const incrementMusic = useGame((state) => state.incrementMusic)
+
+    const incrementWebflow = useGame((state) => state.incrementWebflow)
+    const incrementWordpress = useGame((state) => state.incrementWordpress)
+    const incrementAdobeExperience = useGame((state) => state.incrementAdobeExperience)
+    const incrementMagnolia = useGame((state) => state.incrementMagnolia)
+    const incrementAnimation = useGame((state) => state.incrementAnimation)
+    const incrementMailchimp = useGame((state) => state.incrementMailchimp)
+    const incrementSalesforce = useGame((state) => state.incrementSalesforce)
 
     const [hitSound] = useState(() => new Audio('./hit.mp3'))
 
@@ -178,9 +195,37 @@ export default function Player() {
 
             increaseIncrementMusic()
         }
+        else if (target.rigidBodyObject.name === 'webflow') {
+
+            increaseIncrementWebflow()
+        }
+        else if (target.rigidBodyObject.name === 'wordpress') {
+
+            increaseIncrementWordpress()
+        }
+        else if (target.rigidBodyObject.name === 'adobeexperience') {
+
+            increaseIncrementAdobeExperience()
+        }
+        else if (target.rigidBodyObject.name === 'magnolia') {
+
+            increaseIncrementMagnolia()
+        }
+        else if (target.rigidBodyObject.name === 'animation') {
+
+            increaseIncrementAnimation()
+        }
+        else if (target.rigidBodyObject.name === 'mailchimp') {
+
+            increaseIncrementMailchimp()
+        }
+        else if (target.rigidBodyObject.name === 'salesforce') {
+
+            increaseIncrementSalesforce()
+        }
     }
     const onCollisionExit = () => {
-        if (incrementHtml && incrementCss && incrementJavascript && incrementJquery && incrementReact && incrementThreeJs && incrementPython && incrementGithubGit && incrementSpeedOptimization && incrementSeo && incrementGoogleTagManager && incrementGoogleAnalytics && incrementJira && incrementLitmus && incrementVisualStudioCode && incrementBlenders && incrementIllustrator && incrementPhotoshop && incrementAfterEffects && incrementFigma && incrementAdobeXD && incrementCanva && incrementMusic) {
+        if (incrementHtml && incrementCss && incrementJavascript && incrementJquery && incrementReact && incrementThreeJs && incrementPython && incrementGithubGit && incrementSpeedOptimization && incrementSeo && incrementGoogleTagManager && incrementGoogleAnalytics && incrementJira && incrementLitmus && incrementVisualStudioCode && incrementBlenders && incrementIllustrator && incrementPhotoshop && incrementAfterEffects && incrementFigma && incrementAdobeXD && incrementCanva && incrementMusic && incrementWebflow && incrementWordpress && incrementAdobeExperience && incrementMagnolia && incrementAnimation && incrementMailchimp && incrementSalesforce) {
 
             increaseAllIncrements()
         }

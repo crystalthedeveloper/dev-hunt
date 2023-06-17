@@ -60,6 +60,14 @@ export default create(subscribeWithSelector((set) => {
         incrementCanva: 0,
         incrementMusic: 0,
 
+        incrementWebflow: 0,
+        incrementWordpress: 0,
+        incrementAdobeExperience: 0,
+        incrementMagnolia: 0,
+        incrementAnimation: 0,
+        incrementMailchimp: 0,
+        incrementSalesforce: 0,
+
 
         increaseIncrementHtml: () => set((state) => ({ incrementHtml: state.incrementHtml + 1 })),
         increaseIncrementCss: () => set((state) => ({ incrementCss: state.incrementCss + 1 })),
@@ -84,6 +92,14 @@ export default create(subscribeWithSelector((set) => {
         increaseIncrementAdobeXD: () => set((state) => ({ incrementAdobeXD: state.incrementAdobeXD + 1 })),
         increaseIncrementCanva: () => set((state) => ({ incrementCanva: state.incrementCanva + 1 })),
         increaseIncrementMusic: () => set((state) => ({ incrementMusic: state.incrementMusic + 1 })),
+
+        increaseIncrementWebflow: () => set((state) => ({ incrementWebflow: state.incrementWebflow + 1 })),
+        increaseIncrementWordpress: () => set((state) => ({ incrementWordpress: state.incrementWordpress + 1 })),
+        increaseIncrementAdobeExperience: () => set((state) => ({ incrementAdobeExperience: state.incrementAdobeExperience + 1 })),
+        increaseIncrementMagnolia: () => set((state) => ({ incrementMagnolia: state.incrementMagnolia + 1 })),
+        increaseIncrementAnimation: () => set((state) => ({ incrementAnimation: state.incrementAnimation + 1 })),
+        increaseIncrementMailchimp: () => set((state) => ({ incrementMailchimp: state.incrementMailchimp + 1 })),
+        increaseIncrementSalesforce: () => set((state) => ({ incrementSalesforce: state.incrementSalesforce + 1 })),
 
         AllIncrements: 0,
         increaseAllIncrements: () => set((state) => ({ AllIncrements: state.AllIncrements + 1 })),
@@ -113,6 +129,15 @@ export default create(subscribeWithSelector((set) => {
             incrementAdobeXD: 0,
             incrementCanva: 0,
             incrementMusic: 0,
+
+            incrementWebflow: 0,
+            incrementWordpress: 0,
+            incrementAdobeExperience: 0,
+            incrementMagnolia: 0,
+            incrementAnimation: 0,
+            incrementMailchimp: 0,
+            incrementSalesforce: 0,
+
             AllIncrements: 0,
         }),
 

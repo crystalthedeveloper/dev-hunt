@@ -13,7 +13,7 @@ export default function Interface() {
     const leftward = useKeyboardControls((state) => state.leftward)
     const rightward = useKeyboardControls((state) => state.rightward)
     const jump = useKeyboardControls((state) => state.jump)
-
+    {/* GROUP 1 */ }
     const incrementHtml = useGame((state) => state.incrementHtml)
     const incrementCss = useGame((state) => state.incrementCss)
     const incrementJavascript = useGame((state) => state.incrementJavascript)
@@ -21,22 +21,36 @@ export default function Interface() {
     const incrementReact = useGame((state) => state.incrementReact)
     const incrementThreeJs = useGame((state) => state.incrementThreeJs)
     const incrementPython = useGame((state) => state.incrementPython)
+    {/* GROUP 2 */ }
     const incrementGithubGit = useGame((state) => state.incrementGithubGit)
+    const incrementJira = useGame((state) => state.incrementJira)
+    const incrementLitmus = useGame((state) => state.incrementLitmus)
+    const incrementVisualStudioCode = useGame((state) => state.incrementVisualStudioCode)
+    {/* GROUP 3 */ }
     const incrementSpeedOptimization = useGame((state) => state.incrementSpeedOptimization)
     const incrementSeo = useGame((state) => state.incrementSeo)
     const incrementGoogleTagManager = useGame((state) => state.incrementGoogleTagManager)
     const incrementGoogleAnalytics = useGame((state) => state.incrementGoogleAnalytics)
-    const incrementJira = useGame((state) => state.incrementJira)
-    const incrementLitmus = useGame((state) => state.incrementLitmus)
-    const incrementVisualStudioCode = useGame((state) => state.incrementVisualStudioCode)
+    {/* GROUP 4 */ }
     const incrementBlender = useGame((state) => state.incrementBlender)
+    {/* GROUP 5 */ }
     const incrementIllustrator = useGame((state) => state.incrementIllustrator)
     const incrementPhotoshop = useGame((state) => state.incrementPhotoshop)
     const incrementAfterEffects = useGame((state) => state.incrementAfterEffects)
-    const incrementFigma = useGame((state) => state.incrementFigma)
     const incrementAdobeXD = useGame((state) => state.incrementAdobeXD)
+    {/* GROUP 6 */ }
+    const incrementFigma = useGame((state) => state.incrementFigma)
     const incrementCanva = useGame((state) => state.incrementCanva)
     const incrementMusic = useGame((state) => state.incrementMusic)
+    {/* GROUP 7 */ }
+    const incrementWebflow = useGame((state) => state.incrementWebflow)
+    const incrementWordpress = useGame((state) => state.incrementWordpress)
+    const incrementAdobeExperience = useGame((state) => state.incrementAdobeExperience)
+    const incrementMagnolia = useGame((state) => state.incrementMagnolia)
+    const incrementAnimation = useGame((state) => state.incrementAnimation)
+    const incrementMailchimp = useGame((state) => state.incrementMailchimp)
+    const incrementSalesforce = useGame((state) => state.incrementSalesforce)
+    {/* GROUP ALL */ }
     const AllIncrements = useGame((state) => state.AllIncrements)
 
     const increaseIncrementforwardButton = useGame((state) => state.increaseIncrementforwardButton)
@@ -57,14 +71,14 @@ export default function Interface() {
     function rightwardEnd() {
         removerightwardButton()
     }
-    const increaseIncrementleftwardButton  = useGame((state) => state.increaseIncrementleftwardButton )
-    const removeleftwardButton  = useGame((state) => state.removeleftwardButton )
+    const increaseIncrementleftwardButton = useGame((state) => state.increaseIncrementleftwardButton)
+    const removeleftwardButton = useGame((state) => state.removeleftwardButton)
 
     function leftwardClicked() {
         increaseIncrementleftwardButton()
     }
     function leftwardEnd() {
-        removeleftwardButton ()
+        removeleftwardButton()
     }
     const increaseIncrementbackwardButton = useGame((state) => state.increaseIncrementbackwardButton)
     const removebackwardButton = useGame((state) => state.removebackwardButton)
@@ -99,7 +113,7 @@ export default function Interface() {
 
         {/* Collect */}
         <div className="collect">
-        <div className={`collectHitStar`}>
+            <div className={`collectHitStar`}>
                 *
             </div>
             <div className={`collectHit ${incrementHtml ? 'active' : ''}`}>
@@ -173,6 +187,27 @@ export default function Interface() {
             <div className={`collectHit ${incrementMusic ? 'active' : ''}`}>
                 Music
             </div>
+            <div className={`collectHit ${incrementWebflow ? 'active' : ''}`}>
+                Webflow
+            </div>
+            <div className={`collectHit ${incrementWordpress ? 'active' : ''}`}>
+                Wordpress
+            </div>
+            <div className={`collectHit ${incrementAdobeExperience ? 'active' : ''}`}>
+                CQ6
+            </div>
+            <div className={`collectHit ${incrementMagnolia ? 'active' : ''}`}>
+                Magnolia
+            </div>
+            <div className={`collectHit ${incrementAnimation ? 'active' : ''}`}>
+                Animation
+            </div>
+            <div className={`collectHit ${incrementMailchimp ? 'active' : ''}`}>
+                Mailchimp
+            </div>
+            <div className={`collectHit ${incrementSalesforce ? 'active' : ''}`}>
+                Salesforce
+            </div>
         </div>
 
         {/* Controls */}
@@ -185,13 +220,13 @@ export default function Interface() {
             <div className="raw">
                 <div onTouchStart={leftwardClicked} onTouchEnd={leftwardEnd} className={`key ${leftward ? 'active' : ''}`}></div>
                 <div className="raw">
-                <div onTouchStart={jumpClicked} onTouchEnd={jumpEnd} className={`key ${jump ? 'active' : ''}`}>FLY</div>
-            </div>
+                    <div onTouchStart={jumpClicked} onTouchEnd={jumpEnd} className={`key ${jump ? 'active' : ''}`}>FLY</div>
+                </div>
                 <div onTouchStart={rightwardClicked} onTouchEnd={rightwardEnd} className={`key ${rightward ? 'active' : ''}`}></div>
-                
+
             </div>
             <div className="raw">
-            <div  onTouchStart={backwardClicked} onTouchEnd={backwardEnd}className={`key ${backward ? 'active' : ''}`}></div>
+                <div onTouchStart={backwardClicked} onTouchEnd={backwardEnd} className={`key ${backward ? 'active' : ''}`}></div>
             </div>
             {/* <div className="raw">
                 <div onTouchStart={jumpClicked} onTouchEnd={jumpEnd} className={`key large ${jump ? 'active' : ''}`}></div>

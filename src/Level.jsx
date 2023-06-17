@@ -3,8 +3,6 @@ import { RigidBody } from '@react-three/rapier'
 import { useState, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Text3D, Cloud, Float } from '@react-three/drei'
-import ServicesLevel from './ServicesLevel.jsx'
-import StartLevel from './StartLevel.jsx'
 
 {/* FIX COLORS FROM THREE */ }
 THREE.ColorManagement.enabled = true
@@ -21,45 +19,58 @@ const bevelThicknessText3D = 0
 const bevelSizeText3D = 0
 const heightText3D = [0.03]
 
-{/* Text3D positions */ }
-const text3DpositionDesignerY = 2
-const text3DpositionDeveloperY = 3
-const text3DpositionMoreY = 0
+{/* POSITION GROUND & TEXT3D */ }
+const positionGround1Y = -1
+const positionGround2Y = 0
+const positionGround3Y = 1
+const positionGround4Y = 4
+const positionGround5Y = 2
+const positionGround6Y = 0
+const positionGround7Y = 3
 
-{/* DESGIN */ }
-const positionBlenderText3D = [7, text3DpositionDesignerY, -41]
-const positionPhotoshopText3D = [5, text3DpositionDesignerY, -40]
-const positionIllustratorText3D = [4, text3DpositionDesignerY, -40]
-const positionadobeAfterEffectsText3D = [6, text3DpositionDesignerY, -39]
-const positionAdobeXdText3D = [6, text3DpositionDesignerY, -42]
-const positionFigmaText3D = [6, text3DpositionDesignerY, -40]
-const positionCanvaText3D = [5, text3DpositionDesignerY, -39]
+{/* GROUP 1 */ }
+const positionReactText3D = [0, positionGround1Y, -19]
+const positionThreeJsText3D = [-1, positionGround1Y, -21]
+const positionJqueryText3D = [1, positionGround1Y, -19]
+const positionJavascriptText3D = [-1.5, positionGround1Y, -19]
+const positionPythonText3D = [1, positionGround1Y, -20]
+const positionCssText3D = [0, positionGround1Y, -21]
 
-{/* DEVELOPER */ }
-const positionReactText3D = [-6, text3DpositionDeveloperY, -29]
-const positionThreeJsText3D = [-5, text3DpositionDeveloperY, -31]
-const positionJqueryText3D = [-7, text3DpositionDeveloperY, -29]
-const positionJavascriptText3D = [-6, text3DpositionDeveloperY, -31]
-const positionPythonText3D = [-5, text3DpositionDeveloperY, -30]
-const positionCssText3D = [-7, text3DpositionDeveloperY, -31]
+const positionHText3D = [-1, positionGround1Y, -20]
+const positionTText3D = [-0.80, positionGround1Y, -20]
+const positionMText3D = [-0.65, positionGround1Y, -20]
+const positionLText3D = [-0.43, positionGround1Y, -20]
+{/* GROUP 2 */ }
+const positionGithubGitText3D = [-3.5, positionGround2Y, -9.5]
+const positionLitmusText3D = [-5, positionGround2Y, -10]
+const positionVisualStudioCodeText3D = [-5.5, positionGround2Y, -9]
+const positionJiraText3D = [-4, positionGround2Y, -11]
+{/* GROUP 3 */ }
+const positionSeoText3D = [3, positionGround3Y, -10]
+const positionSpeedOptimizationText3D = [3.5, positionGround3Y, -11]
+const positionGoogleTagManagerText3D = [3, positionGround3Y, -9]
+const positionGoogleAnalyticsText3D = [4.5, positionGround3Y, -10]
+{/* GROUP 4 */ }
+const positionBlenderText3D = [-3, positionGround4Y, -12]
+{/* GROUP 5 */ }
+const positionPhotoshopText3D = [7, positionGround5Y, -40]
+const positionIllustratorText3D = [4, positionGround5Y, -40]
+const positionadobeAfterEffectsText3D = [6, positionGround5Y, -39]
+const positionAdobeXdText3D = [6, positionGround5Y, -41]
+{/* GROUP 6 */ }
+const positionFigmaText3D = [5, positionGround6Y, -60.5]
+const positionCanvaText3D = [5, positionGround6Y, -59.5]
+const positionMusicText3D = [4.2, positionGround6Y, -60]
+{/* GROUP 7 */ }
+const positionWebflowText3D = [-5, positionGround7Y, -29.5]
+const positionWordpressText3D = [-8, positionGround7Y, -30]
+const positionAdobeExperienceText3D = [-6.5, positionGround7Y, -29.5]
+const positionMagnoliaText3D = [-6, positionGround7Y, -28.5]
+const positionAnimationText3D = [-7, positionGround7Y, -31]
+const positionMailchimpText3D = [-5.5, positionGround7Y, -31]
+const positionSalesforceText3D = [-7, positionGround7Y, -29]
 
-const positionHText3D = [-7, text3DpositionDeveloperY, -30]
-const positionTText3D = [-6.80, text3DpositionDeveloperY, -30]
-const positionMText3D = [-6.65, text3DpositionDeveloperY, -30]
-const positionLText3D = [-6.43, text3DpositionDeveloperY, -30]
-
-{/* MORE */ }
-const positionLitmusText3D = [5, text3DpositionMoreY, -58.2]
-const positionGithubGitText3D = [6, text3DpositionMoreY, -61]
-const positionSeoText3D = [5, text3DpositionMoreY, -59]
-const positionSpeedOptimizationText3D = [4, text3DpositionMoreY, -60.8]
-const positionGoogleTagManagerText3D = [5, text3DpositionMoreY, -60]
-const positionGoogleAnalyticsText3D = [5, text3DpositionMoreY, -61.5]
-const positionVisualStudioCodeText3D = [3, text3DpositionMoreY, -60]
-const positionJiraText3D = [6, text3DpositionMoreY, -59]
-const positionMusicText3D = [4, text3DpositionMoreY, -59]
-
-{/* Basic Material Color */ }
+{/* BASIC MATERIAL COLOR */ }
 const meshBasicMaterialColorYellow = "#ffe600"
 const meshBasicMaterialColorWhite = "#ffffff"
 
@@ -68,10 +79,11 @@ const meshBasicMaterialColorWhite = "#ffffff"
 export function BlockExpertise({ position = [0, 0, 0] }) {
 
 
-
     return <><group position={position}>
 
-        {/* Html Developer */}
+        {/* GROUP 1 */}
+
+        {/* Html */}
         <RigidBody name="html">
             <Text3D
                 bevelEnabled
@@ -131,6 +143,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody >
+
         {/* Css Developer */}
         <RigidBody type="fixed" name="css">
             <Text3D
@@ -147,6 +160,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
         {/* Javascript Developer */}
         <RigidBody type="fixed" name="javascript">
             <Text3D
@@ -162,6 +176,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
         {/* ‍Jquery */}
         <RigidBody type="fixed" name="jquery">
             <Text3D
@@ -177,6 +192,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
         {/* ‍React Developer */}
         <RigidBody type="fixed" name="react">
 
@@ -193,6 +209,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
         {/* ‍Three.js */}
         <RigidBody type="fixed" name="ThreeJs">
 
@@ -209,6 +226,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
         {/* ‍python Developer */}
         <RigidBody type="fixed" name="python">
             <Text3D
@@ -225,6 +243,8 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
 
+        {/* GROUP 2 */}
+
         {/* Github Git Developer */}
         <RigidBody type="fixed" name="githubGit">
             <Text3D
@@ -240,66 +260,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
-        {/* Speed Optimization */}
-        <RigidBody type="fixed" name="speedOptimization">
-            <Text3D
-                bevelEnabled
-                font={fontText3D}
-                size={sizeText3D}
-                height={heightText3D}
-                bevelThickness={bevelThicknessText3D}
-                bevelSize={bevelSizeText3D}
-                position={positionSpeedOptimizationText3D}
-            >
-                Speed Optimization
-                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
-            </Text3D>
-        </RigidBody >
-        {/* seo */}
-        <RigidBody type="fixed" name="seo">
-            <Text3D
-                bevelEnabled
-                font={fontText3D}
-                size={sizeText3DTwo}
-                height={heightText3D}
-                bevelThickness={bevelThicknessText3D}
-                bevelSize={bevelSizeText3D}
-                position={positionSeoText3D}
-            >
-                SEO
-                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
-            </Text3D>
-        </RigidBody >
-        {/* Google Tag Manager */}
-        <RigidBody type="fixed" name="tagManager">
-            <Text3D
-                bevelEnabled
-                font={fontText3D}
-                size={sizeText3D}
-                height={heightText3D}
-                bevelThickness={bevelThicknessText3D}
-                bevelSize={bevelSizeText3D}
-                position={positionGoogleTagManagerText3D}
-            >
-                Google Tag Manager
-                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
-            </Text3D>
-        </RigidBody >
-        {/* Google Analytics */}
-        <RigidBody type="fixed" name="analytics">
-            <Text3D
-                bevelEnabled
-                font={fontText3D}
-                size={sizeText3DTwo}
-                height={heightText3D}
-                bevelThickness={bevelThicknessText3D}
-                bevelSize={bevelSizeText3D}
-                position={positionGoogleAnalyticsText3D}
-            >
-                Google Analytics
-                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
-            </Text3D>
-        </RigidBody >
+
         {/* ‍Jira */}
         <RigidBody type="fixed" name="jira">
             <Text3D
@@ -331,6 +292,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
         {/* Visual Studio Code */}
         <RigidBody type="fixed" name="studio">
             <Text3D
@@ -347,7 +309,74 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
             </Text3D>
         </RigidBody>
 
-        {/* DESIGNER & ANIMATION TOOLS */}
+        {/* GROUP 3 */}
+
+        {/* Speed Optimization */}
+        <RigidBody type="fixed" name="speedOptimization">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3D}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionSpeedOptimizationText3D}
+            >
+                Speed Optimization
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody >
+
+        {/* seo */}
+        <RigidBody type="fixed" name="seo">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionSeoText3D}
+            >
+                SEO
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody >
+
+        {/* Google Tag Manager */}
+        <RigidBody type="fixed" name="tagManager">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3D}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionGoogleTagManagerText3D}
+            >
+                Google Tag Manager
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody >
+
+        {/* Google Analytics */}
+        <RigidBody type="fixed" name="analytics">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionGoogleAnalyticsText3D}
+            >
+                Google Analytics
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody >
+
+        {/* GROUP 4 */}
+
         {/* blender */}
         <RigidBody type="fixed" name="blender" >
             <Text3D
@@ -363,6 +392,9 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
+        {/* GROUP 5 */}
+
         {/* Illustrator */}
         <RigidBody type="fixed" name="illustrator">
             <Text3D
@@ -378,6 +410,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
         {/* Photoshop */}
         <RigidBody type="fixed" name="photoshop">
             <Text3D
@@ -393,6 +426,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
+
         {/* adobe After Effects */}
         <RigidBody type="fixed" name="ae">
             <Text3D
@@ -408,21 +442,7 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
-        {/* figma */}
-        <RigidBody type="fixed" name="figma">
-            <Text3D
-                bevelEnabled
-                font={fontText3D}
-                size={sizeText3DThree}
-                height={heightText3D}
-                bevelThickness={bevelThicknessText3D}
-                bevelSize={bevelSizeText3D}
-                position={positionFigmaText3D}
-            >
-                Figma
-                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
-            </Text3D>
-        </RigidBody>
+
         {/* Adobe XD */}
         <RigidBody type="fixed" name="xd">
             <Text3D
@@ -435,6 +455,23 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionAdobeXdText3D}
             >
                 Adobe XD
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody>
+
+        {/* GROUP 6 */}
+        {/* figma */}
+        <RigidBody type="fixed" name="figma">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DThree}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionFigmaText3D}
+            >
+                Figma
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
@@ -467,6 +504,112 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionMusicText3D}
             >
                 Music
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody>
+        {/* GROUP 7 */}
+        {/* WEBFLOW */}
+        <RigidBody name="webflow">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionWebflowText3D}
+            >
+                Webflow
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody>
+        {/* WORDPRESS */}
+        <RigidBody name="wordpress">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionWordpressText3D}
+            >
+                Wordpress
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody>
+        {/* ADOBE EXPERIENCE */}
+        <RigidBody name="adobeexperience">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionAdobeExperienceText3D}
+            >
+                CQ6
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody>
+        {/* MAGNOLIA */}
+        <RigidBody name="magnolia">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionMagnoliaText3D}
+            >
+                Magnolia
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody>
+        {/* ANIMATION */}
+        <RigidBody name="animation">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionAnimationText3D}
+            >
+                Animation
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody>
+        {/* MAILCHIMP */}
+        <RigidBody name="mailchimp">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionMailchimpText3D}
+            >
+                Mailchimp
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
+            </Text3D>
+        </RigidBody>
+        {/* SALESFORCE */}
+        <RigidBody name="salesforce">
+            <Text3D
+                bevelEnabled
+                font={fontText3D}
+                size={sizeText3DTwo}
+                height={heightText3D}
+                bevelThickness={bevelThicknessText3D}
+                bevelSize={bevelSizeText3D}
+                position={positionSalesforceText3D}
+            >
+                Salesforce
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>
@@ -586,11 +729,7 @@ export function BlockAxe({ position = [0, 0, 0] }) {
 export function Level() {
 
     return <>
-
-        <StartLevel />
-        <ServicesLevel />
         <BlockExpertise />
-
         {/* <BlockSpinner position={[0, 0, 0]} /> */}
         <BlockAxe position={[-6, 0, -70]} />
         <BlockLimbo position={[-12, -10, -20]} />

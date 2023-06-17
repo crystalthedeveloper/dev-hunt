@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import { RigidBody } from '@react-three/rapier'
-import { Html } from '@react-three/drei'
 import Logo from './Logo.jsx'
 
 
@@ -8,119 +7,146 @@ import Logo from './Logo.jsx'
 const rotationX = [-Math.PI / 2]
 const boxGeometry = new THREE.BoxGeometry(1, 1, 1, 2, 2, 2)
 const circleGeometry = new THREE.CircleGeometry(1, 100)
+
+{/* COLORS */ }
 const meshBasicMaterialColorBlack = "#000000"
 const meshBasicMaterialColorWhite = "#ffffff"
 const meshBasicMaterialColorYellow = "#ffe600"
-const positionGroundY = 0
-const positionGroundDesignerY = 2
-const positionGroundDeveloperY = 3
+
+{/* POSITION GROUND & TEXT3D */ }
+const positionGroundStartY = 0
+const positionGround1Y = -1
+const positionGround2Y = 0
+const positionGround3Y = 1
+const positionGround4Y = 4
+const positionGround5Y = 2
+const positionGround6Y = 0
+const positionGround7Y = 3
+
+{/* SCALE */ }
 const positionScaleZ = 1
 
 {/* GROUND START */ }
-const positionGroundStart = [0, positionGroundY, 0]
-const scaleGroundStart = [1, 1, positionScaleZ]
-{/* GROUND ABOUT */ }
-const positionGroundContact = [-4, positionGroundY, -10]
-const scaleGroundContact = [1, 1, positionScaleZ]
-{/* GROUND EMAIL */ }
-const positionGroundRight = [4, positionGroundY, -10]
-const scaleGroundRight = [1, 1, positionScaleZ]
-{/* GROUND SERVICES */ }
-const positionGroundServices= [-3, 5, -12]
-const scaleGroundServices = [1, 1, positionScaleZ]
-
-{/* GROUND DESIGNER */ }
-const positionGroundDesigner = [6, positionGroundDesignerY, -40]
-const scaleGroundDesigner = [2, 2, positionScaleZ]
-{/* GROUND DEVELOPER */ }
-const positionGroundDeveloper = [-6, positionGroundDeveloperY, -30]
-const scaleGroundDeveloper = [2, 2, positionScaleZ]
-{/*  MORE */ }
-const positionGroundMore = [5, positionGroundY, -60]
-const scaleGroundMore = [2, 2, positionScaleZ]
-
+const positionGroundStart = [0, positionGroundStartY, 0]
+{/* GROUP 1 */ }
+const positionGround1 = [0, positionGround1Y, -20]
+{/* GROUP 2 */ }
+const positionGround2 = [-4, positionGround2Y, -10]
+{/* GROUP 3 */ }
+const positionGround3 = [4, positionGround3Y, -10]
+{/* GROUP 4 */ }
+const positionGround4 = [-3, positionGround4Y, -12]
+{/* GROUP 5 */ }
+const positionGround5 = [6, positionGround5Y, -40]
+{/* GROUP 6 */ }
+const positionGround6 = [5, positionGround6Y, -60]
+{/* GROUP 7 */ }
+const positionGround7 = [-6, positionGround7Y, -30]
+{/* SCALE */ }
+const scaleGroundBig = [2, 2, positionScaleZ]
+const scaleGroundSmall = [1, 1, positionScaleZ]
 
 {/******************* ARCHITECTURE FUNCTION *******************/ }
 export default function Architecture() {
 
     return <>
-        {/* GROUND */}
-        <RigidBody type="fixed">
-            {/* START */}
+
+        {/* START */}
+        <RigidBody type="fixed" position={positionGroundStart}>
             <mesh
-                position={positionGroundStart}
                 rotation-x={rotationX}
                 geometry={circleGeometry}
-                scale={scaleGroundStart}
+                scale={scaleGroundSmall}
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
-            </RigidBody>
-            <RigidBody type="fixed">
-               {/* SERVICES */}
-               <mesh
-                position={positionGroundServices}
+            <Logo />
+        </RigidBody>
+
+        {/* GROUP 1 */}
+        <RigidBody type="fixed" position={positionGround1}>
+            <mesh
                 rotation-x={rotationX}
                 geometry={circleGeometry}
-                scale={scaleGroundServices}
+                scale={scaleGroundBig}
+            >
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
+
+            </mesh>
+            <Logo />
+        </RigidBody>
+        {/* GROUP 2 */}
+        <RigidBody type="fixed" position={positionGround2}>
+            <mesh
+                rotation-x={rotationX}
+                geometry={circleGeometry}
+                scale={scaleGroundBig}
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
-            </RigidBody>
-            <RigidBody type="fixed">
-            {/* ABOUT */}
+            <Logo />
+        </RigidBody>
+
+        {/* GROUP 3 */}
+        <RigidBody type="fixed" position={positionGround3}>
             <mesh
-                position={positionGroundContact}
                 rotation-x={rotationX}
                 geometry={circleGeometry}
-                scale={scaleGroundContact}
+                scale={scaleGroundBig}
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
-            </RigidBody>
-            <RigidBody type="fixed">
-            {/* EMAIL */}
+            <Logo />
+        </RigidBody>
+
+
+        {/* GROUP 4 */}
+        <RigidBody type="fixed" position={positionGround4}>
             <mesh
-                position={positionGroundRight}
                 rotation-x={rotationX}
                 geometry={circleGeometry}
-                scale={scaleGroundRight}
+                scale={scaleGroundSmall}
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
-            </RigidBody>
-            <RigidBody type="fixed">
-            {/* DESIGNER */}
+            <Logo />
+        </RigidBody>
+
+        {/* GROUP 5 */}
+        <RigidBody type="fixed" position={positionGround5}>
             <mesh
-                position={positionGroundDesigner}
                 rotation-x={rotationX}
                 geometry={circleGeometry}
-                scale={scaleGroundDesigner}
+                scale={scaleGroundBig}
+            >
+                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
+
+            </mesh>
+            <Logo />
+        </RigidBody>
+
+        {/* GROUP 6 */}
+        <RigidBody type="fixed" position={positionGround6}>
+            <mesh
+                rotation-x={rotationX}
+                geometry={circleGeometry}
+                scale={scaleGroundSmall}
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
-            </RigidBody>
-            <RigidBody type="fixed">
-            {/* DEVELOPER */}
+            <Logo />
+        </RigidBody>
+
+        {/* GROUP 7 */}
+        <RigidBody type="fixed" position={positionGround7}>
             <mesh
-                position={positionGroundDeveloper}
                 rotation-x={rotationX}
                 geometry={circleGeometry}
-                scale={scaleGroundDeveloper}
-            >
-                <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe/>
-            </mesh>
-            </RigidBody>
-            <RigidBody type="fixed">
-            {/* MORE */}
-            <mesh
-                position={positionGroundMore}
-                rotation-x={rotationX}
-                geometry={circleGeometry}
-                scale={scaleGroundMore}
+                scale={scaleGroundBig}
             >
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} opacity={0.6} transparent wireframe />
             </mesh>
+            <Logo />
         </RigidBody>
     </>
 }
