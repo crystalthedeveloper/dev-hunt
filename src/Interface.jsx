@@ -47,7 +47,6 @@ export default function Interface() {
     const incrementWordpress = useGame((state) => state.incrementWordpress)
     const incrementAdobeExperience = useGame((state) => state.incrementAdobeExperience)
     const incrementMagnolia = useGame((state) => state.incrementMagnolia)
-    const incrementAnimation = useGame((state) => state.incrementAnimation)
     const incrementMailchimp = useGame((state) => state.incrementMailchimp)
     const incrementSalesforce = useGame((state) => state.incrementSalesforce)
     {/* GROUP ALL */ }
@@ -198,9 +197,6 @@ export default function Interface() {
             </div>
             <div className={`collectHit ${incrementMagnolia ? 'active' : ''}`}>
                 Magnolia
-            </div>
-            <div className={`collectHit ${incrementAnimation ? 'active' : ''}`}>
-                Animation
             </div>
             <div className={`collectHit ${incrementMailchimp ? 'active' : ''}`}>
                 Mailchimp

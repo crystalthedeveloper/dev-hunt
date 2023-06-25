@@ -64,7 +64,6 @@ export default create(subscribeWithSelector((set) => {
         incrementWordpress: 0,
         incrementAdobeExperience: 0,
         incrementMagnolia: 0,
-        incrementAnimation: 0,
         incrementMailchimp: 0,
         incrementSalesforce: 0,
 
@@ -97,7 +96,6 @@ export default create(subscribeWithSelector((set) => {
         increaseIncrementWordpress: () => set((state) => ({ incrementWordpress: state.incrementWordpress + 1 })),
         increaseIncrementAdobeExperience: () => set((state) => ({ incrementAdobeExperience: state.incrementAdobeExperience + 1 })),
         increaseIncrementMagnolia: () => set((state) => ({ incrementMagnolia: state.incrementMagnolia + 1 })),
-        increaseIncrementAnimation: () => set((state) => ({ incrementAnimation: state.incrementAnimation + 1 })),
         increaseIncrementMailchimp: () => set((state) => ({ incrementMailchimp: state.incrementMailchimp + 1 })),
         increaseIncrementSalesforce: () => set((state) => ({ incrementSalesforce: state.incrementSalesforce + 1 })),
 
@@ -134,7 +132,6 @@ export default create(subscribeWithSelector((set) => {
             incrementWordpress: 0,
             incrementAdobeExperience: 0,
             incrementMagnolia: 0,
-            incrementAnimation: 0,
             incrementMailchimp: 0,
             incrementSalesforce: 0,
 

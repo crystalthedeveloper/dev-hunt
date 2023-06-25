@@ -20,7 +20,8 @@ const bevelSizeText3D = 0
 const heightText3D = [0.03]
 
 {/* POSITION GROUND & TEXT3D */ }
-const positionGround1Y = -1
+const positionGround1Y = 1
+const positionGround1pY = 0.5
 const positionGround2Y = 0
 const positionGround3Y = 1
 const positionGround4Y = 4
@@ -29,9 +30,9 @@ const positionGround6Y = 0
 const positionGround7Y = 3
 
 {/* GROUP 1 */ }
-const positionReactText3D = [0, positionGround1Y, -19]
-const positionThreeJsText3D = [-1, positionGround1Y, -21]
-const positionJqueryText3D = [1, positionGround1Y, -19]
+const positionReactText3D = [0, positionGround1pY, -19]
+const positionThreeJsText3D = [-1, positionGround1pY, -21]
+const positionJqueryText3D = [1, positionGround1pY, -19]
 const positionJavascriptText3D = [-1.5, positionGround1Y, -19]
 const positionPythonText3D = [1, positionGround1Y, -20]
 const positionCssText3D = [0, positionGround1Y, -21]
@@ -66,7 +67,6 @@ const positionWebflowText3D = [-5, positionGround7Y, -29.5]
 const positionWordpressText3D = [-8, positionGround7Y, -30]
 const positionAdobeExperienceText3D = [-6.5, positionGround7Y, -29.5]
 const positionMagnoliaText3D = [-6, positionGround7Y, -28.5]
-const positionAnimationText3D = [-7, positionGround7Y, -31]
 const positionMailchimpText3D = [-5.5, positionGround7Y, -31]
 const positionSalesforceText3D = [-7, positionGround7Y, -29]
 
@@ -565,21 +565,6 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
                 position={positionMagnoliaText3D}
             >
                 Magnolia
-                <meshBasicMaterial color={meshBasicMaterialColorWhite} />
-            </Text3D>
-        </RigidBody>
-        {/* ANIMATION */}
-        <RigidBody name="animation">
-            <Text3D
-                bevelEnabled
-                font={fontText3D}
-                size={sizeText3DTwo}
-                height={heightText3D}
-                bevelThickness={bevelThicknessText3D}
-                bevelSize={bevelSizeText3D}
-                position={positionAnimationText3D}
-            >
-                Animation
                 <meshBasicMaterial color={meshBasicMaterialColorWhite} />
             </Text3D>
         </RigidBody>

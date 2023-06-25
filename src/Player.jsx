@@ -79,7 +79,6 @@ export default function Player() {
     const increaseIncrementWordpress = useGame((state) => state.increaseIncrementWordpress)
     const increaseIncrementAdobeExperience = useGame((state) => state.increaseIncrementAdobeExperience)
     const increaseIncrementMagnolia = useGame((state) => state.increaseIncrementMagnolia)
-    const increaseIncrementAnimation = useGame((state) => state.increaseIncrementAnimation)
     const increaseIncrementMailchimp = useGame((state) => state.increaseIncrementMailchimp)
     const increaseIncrementSalesforce = useGame((state) => state.increaseIncrementSalesforce)
     
@@ -113,7 +112,6 @@ export default function Player() {
     const incrementWordpress = useGame((state) => state.incrementWordpress)
     const incrementAdobeExperience = useGame((state) => state.incrementAdobeExperience)
     const incrementMagnolia = useGame((state) => state.incrementMagnolia)
-    const incrementAnimation = useGame((state) => state.incrementAnimation)
     const incrementMailchimp = useGame((state) => state.incrementMailchimp)
     const incrementSalesforce = useGame((state) => state.incrementSalesforce)
 
@@ -211,10 +209,6 @@ export default function Player() {
 
             increaseIncrementMagnolia()
         }
-        else if (target.rigidBodyObject.name === 'animation') {
-
-            increaseIncrementAnimation()
-        }
         else if (target.rigidBodyObject.name === 'mailchimp') {
 
             increaseIncrementMailchimp()
@@ -225,7 +219,7 @@ export default function Player() {
         }
     }
     const onCollisionExit = () => {
-        if (incrementHtml && incrementCss && incrementJavascript && incrementJquery && incrementReact && incrementThreeJs && incrementPython && incrementGithubGit && incrementSpeedOptimization && incrementSeo && incrementGoogleTagManager && incrementGoogleAnalytics && incrementJira && incrementLitmus && incrementVisualStudioCode && incrementBlenders && incrementIllustrator && incrementPhotoshop && incrementAfterEffects && incrementFigma && incrementAdobeXD && incrementCanva && incrementMusic && incrementWebflow && incrementWordpress && incrementAdobeExperience && incrementMagnolia && incrementAnimation && incrementMailchimp && incrementSalesforce) {
+        if (incrementHtml && incrementCss && incrementJavascript && incrementJquery && incrementReact && incrementThreeJs && incrementPython && incrementGithubGit && incrementSpeedOptimization && incrementSeo && incrementGoogleTagManager && incrementGoogleAnalytics && incrementJira && incrementLitmus && incrementVisualStudioCode && incrementBlenders && incrementIllustrator && incrementPhotoshop && incrementAfterEffects && incrementFigma && incrementAdobeXD && incrementCanva && incrementMusic && incrementWebflow && incrementWordpress && incrementAdobeExperience && incrementMagnolia && incrementMailchimp && incrementSalesforce) {
 
             increaseAllIncrements()
         }
