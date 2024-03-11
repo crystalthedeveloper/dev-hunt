@@ -606,119 +606,13 @@ export function BlockExpertise({ position = [0, 0, 0] }) {
 {/******************* END EXPERTISE FUNCTION *******************/ }
 
 
-{/******************* SPINNER FUNCTION *******************/ }
-export function BlockSpinner({ position = [0, 0, 0] }) {
-    const obstacle = useRef()
-    const [speed] = useState(() => (Math.random() + 0.1) * (Math.random() < 0.5 ? - 1 : 1))
-
-    {/* Spinner anmation */ }
-    useFrame((state) => {
-        {/* need clock to anmation */ }
-        const time = state.clock.getElapsedTime()
-        {/* rotation anmation */ }
-        const rotation = new THREE.Quaternion()
-
-        rotation.setFromEuler(new THREE.Euler(0, time * speed, 0))
-        obstacle.current.setNextKinematicRotation(rotation)
-    })
-
-    return <group position={position}>
-        {/* Spinner Rigidbody Physics */}
-        <RigidBody type="kinematicPosition"
-            ref={obstacle}
-            position={[0, 1, -10]}
-            restitution={0.2}
-            friction={0}>
-            <mesh geometry={boxGeometry}>
-                <meshBasicMaterial color={meshBasicMaterialColorWhite} wireframe />
-            </mesh>
-        </RigidBody>
-    </group>
-}
-
-{/****************** LIMBO FUNCTION ******************/ }
-export function BlockLimbo({ position = [0, 0, 0] }) {
-    const obstacle = useRef()
-    const [timeOffset] = useState(() => Math.random() * Math.PI * 1)
-
-    {/* Limbo anmation */ }
-    useFrame((state) => {
-        {/* need clock to anmation */ }
-        const time = state.clock.getElapsedTime()
-        {/* up and down anmation */ }
-        const y = Math.sin(time + timeOffset) + 1.30
-        obstacle.current.setNextKinematicTranslation({ x: position[0], y: position[1] + y, z: position[2] })
-    })
-
-    return <group position={position}>
-        {/* Limbo Rigidbody Physics */}
-        <RigidBody type="kinematicPosition"
-            ref={obstacle}
-            restitution={0.2}
-            friction={0}
-            colliders={false}
-
-        >
-            <Cloud
-                opacity={0.5}
-                speed={0.4} // Rotation speed
-                width={10} // Width of the full cloud
-                depth={1.5} // Z-dir depth
-                segments={20} // Number of particles
-                color={meshBasicMaterialColorWhite}
-            />
-        </RigidBody>
-    </group>
-}
-
-{/******************* AXE FUNCTION *******************/ }
-export function BlockAxe({ position = [0, 0, 0] }) {
-    const obstacle = useRef()
-    const [timeOffset] = useState(() => Math.random() * Math.PI * 2)
-
-    {/* Axe anmation */ }
-    useFrame((state) => {
-        {/* need clock to anmation */ }
-        const time = state.clock.getElapsedTime()
-        {/* up and down anmation */ }
-        const z = Math.sin(time + timeOffset) * 3
-        obstacle.current.setNextKinematicTranslation({ x: position[0], y: position[1], z: position[2] + z })
-    })
-
-    return <group position={position}>
-
-        {/* Axe Rigidbody Physics */}
-        <RigidBody type="kinematicPosition"
-            ref={obstacle}
-            colliders={false}
-            position={[0, 0.3, 0]}
-            restitution={0.2}
-            friction={0}>
-
-            {/* Axe mesh */}
-            <Cloud
-                opacity={0.5}
-                speed={0.4} // Rotation speed
-                width={10} // Width of the full cloud
-                depth={1.5} // Z-dir depth
-                segments={30} // Number of particles
-                colliders={false}
-                color={meshBasicMaterialColorWhite}
-            />
-        </RigidBody>
-
-    </group>
-}
 
 {/******************* EXPORT TO SENSE *******************/ }
 export function Level() {
 
     return <>
         <BlockExpertise />
-        {/* <BlockSpinner position={[0, 0, 0]} /> */}
-        <BlockAxe position={[-6, 0, -70]} />
-        <BlockLimbo position={[-12, -10, -20]} />
-        <BlockLimbo position={[20, 10, -50]} />
+        
 
     </>
 }

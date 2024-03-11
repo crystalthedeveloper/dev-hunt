@@ -3,6 +3,7 @@ import { Physics, Debug } from '@react-three/rapier'
 import { Level } from './Level.jsx'
 import Player from './Player.jsx'
 import Architecture from './Architecture.jsx'
+import { Developer }from './Developer.jsx'
 
 export default function Experience() {
     
@@ -11,6 +12,7 @@ export default function Experience() {
             {/* <Debug />  */}
             {/* <Stats /> */}
             <Level />
+            <Developer/>
             <Player />
             <Architecture/>
         </Physics>

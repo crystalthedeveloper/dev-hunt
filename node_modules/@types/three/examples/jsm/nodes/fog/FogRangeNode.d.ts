@@ -1,5 +1,6 @@
-import FogNode from './FogNode';
-import Node from '../core/Node';
+import Node from "../core/Node.js";
+import { ShaderNodeObject } from "../shadernode/ShaderNode.js";
+import FogNode from "./FogNode.js";
 
 export default class FogRangeNode extends FogNode {
     isFogRangeNode: true;
@@ -7,4 +8,12 @@ export default class FogRangeNode extends FogNode {
     farNode: Node;
 
     constructor(colorNode: Node, nearNode: Node, farNode: Node);
+}
+
+export const rangeFog: (colorNode: Node, nearNode: Node, farNode: Node) => ShaderNodeObject<FogRangeNode>;
+
+declare module "../shadernode/ShaderNode.js" {
+    interface NodeElements {
+        rangeFog: typeof rangeFog;
+    }
 }
