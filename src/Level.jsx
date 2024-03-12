@@ -1,14 +1,9 @@
 import * as THREE from 'three'
 import { RigidBody } from '@react-three/rapier'
-import { useState, useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { Text3D, Cloud, Float } from '@react-three/drei'
+import { Text3D, Float } from '@react-three/drei'
 
 {/* FIX COLORS FROM THREE */ }
 THREE.ColorManagement.enabled = true
-
-{/* All Box Geometry */ }
-const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
 
 {/* Text3D */ }
 const sizeText3D = 0.1
