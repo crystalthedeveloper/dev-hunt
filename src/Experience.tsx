@@ -1,7 +1,7 @@
 // src/Experience.tsx
 import { Debug, Physics } from "@react-three/cannon";
-import Player from "./Player";
-import Architecture from "./components/Architecture";
+import Player from "./components/3d/Player";
+import Architecture from "./components/3d/Architecture";
 import { useRef } from "react";
 import { Group } from "three";
 

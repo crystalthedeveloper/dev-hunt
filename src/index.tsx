@@ -1,6 +1,6 @@
 import "./style.css";
 import Experience from "./Experience";
-import Interface from "./Interface";
+import Interface from "./components/ui/Interface";
 import ReactDOM from "react-dom/client";
 import { Canvas } from "@react-three/fiber";
 import { KeyboardControls, Loader, Environment, Sky, Stars } from "@react-three/drei";
