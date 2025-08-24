@@ -1,1 +1,26 @@
+# Dependencies
 node_modules
+
+# Vite timestamp backup files
+vite.config.js.timestamp-*.mjs
+
+# Build output
+dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# TypeScript build cache
+*.tsbuildinfo
