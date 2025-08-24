@@ -41,7 +41,7 @@ export default function usePlayerControls(api: PublicApi) {
     const turnLeft = leftward || leftwardBtn > 0;
     const turnRight = rightward || rightwardBtn > 0;
 
-    const moveForce = 600 * delta;
+    const moveForce = 700 * delta;
     const verticalForce = 700 * delta;
     const turnSpeed = 2.5 * delta;
 
