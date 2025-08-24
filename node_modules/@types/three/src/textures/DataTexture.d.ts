@@ -1,14 +1,12 @@
-import { Texture } from './Texture';
 import {
+    MagnificationTextureFilter,
     Mapping,
-    Wrapping,
+    MinificationTextureFilter,
     PixelFormat,
     TextureDataType,
-    TextureEncoding,
-    MagnificationTextureFilter,
-    MinificationTextureFilter,
-} from '../constants';
-import { TextureImageData } from './types';
+    Wrapping,
+} from "../constants.js";
+import { Texture } from "./Texture.js";
 
 /**
  * Creates a texture directly from raw data, width and height.
@@ -50,10 +48,10 @@ export class DataTexture extends Texture {
      * @param magFilter See {@link Texture.magFilter | .magFilter}. Default {@link THREE.NearestFilter}
      * @param minFilter  See {@link Texture.minFilter | .minFilter}. Default {@link THREE.NearestFilter}
      * @param anisotropy See {@link Texture.anisotropy | .anisotropy}. Default {@link THREE.Texture.DEFAULT_ANISOTROPY}
-     * @param encoding See {@link Texture.encoding | .encoding}. Default {@link THREE.LinearEncoding}
+     * @param colorSpace See {@link Texture.colorSpace | .colorSpace}. Default {@link NoColorSpace}
      */
     constructor(
-        data?: BufferSource | null,
+        data?: ArrayBufferView | null,
         width?: number,
         height?: number,
         format?: PixelFormat,
@@ -64,7 +62,7 @@ export class DataTexture extends Texture {
         magFilter?: MagnificationTextureFilter,
         minFilter?: MinificationTextureFilter,
         anisotropy?: number,
-        encoding?: TextureEncoding,
+        colorSpace?: string,
     );
 
     /**
@@ -110,4 +108,10 @@ export class DataTexture extends Texture {
      * @defaultValue `1`
      */
     unpackAlignment: number;
+}
+
+export interface TextureImageData {
+    data: ArrayBufferView;
+    height: number;
+    width: number;
 }
