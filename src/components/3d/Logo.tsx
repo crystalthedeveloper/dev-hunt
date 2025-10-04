@@ -85,8 +85,16 @@ export default function Logo({ scale, position, rotation, simple = false, active
     return [DEFAULT_SCALE, DEFAULT_SCALE, DEFAULT_SCALE];
   }, [scale]);
 
+  const resolvedRotation = useMemo<[number, number, number]>(() => {
+    if (rotation) return rotation;
+    const yaw = MathUtils.degToRad(Math.random() * 360);
+    const tilt = MathUtils.degToRad((Math.random() - 0.5) * 12);
+    const roll = MathUtils.degToRad((Math.random() - 0.5) * 6);
+    return [-Math.PI / 2 + tilt, yaw, roll];
+  }, [rotation]);
+
   return (
-    <group position={position} rotation={rotation ?? [-Math.PI / 2, 0, 0]}>
+    <group position={position} rotation={resolvedRotation}>
       <Clone object={logo.scene} scale={resolvedScale} />
     </group>
   );
