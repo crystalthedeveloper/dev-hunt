@@ -1,117 +1,46 @@
-// src/Player.tsx
-import { useSphere, PublicApi } from "@react-three/cannon";
-import { useGLTF } from "@react-three/drei";
+// src/components/3d/Player.tsx
+import { useEffect, useRef } from "react";
+import useGame from "../../stores/useGame";
 import usePlayerControls from "../../hooks/usePlayerControls";
 import usePlayerCamera from "../../hooks/usePlayerCamera";
-import usePlayerReset from "../../hooks/usePlayerReset";
-import useGame from "../../stores/useGame"; // ✅ import game store
-import {
-  Group,
-  Box3,
-  Vector3,
-  Mesh,
-  MeshStandardMaterial,
-  Texture,
-  SRGBColorSpace,
-} from "three";
-import {
-  forwardRef,
-  useImperativeHandle,
-  useMemo,
-  useEffect,
-} from "react";
 
-const CHARACTER_PATH = "/characterLogo.glb";
+const SPAWN_POSITION: [number, number, number] = [0, 1.6, 0];
+const IDENTITY_QUATERNION: [number, number, number, number] = [0, 0, 0, 1];
+const noop = () => {};
+const isDev = import.meta.env.DEV;
 
-const Player = forwardRef<Group>((_, ref) => {
-  const { scene } = useGLTF(CHARACTER_PATH);
-  const phase = useGame((s) => s.phase);
-  const setOnRestartPlayer = useGame((s) => s.setOnRestartPlayer);
-
-  // 🔧 fix textures
+export default function Player() {
   useEffect(() => {
-    if (!scene) return;
-    scene.traverse((child) => {
-      if ((child as Mesh).isMesh) {
-        const mesh = child as Mesh;
-        const applyColorSpace = (mat: MeshStandardMaterial) => {
-          const tex: Texture | null | undefined = mat.map;
-          if (tex) tex.colorSpace = SRGBColorSpace;
-        };
-        if (Array.isArray(mesh.material)) {
-          mesh.material.forEach((mat) =>
-            applyColorSpace(mat as MeshStandardMaterial)
-          );
-        } else if (mesh.material) {
-          applyColorSpace(mesh.material as MeshStandardMaterial);
+    const applySpawn = () => {
+      const state = typeof useGame.getState === "function" ? useGame.getState() : undefined;
+      if (!state) {
+        if (isDev) {
+          console.warn("Player: useGame.getState() returned undefined");
         }
+        return;
       }
-    });
-  }, [scene]);
 
-  // bounding box → auto radius + offset
-  const { radius, offset } = useMemo(() => {
-    if (!scene) return { radius: 0.5, offset: new Vector3() };
-    const box = new Box3().setFromObject(scene);
-    const size = new Vector3();
-    const center = new Vector3();
-    box.getSize(size);
-    box.getCenter(center);
-    return {
-      radius: Math.max(size.x, size.y, size.z) / 2,
-      offset: new Vector3(-center.x, -center.y, -center.z),
+      state.setPlayerPosition?.([...SPAWN_POSITION] as [number, number, number]);
+      state.resetMovementVector?.();
+      state.setOrientation?.([
+        ...IDENTITY_QUATERNION,
+      ] as [number, number, number, number]);
     };
-  }, [scene]);
 
-  const [physicsRef, api] = useSphere<Group>(() => ({
-    mass: 1,
-    args: [radius],
-    position: [0, radius + 0.5, 0], // ✅ spawn point
-    linearDamping: 0.8,
-    angularDamping: 0.5,
-    name: "Player",
-    onCollide: (e) => {
-      if (e.body?.userData?.isResetFloor) resetPlayer();
-    },
-  }));
-
-  const resetPlayer = usePlayerReset(api as PublicApi);
-
-  // ✅ link restart → reset player
-  useEffect(() => {
-    setOnRestartPlayer(resetPlayer);
-  }, [resetPlayer, setOnRestartPlayer]);
-
-  // ✅ Pause physics on win
-  useEffect(() => {
-    if (!api) return;
-    if (phase === "finished") {
-      api.velocity.set(0, 0, 0);
-      api.angularVelocity.set(0, 0, 0);
-      api.mass.set(0); // freeze as static
-    } else {
-      api.mass.set(1); // restore when playing
+    applySpawn();
+    const state = typeof useGame.getState === "function" ? useGame.getState() : undefined;
+    const action = state?.setOnRestartPlayer;
+    if (typeof action === "function") {
+      action(() => {
+        applySpawn();
+      });
+    } else if (isDev) {
+      console.warn("Player: setOnRestartPlayer missing", action);
     }
-  }, [phase, api]);
+  }, []);
 
-  useImperativeHandle(ref, () => physicsRef.current!, [physicsRef]);
+  usePlayerControls();
+  usePlayerCamera();
 
-  // Hooks
-  usePlayerControls(api as PublicApi);
-  usePlayerCamera(api as PublicApi);
-
-  return (
-    <group ref={physicsRef}>
-      {scene ? (
-        <primitive object={scene} scale={1.0} position={offset} />
-      ) : (
-        <mesh>
-          <sphereGeometry args={[radius, 16, 16]} />
-          <meshBasicMaterial color="hotpink" wireframe />
-        </mesh>
-      )}
-    </group>
-  );
-});
-
-export default Player;
+  return null;
+}

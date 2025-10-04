@@ -1,19 +1,24 @@
 // src/Experience.tsx
-import { Debug, Physics } from "@react-three/cannon";
+import { Physics } from "@react-three/cannon";
 import Player from "./components/3d/Player";
 import Architecture from "./components/3d/Architecture";
-import { useRef } from "react";
-import { Group } from "three";
+import type { DeviceProfile } from "./hooks/useDeviceProfile";
 
-export default function Experience() {
-  const playerRef = useRef<Group>(null);
+type ExperienceProps = {
+  deviceProfile: DeviceProfile;
+};
 
+export default function Experience({ deviceProfile }: ExperienceProps) {
   return (
-    <Physics gravity={[0, -9.81, 0]}>
-      <Player ref={playerRef} />
-      <Debug />
-      {/* Pass playerRef down so words can detect overlaps */}
-      <Architecture playerRef={playerRef} />
+    <Physics
+      gravity={[0, -9.81, 0]}
+      iterations={deviceProfile.physicsIterations}
+      stepSize={deviceProfile.physicsStep}
+      broadphase="SAP"
+      allowSleep={deviceProfile.isMobile}
+    >
+      <Player />
+      <Architecture deviceProfile={deviceProfile} />
     </Physics>
   );
 }

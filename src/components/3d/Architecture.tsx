@@ -1,14 +1,12 @@
 // src/components/Architecture.tsx
-import React from "react";
+import type { Ref } from "react";
+import { useEffect, useMemo } from "react";
 import * as THREE from "three";
-import { useBox, usePlane } from "@react-three/cannon";
+import { useBox } from "@react-three/cannon";
 import Logo from "../3d/Logo";
 import CollectibleWord from "./CollectibleWord";
-import { skills } from "../../stores/useGame";
-
-type Props = {
-  playerRef: React.RefObject<THREE.Group>;
-};
+import useGame, { skillThemes } from "../../stores/useGame";
+import type { DeviceProfile } from "../../hooks/useDeviceProfile";
 
 // ✅ Split into groups of 3
 function chunkArray<T extends string>(arr: readonly T[], size: number): T[][] {
@@ -51,63 +49,117 @@ function generatePosition(existing: [number, number, number][], minDist = 6): [n
   return pos!;
 }
 
-export default function Architecture({ playerRef }: Props) {
-  const chunkedSkills = chunkArray(skills, 3);
+type SkillChunk = {
+  key: string;
+  skills: readonly string[];
+  themeIndex: number;
+};
+
+type ArchitectureProps = {
+  deviceProfile: DeviceProfile;
+};
+
+export default function Architecture({ deviceProfile }: ArchitectureProps) {
+  const { isMobile, useSimpleMaterials } = deviceProfile;
+  const unlockedClusterIndex = useGame((state) => state.unlockedClusterIndex);
+  const setPlatformSurfaces = useGame((state) => state.setPlatformSurfaces);
+  const activePlatformIndex = useGame((state) => state.activePlatformIndex);
+  const grounded = useGame((state) => state.grounded);
+
+  const skillChunks = useMemo<SkillChunk[]>(() => {
+    return skillThemes.flatMap((theme, themeIndex) =>
+      chunkArray(theme.skills, 3).map((skills, tierIndex) => ({
+        key: `${theme.id}-${tierIndex}`,
+        skills,
+        themeIndex,
+      }))
+    );
+  }, []);
 
   // ✅ Positions: 1 start platform + enough for words
-  const positions: [number, number, number][] = [];
-  positions.push([0, 0, 0]); // start at origin
+  const positions = useMemo<[number, number, number][]>(() => {
+    const generated: [number, number, number][] = [[0, 0, 0]];
+    skillChunks.forEach(() => {
+      generated.push(generatePosition(generated, 8));
+    });
+    return generated;
+  }, [skillChunks]);
 
-  chunkedSkills.forEach(() => {
-    positions.push(generatePosition(positions, 8)); // min 8 units apart
-  });
+  const logoScales = useMemo(
+    () =>
+      positions.map((_, index) => {
+        if (index === 0) return isMobile ? 2.6 : 3.2;
+        return isMobile ? 2.2 : 2.6;
+      }),
+    [positions, isMobile]
+  );
 
-  const scales: [number, number, number][] = positions.map(() => [1.8, 1.8, 1]);
+  const platformSurfaces = useMemo(
+    () =>
+      positions.map((position, index) => ({
+        position,
+        radius: logoScales[index] * 0.55,
+        height: position[1] + 0.2,
+        index,
+      })),
+    [positions, logoScales]
+  );
 
-  // ✅ Invisible reset floor
-  const [floorRef] = usePlane(() => ({
-    rotation: [-Math.PI / 2, 0, 0],
-    position: [0, -6, 0],
-    args: [250, 250],
-    type: "Static",
-    userData: { isResetFloor: true },
-  }));
+  useEffect(() => {
+    setPlatformSurfaces(platformSurfaces);
+    return () => {
+      setPlatformSurfaces([]);
+    };
+  }, [platformSurfaces, setPlatformSurfaces]);
+
+  const BOUNDARY_RADIUS = 120;
 
   return (
     <>
-      {/* Safety floor */}
-      <mesh ref={floorRef as unknown as React.Ref<THREE.Mesh>}>
-        <planeGeometry args={[250, 250]} />
-        <meshStandardMaterial transparent opacity={0} depthWrite={false} colorWrite={false} />
+      <ambientLight intensity={isMobile ? 0.35 : 0.45} color="#ffffff" />
+      <directionalLight
+        position={[30, 60, 20]}
+        intensity={isMobile ? 0.55 : 0.7}
+        color="#f0f0f0"
+        castShadow={!isMobile}
+      />
+      {!isMobile && <directionalLight position={[-25, 40, -30]} intensity={0.35} color="#cfcfcf" />}
+      <hemisphereLight args={["#d9d9d9", "#0a0a0a", 0.2]} />
+
+      {/* Invisible boundary dome used for visual reference */}
+      <mesh scale={BOUNDARY_RADIUS}>
+        <sphereGeometry args={[1, 32, 32]} />
+        <meshBasicMaterial color="white" transparent opacity={0} depthWrite={false} />
       </mesh>
 
       {/* Platforms */}
       {positions.map((position, platformIndex) => {
-        const scale = scales[platformIndex];
-        const [px, py, pz] = position;
+        const scale = logoScales[platformIndex];
+        const colliderHeight = isMobile ? 0.6 : 0.7;
 
         const [ref] = useBox(() => ({
-          args: [scale[0] * 2, 0.3, scale[2] * 2],
-          position,
+          args: [scale * 1.15, colliderHeight, scale * 1.15],
+          position: [position[0], position[1] + colliderHeight * 0.5 - 0.15, position[2]],
           type: "Static",
         }));
 
-        const wordsHere = platformIndex === 0 ? [] : chunkedSkills[platformIndex - 1] ?? [];
+        const chunk = platformIndex === 0 ? undefined : skillChunks[platformIndex - 1];
+        const clusterIndex = chunk?.themeIndex ?? 0;
+        const isUnlocked = platformIndex === 0 || clusterIndex <= unlockedClusterIndex;
+        const isNextCluster = chunk && clusterIndex === unlockedClusterIndex + 1;
+        const wordsHere = platformIndex === 0 || !isUnlocked ? [] : chunk?.skills ?? [];
+        const isActive = grounded && activePlatformIndex === platformIndex;
 
         return (
-          <group ref={ref as unknown as React.Ref<THREE.Group>} key={platformIndex} position={position}>
-            {/* Platform base */}
-            <mesh rotation={[-Math.PI / 2, 0, 0]} scale={scale}>
-              <circleGeometry args={[1, 128]} />
-              <meshBasicMaterial color="white" opacity={0.35} transparent wireframe />
-            </mesh>
-
-            {/* Center logo */}
-            <Logo />
+          <group ref={ref as unknown as Ref<THREE.Group>} key={platformIndex} position={position}>
+            {/* Logo platform */}
+            <group scale={isNextCluster ? 1.05 : 1}>
+              <Logo scale={scale} simple={useSimpleMaterials} active={isActive} />
+            </group>
 
             {/* Words around logo */}
             {wordsHere.map((word, i) => {
-              const radius = 1.2;
+              const radius = scale * 0.58;
               const angle = (i / wordsHere.length) * Math.PI * 2;
 
               const x = Math.cos(angle) * radius;
@@ -119,7 +171,7 @@ export default function Architecture({ playerRef }: Props) {
 
               return (
                 <group key={`${platformIndex}-${word}`} position={[x, y, z]} rotation={[rotationX, rotationY, 0]}>
-                  <CollectibleWord word={word} playerRef={playerRef} />
+                  <CollectibleWord word={word} />
                 </group>
               );
             })}

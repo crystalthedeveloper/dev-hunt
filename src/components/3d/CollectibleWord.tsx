@@ -1,16 +1,51 @@
 // src/components/CollectibleWord.tsx
 import { Text } from "@react-three/drei";
-import useGame from "../../stores/useGame";
+import useGame, { skillThemes } from "../../stores/useGame";
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useShallow } from "zustand/react/shallow";
 import * as THREE from "three";
 
-export default function CollectibleWord({ word, position = [0, 0, 0], playerRef }) {
-  const collectedWords = useGame((s) => s.collectedWords);
-  const collectWord = useGame((s) => s.collectWord);
+type CollectibleProps = {
+  word: string;
+  position?: [number, number, number];
+};
+
+const noop = () => {};
+const EMPTY_WORDS: readonly string[] = [];
+const DEFAULT_PLAYER_POSITION: readonly [number, number, number] = [0, 0, 0];
+
+const skillClusterLookup = new Map<string, number>();
+skillThemes.forEach((theme, themeIndex) => {
+  theme.skills.forEach((skill) => {
+    skillClusterLookup.set(skill.toLowerCase(), themeIndex);
+  });
+});
+
+export default function CollectibleWord({ word, position = [0, 0, 0] }: CollectibleProps) {
+  const {
+    collectedWords,
+    collectWord: collectWordAction,
+    playerPosition,
+    unlockedClusterIndex,
+  } = useGame(
+    useShallow((state) => ({
+      collectedWords: (state as any)?.collectedWords ?? EMPTY_WORDS,
+      collectWord: (state as any)?.collectWord,
+      playerPosition: (state as any)?.playerPosition ?? DEFAULT_PLAYER_POSITION,
+      unlockedClusterIndex: (state as any)?.unlockedClusterIndex ?? 0,
+    }))
+  );
+  const collectWord = useMemo(
+    () => (typeof collectWordAction === "function" ? collectWordAction : noop),
+    [collectWordAction]
+  );
 
   const normalized = word.toLowerCase();
+  const clusterIndex = skillClusterLookup.get(normalized) ?? 0;
+  const isUnlocked = clusterIndex <= unlockedClusterIndex;
   const ref = useRef(null);
+  const worldPos = useRef(new THREE.Vector3());
 
   const isCollected = collectedWords.includes(normalized);
 
@@ -26,12 +61,18 @@ export default function CollectibleWord({ word, position = [0, 0, 0], playerRef 
 
   // check overlap each frame
   useFrame(() => {
-    if (!playerRef.current || !ref.current) return;
+    if (!ref.current || isCollected || !isUnlocked) return;
 
-    const playerBox = new THREE.Box3().setFromObject(playerRef.current);
-    const wordBox = new THREE.Box3().setFromObject(ref.current);
+    const [px, py, pz] = playerPosition;
+    (ref.current as THREE.Object3D).getWorldPosition(worldPos.current);
+    const { x: wx, y: wy, z: wz } = worldPos.current;
 
-    if (playerBox.intersectsBox(wordBox) && !isCollected) {
+    const dx = px - wx;
+    const dy = py - wy;
+    const dz = pz - wz;
+
+    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+    if (distance < 1.2) {
       collectWord(normalized);
     }
   });
@@ -41,7 +82,7 @@ export default function CollectibleWord({ word, position = [0, 0, 0], playerRef 
       ref={ref}
       position={position as [number, number, number]}
       rotation={randomRotation}
-      visible={!isCollected}
+      visible={isUnlocked && !isCollected}
     >
       {/* Invisible hitbox */}
       <mesh visible={false}>
