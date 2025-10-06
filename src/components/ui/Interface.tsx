@@ -14,7 +14,8 @@ const TRACKPAD_THUMB_SIZE = 72;
 const TRACKPAD_THUMB_RADIUS = TRACKPAD_THUMB_SIZE / 2;
 
 const EMPTY_WORDS: readonly string[] = [];
-const isDev = import.meta.env.DEV;
+const importMetaEnv = (import.meta as ImportMeta & { env?: { DEV?: boolean } }).env;
+const isDev = Boolean(importMetaEnv?.DEV);
 
 const chunkArray = <T,>(arr: readonly T[], size: number): T[][] => {
   const result: T[][] = [];
@@ -313,12 +314,24 @@ export default function Interface({ deviceProfile }: InterfaceProps) {
 
       const normalizedX = limitedDx / maxDistance;
       const normalizedY = -(limitedDy / maxDistance);
-      const pointerStrength = Math.min(1, Math.hypot(limitedDx, limitedDy) / maxDistance);
+      const normalizedDistance = Math.min(1, Math.hypot(limitedDx, limitedDy) / maxDistance);
+
+      const pointerStrength = normalizedDistance;
+
+      let forwardStrength = pointerStrength;
+      const neutralRadius = 0.28;
+      if (normalizedDistance < neutralRadius) {
+        const centerFactor = 1 - normalizedDistance / neutralRadius;
+        const autoForwardMin = 0.22;
+        const autoForwardMax = 0.65;
+        const autoForward = autoForwardMin + (autoForwardMax - autoForwardMin) * centerFactor;
+        forwardStrength = Math.max(pointerStrength, autoForward);
+      }
 
       scheduleMovementUpdate(
         {
           x: normalizedX,
-          y: pointerStrength,
+          y: Math.min(1, forwardStrength),
         },
         normalizedY
       );

@@ -1,14 +1,14 @@
 // src/components/3d/Player.tsx
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import useGame from "../../stores/useGame";
 import usePlayerControls from "../../hooks/usePlayerControls";
 import usePlayerCamera from "../../hooks/usePlayerCamera";
 
 const SPAWN_POSITION: [number, number, number] = [0, 1.6, 0];
 const IDENTITY_QUATERNION: [number, number, number, number] = [0, 0, 0, 1];
-const noop = () => {};
-const isDev = import.meta.env.DEV;
+const importMetaEnv = (import.meta as ImportMeta & { env?: { DEV?: boolean } }).env;
+const isDev = Boolean(importMetaEnv?.DEV);
 
 export default function Player() {
   useEffect(() => {
