@@ -21,6 +21,8 @@ const LANDING_HEIGHT_TOLERANCE = 0.4;
 const ASCENT_THRESHOLD = 0.5;
 const FORWARD_BIAS = 0.12;
 const NEUTRAL_SPEED_BOOST = 0.22;
+const MIN_WORLD_Y = -18;
+const FLOOR_RESET_THRESHOLD = MIN_WORLD_Y + 0.01;
 
 const WORLD_UP = new THREE.Vector3(0, 1, 0);
 const IDENTITY_QUATERNION = new THREE.Quaternion();
@@ -299,6 +301,14 @@ export default function usePlayerControls() {
     }
 
     if (position.current.y < SPAWN_POSITION.y - RESET_HEIGHT) {
+      const setTouchActive = stateApi?.setTouchActive;
+      warnMissing("setTouchActive", setTouchActive);
+      setTouchActive?.(false);
+      startSmoothReset();
+      return;
+    }
+
+    if (position.current.y <= FLOOR_RESET_THRESHOLD) {
       const setTouchActive = stateApi?.setTouchActive;
       warnMissing("setTouchActive", setTouchActive);
       setTouchActive?.(false);
