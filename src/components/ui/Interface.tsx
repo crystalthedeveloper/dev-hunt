@@ -16,6 +16,8 @@ const TRACKPAD_THUMB_RADIUS = TRACKPAD_THUMB_SIZE / 2;
 const EMPTY_WORDS: readonly string[] = [];
 const importMetaEnv = (import.meta as ImportMeta & { env?: { DEV?: boolean } }).env;
 const isDev = Boolean(importMetaEnv?.DEV);
+const FLOOR_Y = -18;
+const FLOOR_ALERT_RANGE = 20;
 
 const chunkArray = <T,>(arr: readonly T[], size: number): T[][] => {
   const result: T[][] = [];
@@ -186,9 +188,23 @@ export default function Interface({ deviceProfile }: InterfaceProps) {
     const alertColor = new Color(0xffffff);
     const color = baseColor.clone();
 
-    if (worstSeverity > 0.7) {
-      const pct = Math.min(1, (worstSeverity - 0.7) / 0.3);
+    const playerY = playerPosition?.[1] ?? FLOOR_Y;
+    const heightAboveFloor = playerY - FLOOR_Y;
+    const floorProximity = Math.max(0, 1 - Math.min(Math.max(heightAboveFloor, 0), FLOOR_ALERT_RANGE) / FLOOR_ALERT_RANGE);
+
+    const time = typeof performance !== "undefined" ? performance.now() : Date.now();
+    const pulse = (Math.sin(time * 0.008) + 1) * 0.5;
+    const floorFlash = floorProximity * (0.5 + 0.5 * pulse);
+
+    const combinedSeverity = Math.max(worstSeverity, floorProximity);
+
+    if (combinedSeverity > 0.7) {
+      const pct = Math.min(1, (combinedSeverity - 0.7) / 0.3);
       color.lerp(alertColor, pct);
+    }
+
+    if (floorProximity > 0) {
+      color.lerp(alertColor, floorFlash);
     }
 
     return {
@@ -197,7 +213,8 @@ export default function Interface({ deviceProfile }: InterfaceProps) {
         ...marker,
         nearest: marker.index === nearestIndex,
       })),
-      severity: worstSeverity,
+      severity: combinedSeverity,
+      floorFlash,
       colorHex: `#${color.getHexString()}`,
     };
   }, [orientation, playerPosition, platformSurfaces, activePlatformIndex]);
@@ -438,7 +455,9 @@ export default function Interface({ deviceProfile }: InterfaceProps) {
         style={{
           borderColor: miniMap.colorHex,
           boxShadow:
-            miniMap.severity > 0.6
+            miniMap.floorFlash > 0
+              ? `0 0 ${18 + miniMap.floorFlash * 60}px rgba(255, 255, 255, ${0.35 + miniMap.floorFlash * 0.5})`
+              : miniMap.severity > 0.6
               ? `0 0 ${10 + miniMap.severity * 40}px ${miniMap.colorHex}70`
               : "0 0 12px rgba(255, 255, 255, 0.08)",
         }}
@@ -448,7 +467,9 @@ export default function Interface({ deviceProfile }: InterfaceProps) {
           className="radarRing"
           style={{
             boxShadow:
-              miniMap.severity > 0.6
+              miniMap.floorFlash > 0
+                ? `inset 0 0 ${20 + miniMap.floorFlash * 60}px rgba(255, 255, 255, ${0.4 + miniMap.floorFlash * 0.4})`
+                : miniMap.severity > 0.6
                 ? `inset 0 0 ${10 + miniMap.severity * 40}px ${miniMap.colorHex}`
                 : "none",
           }}
@@ -459,12 +480,16 @@ export default function Interface({ deviceProfile }: InterfaceProps) {
               className={`radarDot${marker.active ? " radarDot--active" : ""}${marker.nearest ? " radarDot--nearest" : ""}`}
               style={{
                 transform: `translate(${marker.x}px, ${marker.y}px)`,
-                backgroundColor: marker.nearest ? miniMap.colorHex : undefined,
-                boxShadow: marker.nearest
-                  ? `0 0 20px ${miniMap.colorHex}`
-                  : marker.active
-                  ? `0 0 16px ${miniMap.colorHex}aa`
-                  : undefined,
+                backgroundColor:
+                  marker.nearest || miniMap.floorFlash > 0
+                    ? `rgba(255, 255, 255, ${0.7 + miniMap.floorFlash * 0.3})`
+                    : undefined,
+                boxShadow:
+                  marker.nearest || miniMap.floorFlash > 0
+                    ? `0 0 ${18 + miniMap.floorFlash * 30}px rgba(255, 255, 255, ${0.45 + miniMap.floorFlash * 0.4})`
+                    : marker.active
+                    ? `0 0 16px ${miniMap.colorHex}aa`
+                    : undefined,
               }}
             />
           ))}
